@@ -18,7 +18,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_centerVertical="true"
 	            android:text="返回"
-	            android:textSize="14sp"
+	            android:textSize="17sp"
 	            android:textColor="#fff"
 	            android:onClick="page_back"
 	            android:background="@drawable/title_btn_back" /> 

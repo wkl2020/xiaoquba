@@ -49,6 +49,12 @@ public class MainActivity extends MyAbstractActivity {
 		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
 		startActivity(intent);
     }
+    
+    public void wuyenotifieronclick(View v) { 
+        Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		startActivity(intent);    	
+    }
 
 }
 

@@ -39,65 +39,177 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:gravity="center_vertical"
             android:background="@drawable/search_bar_bg" >
 
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="搜索"
-                android:singleLine="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:textColor="#000"
-                android:drawableLeft="@drawable/search_bar_icon_normal" 
-                android:background="@drawable/search_bar_edit_bg" >               
-            </EditText>
+            <TextView
+		        android:id="@+id/myxiaoqu_label"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:singleLine="true"
+		        android:textColor="#000"
+				android:text="@string/myxiaoqu_label" />
             
         </LinearLayout>
         
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/mm_listitem"
-            android:clickable="true"
-            android:onClick="startchat"
-             >
+            android:layout_height="150dp"            
+       		android:gravity="center_horizontal|clip_vertical"
+       		android:paddingTop="15dp"  
+            android:background="@drawable/mm_listitem">
             
             <ImageView
-                android:id="@+id/head"
-                android:layout_width="55dp"
-		        android:layout_height="55dp"
+                android:id="@+id/wuyenotifier"
+                android:layout_width="85dp"
+		        android:layout_height="65dp"
                 android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
+                android:onClick="wuyenotifieronclick"
+                android:src="@drawable/green_test_icon" />
+            
+            <ImageView
+                android:id="@+id/phonenumbers"
+                android:layout_width="85dp"
+		        android:layout_height="65dp"
+		        android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/wuyenotifier"
+                android:onClick="wuyenotifieronclick"
                 android:paddingLeft="5dp"
-                android:src="@drawable/xiaohei" />
+                android:src="@drawable/red_test_icon" />
+            
+            <ImageView
+                android:id="@+id/bbs"
+                android:layout_width="85dp"
+		        android:layout_height="65dp"
+		        android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/phonenumbers"
+                android:onClick="wuyenotifieronclick"
+                android:paddingLeft="5dp"
+                android:src="@drawable/blue_test_icon" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/wuyenotifier_label"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/head"
-                android:padding="7dp"
-                android:text="小黑"
+                android:layout_below="@+id/wuyenotifier"
+                android:text="@string/wuyenotifier_label"
+                android:gravity="center"
                 android:textColor="#000" />
+            
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/phonenumbers_label"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:padding="7dp"
-                android:text="昨天 晚上"
-                android:textColor="#666" />
-             <TextView
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/phonenumbers"
+                android:layout_toRightOf="@+id/wuyenotifier_label"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:text="@string/phonenumbers_label"
+                android:textColor="#000" />
+             
+            <TextView
+                android:id="@+id/bbs_label"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/head"
-                android:layout_alignParentBottom="true"
-                android:padding="7dp"
-                android:text="尼滚...."
-                android:textColor="#666" />
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/bbs"
+                android:layout_toRightOf="@+id/phonenumbers_label"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:text="@string/bbs_label"
+                android:textColor="#000" />
+
+            
+            
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/search_bar_bg" >
+
+            <TextView
+		        android:id="@+id/xiaoquaround_label"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:singleLine="true"
+		        android:textColor="#000"
+				android:text="@string/xiaoquaround_label" />
+            
+        </LinearLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+       		android:gravity="center_horizontal|clip_vertical"
+       		android:paddingTop="15dp"  
+            android:background="@drawable/mm_listitem">
+            
+            <ImageView
+                android:id="@+id/shoppings"
+                android:layout_width="85dp"
+		        android:layout_height="65dp"
+                android:layout_alignParentLeft="true"
+                android:onClick="wuyenotifieronclick"
+                android:src="@drawable/green_test_icon" />
+            
+            <ImageView
+                android:id="@+id/waimai"
+                android:layout_width="85dp"
+		        android:layout_height="65dp"
+		        android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/shoppings"
+                android:onClick="wuyenotifieronclick"
+                android:paddingLeft="5dp"
+                android:src="@drawable/red_test_icon" />
+            
+            <ImageView
+                android:id="@+id/pingche"
+                android:layout_width="85dp"
+		        android:layout_height="65dp"
+		        android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/waimai"
+                android:onClick="wuyenotifieronclick"
+                android:paddingLeft="5dp"
+                android:src="@drawable/blue_test_icon" />
+
+            <TextView
+                android:id="@+id/shoppings_label"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shoppings"
+                android:text="@string/shoppings_label"
+                android:gravity="center"
+                android:textColor="#000" />
+            
+            <TextView
+                android:id="@+id/waimai_label"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/waimai"
+                android:layout_toRightOf="@+id/shoppings_label"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:text="@string/waimai_label"
+                android:textColor="#000" />
+             
+            <TextView
+                android:id="@+id/pingche_label"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/pingche"
+                android:layout_toRightOf="@+id/waimai_label"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:text="@string/pingche_label"
+                android:textColor="#000" />
 
             
             
