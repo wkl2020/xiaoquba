@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -14,7 +16,7 @@ import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
 import com.jun.xiaoquren.model.Xiaoqu;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
-public class XiaoquSearchActivity extends MyAbstractActivity {
+public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickListener{
 	public static final String ACTIVITY_NAME = "XiaoquSearchActivity";
 
     @Override
@@ -95,4 +97,17 @@ public class XiaoquSearchActivity extends MyAbstractActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()) {
+		case R.id.btn_back:
+			finish();
+			break;
+		}
+	}
+
+    public void page_back(View v) {
+		this.finish();
+    }
 }

@@ -6,29 +6,31 @@
         android:orientation="vertical" >
         
         <RelativeLayout 
-        android:id="@+id/rl_layout"
+        	android:id="@+id/header_layout"
   			android:layout_width="fill_parent"
   			android:layout_height="45dp"
   			android:background="@drawable/title_bar"
   			android:gravity="center_vertical"  > 
+  			
   			<Button
-            android:id="@+id/btn_back"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="返回"
-            android:textSize="14sp"
-            android:textColor="#fff"
-            android:onClick="chat_back"
-            android:background="@drawable/title_btn_back"
-		    />    
+	            android:id="@+id/btn_back"
+	            android:layout_width="70dp"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:text="返回"
+	            android:textSize="14sp"
+	            android:textColor="#fff"
+	            android:onClick="page_back"
+	            android:background="@drawable/title_btn_back" /> 
+	               
       		<TextView
         		android:layout_width="wrap_content" 
         		android:layout_height="wrap_content" 
         		android:text="个人中心"
         		android:layout_centerInParent="true"
         		android:textSize="20sp"		
-				android:textColor="#ffffff" /> 			
+				android:textColor="#ffffff" /> 
+							
 		</RelativeLayout>
 		
 		<ScrollView

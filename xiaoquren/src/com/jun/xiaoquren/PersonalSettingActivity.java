@@ -29,7 +29,7 @@ public class PersonalSettingActivity extends MyAbstractActivity implements OnCli
 		}
 	}
 
-    public void chat_back(View v) {
+    public void page_back(View v) {
 		this.finish();
     }
 }

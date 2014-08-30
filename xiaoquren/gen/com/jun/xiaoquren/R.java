@@ -204,11 +204,11 @@ public final class R {
         public static final int current_xiaoqu_name=0x7f090001;
         public static final int editText1=0x7f090003;
         public static final int head=0x7f090004;
+        public static final int header_layout=0x7f090007;
         public static final int listview=0x7f090010;
         public static final int name=0x7f09000c;
         public static final int namelabel=0x7f09000b;
         public static final int personal_settings=0x7f090002;
-        public static final int rl_layout=0x7f090007;
         public static final int search=0x7f09000f;
         public static final int title=0x7f090000;
         public static final int xiaoquaddresslabel=0x7f09000d;
