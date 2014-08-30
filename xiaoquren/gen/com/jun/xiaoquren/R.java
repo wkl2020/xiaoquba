@@ -196,48 +196,31 @@ public final class R {
         public static final int xiaohei_big=0x7f02009d;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001d;
-        public static final int add_friend=0x7f090009;
-        public static final int add_friend_shake=0x7f09000a;
-        public static final int btn1=0x7f090019;
-        public static final int btn2=0x7f09001a;
-        public static final int btn3=0x7f09001b;
-        public static final int btn4=0x7f09001c;
-        public static final int btn_back=0x7f09000c;
-        public static final int country=0x7f090003;
-        public static final int countrylabel=0x7f090002;
-        public static final int current_xiaoqu_name=0x7f09000d;
-        public static final int editText1=0x7f09000f;
-        public static final int head=0x7f090010;
-        public static final int imageButton1=0x7f090011;
-        public static final int imageButton2=0x7f090012;
-        public static final int listview=0x7f090007;
-        public static final int norification_image=0x7f090017;
-        public static final int notification_text=0x7f090018;
-        public static final int pager_tabstrip=0x7f090014;
-        public static final int personal_settings=0x7f09000e;
-        public static final int population=0x7f090005;
-        public static final int populationlabel=0x7f090004;
-        public static final int rank=0x7f090001;
-        public static final int ranklabel=0x7f090000;
-        public static final int rl_layout=0x7f09000b;
-        public static final int search=0x7f090006;
-        public static final int title=0x7f090008;
-        public static final int view_pager_demo=0x7f090013;
-        public static final int view_pager_image=0x7f090015;
-        public static final int view_pager_text=0x7f090016;
+        public static final int action_settings=0x7f090011;
+        public static final int add_friend=0x7f090005;
+        public static final int add_friend_shake=0x7f090006;
+        public static final int address=0x7f09000e;
+        public static final int btn_back=0x7f090008;
+        public static final int current_xiaoqu_name=0x7f090001;
+        public static final int editText1=0x7f090003;
+        public static final int head=0x7f090004;
+        public static final int listview=0x7f090010;
+        public static final int name=0x7f09000c;
+        public static final int namelabel=0x7f09000b;
+        public static final int personal_settings=0x7f090002;
+        public static final int rl_layout=0x7f090007;
+        public static final int search=0x7f09000f;
+        public static final int title=0x7f090000;
+        public static final int xiaoquaddresslabel=0x7f09000d;
+        public static final int xiaoquid=0x7f09000a;
+        public static final int xiaoquidlabel=0x7f090009;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int listview_item=0x7f030001;
-        public static final int listview_main=0x7f030002;
-        public static final int main_tab_friends=0x7f030003;
-        public static final int main_tab_settings=0x7f030004;
-        public static final int main_tab_weixin=0x7f030005;
-        public static final int singleitemview=0x7f030006;
-        public static final int titlebtn=0x7f030007;
-        public static final int view_pager_demo=0x7f030008;
-        public static final int view_pager_fragment=0x7f030009;
+        public static final int main_activity=0x7f030000;
+        public static final int main_tab_friends=0x7f030001;
+        public static final int personal_settings=0x7f030002;
+        public static final int xiaoqu_item=0x7f030003;
+        public static final int xiaoqu_search_main=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -245,12 +228,12 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
-        public static final int countrylabel=0x7f060006;
         public static final int hello_world=0x7f060001;
         public static final int menu_settings=0x7f060003;
-        public static final int populationlabel=0x7f060007;
-        public static final int ranklabel=0x7f060005;
         public static final int title_activity_main=0x7f060004;
+        public static final int xiaoquaddresslabel=0x7f060007;
+        public static final int xiaoquidlabel=0x7f060005;
+        public static final int xiaoqunamelabel=0x7f060006;
     }
     public static final class style {
         public static final int AnimBottom=0x7f070005;

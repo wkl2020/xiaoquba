@@ -3,20 +3,19 @@ package com.jun.xiaoquren;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import com.jun.xiaoquren.adapter.ListViewAdapter;
-import com.jun.xiaoquren.model.WorldPopulation;
-import com.jun.xiaoquren.util.MyAbstractActivity;
-
 import android.os.Bundle;
-import android.app.Activity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.widget.EditText;
 import android.widget.ListView;
 
-public class XiaoQuSearchActivity extends MyAbstractActivity {
-	public static final String ACTIVITY_NAME = "XiaoQuSearchActivity";
+import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
+import com.jun.xiaoquren.model.Xiaoqu;
+import com.jun.xiaoquren.util.MyAbstractActivity;
+
+public class XiaoquSearchActivity extends MyAbstractActivity {
+	public static final String ACTIVITY_NAME = "XiaoquSearchActivity";
 
     @Override
 	public String getActivityName() {
@@ -24,58 +23,56 @@ public class XiaoQuSearchActivity extends MyAbstractActivity {
 	} 
 
 	// Declare Variables
-	ListView list;
-	ListViewAdapter adapter;
-	EditText editsearch;
-	String[] rank;
-	String[] country;
-	String[] population;
-	ArrayList<WorldPopulation> arraylist = new ArrayList<WorldPopulation>();
+	ListView xiaoxuListView;
+	XiaoquListViewAdapter listViewAdapter;
+	EditText searchTextbox;
+	String[] xiaoquIds;
+	String[] xiaoquNames;
+	String[] xiaoquAddress;
+	ArrayList<Xiaoqu> xiaoquList = new ArrayList<Xiaoqu>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.listview_main);
+		setContentView(R.layout.xiaoqu_search_main);
 
 		// Generate sample data
-		rank = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+		xiaoquIds = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
-		country = new String[] { "新开家园", "音都雅苑", "上海康城",
+		xiaoquNames = new String[] { "新开家园", "音都雅苑", "上海康城",
 				"上海国际豪都花园", "汤臣一品", "汤臣二品", "汤臣三品", "汤臣四品",
 				"汤臣五品", "汤臣六品" };
 
-		population = new String[] { "南京西路1899号", "南京西路1899号",
+		xiaoquAddress = new String[] { "南京西路1899号", "南京西路1899号",
 				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号",
 				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号" };
 
 		// Locate the ListView in listview_main.xml
-		list = (ListView) findViewById(R.id.listview);
+		xiaoxuListView = (ListView) findViewById(R.id.listview);
 
-		for (int i = 0; i < rank.length; i++) 
+		for (int i = 0; i < xiaoquIds.length; i++) 
 		{
-			WorldPopulation wp = new WorldPopulation(rank[i], country[i],
-					population[i]);
+			Xiaoqu wp = new Xiaoqu(xiaoquIds[i], xiaoquNames[i], xiaoquAddress[i]);
 			// Binds all strings into an array
-			arraylist.add(wp);
+			xiaoquList.add(wp);
 		}
 
 		// Pass results to ListViewAdapter Class
-		adapter = new ListViewAdapter(this, arraylist);
+		listViewAdapter = new XiaoquListViewAdapter(this, xiaoquList);
 		
 		// Binds the Adapter to the ListView
-		list.setAdapter(adapter);
+		xiaoxuListView.setAdapter(listViewAdapter);
 		
 		// Locate the EditText in listview_main.xml
-		editsearch = (EditText) findViewById(R.id.search);
+		searchTextbox = (EditText) findViewById(R.id.search);
 
 		// Capture Text in EditText
-		editsearch.addTextChangedListener(new TextWatcher() {
+		searchTextbox.addTextChangedListener(new TextWatcher() {
 
 			@Override
 			public void afterTextChanged(Editable arg0) {
-				// TODO Auto-generated method stub
-				String text = editsearch.getText().toString().toLowerCase(Locale.getDefault());
-				adapter.filter(text);
+				String text = searchTextbox.getText().toString().toLowerCase(Locale.getDefault());
+				listViewAdapter.filter(text);
 			}
 
 			@Override
@@ -92,7 +89,7 @@ public class XiaoQuSearchActivity extends MyAbstractActivity {
 		});
 	}
 
-	// Not using options menu in this tutorial
+	// Not using options menu in this page
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);

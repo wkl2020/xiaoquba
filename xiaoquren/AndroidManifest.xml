@@ -24,8 +24,8 @@
         </activity>
         
         <activity android:name=".PersonalSettingActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".XiaoQuSearchActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".XiaoQuItemActivity" android:theme="@style/Anim_style2" />
+        <activity android:name=".XiaoquSearchActivity" android:theme="@style/Anim_style2" />
+        <activity android:name=".XiaoquDetailActivity" android:theme="@style/Anim_style2" />
         
     </application>
 

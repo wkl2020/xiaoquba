@@ -4,43 +4,43 @@
     android:layout_height="fill_parent" >
 
     <TextView
-        android:id="@+id/ranklabel"
+        android:id="@+id/xiaoquidlabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ranklabel" />
+        android:text="@string/xiaoquidlabel" />
 
     <TextView
-        android:id="@+id/rank"
+        android:id="@+id/xiaoquid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ranklabel" />
+        android:layout_toRightOf="@+id/xiaoquidlabel" />
 
     <TextView
-        android:id="@+id/countrylabel"
+        android:id="@+id/namelabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ranklabel"
-        android:text="@string/countrylabel" />
+        android:layout_below="@+id/xiaoquidlabel"
+        android:text="@string/xiaoqunamelabel" />
 
     <TextView
-        android:id="@+id/country"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rank"
-        android:layout_toRightOf="@+id/countrylabel" />
+        android:layout_below="@+id/xiaoquid"
+        android:layout_toRightOf="@+id/namelabel" />
 
     <TextView
-        android:id="@+id/populationlabel"
+        android:id="@+id/xiaoquaddresslabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/countrylabel"
-        android:text="@string/populationlabel" />
+        android:layout_below="@+id/namelabel"
+        android:text="@string/xiaoquaddresslabel" />
 
     <TextView
-        android:id="@+id/population"
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/country"
-        android:layout_toRightOf="@+id/populationlabel" />
+        android:layout_below="@+id/name"
+        android:layout_toRightOf="@+id/xiaoquaddresslabel" />
 
 </RelativeLayout>
