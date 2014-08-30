@@ -75,7 +75,7 @@
 		        android:layout_height="65dp"
 		        android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/wuyenotifier"
-                android:onClick="wuyenotifieronclick"
+                android:onClick="phonenumbersonclick"
                 android:paddingLeft="5dp"
                 android:src="@drawable/red_test_icon" />
             
@@ -85,7 +85,7 @@
 		        android:layout_height="65dp"
 		        android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/phonenumbers"
-                android:onClick="wuyenotifieronclick"
+                android:onClick="bbsonclick"
                 android:paddingLeft="5dp"
                 android:src="@drawable/blue_test_icon" />
 
@@ -155,7 +155,7 @@
                 android:layout_width="85dp"
 		        android:layout_height="65dp"
                 android:layout_alignParentLeft="true"
-                android:onClick="wuyenotifieronclick"
+                android:onClick="shopptingsonclick"
                 android:src="@drawable/green_test_icon" />
             
             <ImageView
@@ -164,7 +164,7 @@
 		        android:layout_height="65dp"
 		        android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/shoppings"
-                android:onClick="wuyenotifieronclick"
+                android:onClick="waimaionclick"
                 android:paddingLeft="5dp"
                 android:src="@drawable/red_test_icon" />
             
@@ -174,7 +174,7 @@
 		        android:layout_height="65dp"
 		        android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/waimai"
-                android:onClick="wuyenotifieronclick"
+                android:onClick="pingcheonclick"
                 android:paddingLeft="5dp"
                 android:src="@drawable/blue_test_icon" />
 

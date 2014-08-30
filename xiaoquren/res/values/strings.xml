@@ -11,11 +11,23 @@
     <string name="xiaoquaddresslabel">""</string>
     <string name="myxiaoqu_label">我的小区</string>
     <string name="xiaoquaround_label">小区周边</string>
-    <string name="wuyenotifier_label">物业通告</string>
+    <string name="wuyenotifier_label">小区公告</string>
     <string name="phonenumbers_label">号码通</string>
     <string name="bbs_label">论坛</string>    
     <string name="shoppings_label">商铺</string>
     <string name="waimai_label">外卖</string>
     <string name="pingche_label">拼车</string>
+    
+    <string name="search_hint_label">搜索</string>
+    
+    
+    <string name="xiaoqu_search_header_label">小区选择</string>
+    <string name="personal_header_label">个人中心</string>
+    <string name="wuye_notifier_header_label">小区公告</string>
+    <string name="return_btn_label">返回</string>
+    <string name="aaa">拼车</string>
+    <string name="bbb">拼车</string>
+    <string name="ccc">拼车</string>
+    
 
 </resources>

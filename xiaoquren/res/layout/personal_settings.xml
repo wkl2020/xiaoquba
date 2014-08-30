@@ -17,7 +17,7 @@
 	            android:layout_width="70dp"
 	            android:layout_height="wrap_content"
 	            android:layout_centerVertical="true"
-	            android:text="返回"
+	            android:text="@string/return_btn_label"
 	            android:textSize="17sp"
 	            android:textColor="#fff"
 	            android:onClick="page_back"
@@ -25,8 +25,8 @@
 	               
       		<TextView
         		android:layout_width="wrap_content" 
-        		android:layout_height="wrap_content" 
-        		android:text="个人中心"
+        		android:layout_height="wrap_content"
+        		android:text="@string/personal_header_label"
         		android:layout_centerInParent="true"
         		android:textSize="20sp"		
 				android:textColor="#ffffff" /> 

@@ -17,8 +17,8 @@ import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
 import com.jun.xiaoquren.model.Xiaoqu;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
-public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickListener{
-	public static final String ACTIVITY_NAME = "XiaoquSearchActivity";
+public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnClickListener{
+	public static final String ACTIVITY_NAME = "WuyeNotifierMainActivity";
 
     @Override
 	public String getActivityName() {
@@ -26,7 +26,7 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 	} 
 
 	// Declare Variables
-	ListView xiaoxuListView;
+	ListView notifierListView;
 	XiaoquListViewAdapter listViewAdapter;
 	EditText searchTextbox;
 	String[] xiaoquIds;
@@ -37,21 +37,21 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.xiaoqu_search_main);
+		setContentView(R.layout.wuye_notifier_main);
 
 		// Generate sample data
 		xiaoquIds = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
-		xiaoquNames = new String[] { "新开家园", "音都雅苑", "上海康城",
-				"上海国际豪都花园", "汤臣一品", "汤臣二品", "汤臣三品", "汤臣四品",
-				"汤臣五品", "汤臣六品" };
+		xiaoquNames = new String[] { "asdf", "音asdf雅苑", "上asdf海康城",
+				"上海国际豪都asdf花园", "汤臣asdf一品", "asdf汤臣二品", "汤asdf臣三品", "汤asdf臣四品",
+				"汤臣asdf五品", "汤臣asdf六品" };
 
-		xiaoquAddress = new String[] { "南京西路1899号", "南京西路1899号",
-				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号",
-				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号" };
+		xiaoquAddress = new String[] { "南京西路asdf1899号", "南asdf京西路1899号",
+				"南京西路asdf1899号", "南京西路189asdf9号", "南京西路1asdf899号", "南京asdf西路1899号",
+				"南京西asdf路1899号", "南asdasdff京西路1899号", "南京西路asdf1899号", "南京asdf西路1899号" };
 
 		// Locate the ListView in listview_main.xml
-		xiaoxuListView = (ListView) findViewById(R.id.listview);
+		notifierListView = (ListView) findViewById(R.id.listview);
 
 		for (int i = 0; i < xiaoquIds.length; i++) 
 		{
@@ -64,7 +64,7 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 		listViewAdapter = new XiaoquListViewAdapter(this, xiaoquList);
 		
 		// Binds the Adapter to the ListView
-		xiaoxuListView.setAdapter(listViewAdapter);
+		notifierListView.setAdapter(listViewAdapter);
 		
 		// Locate the EditText in listview_main.xml
 		searchTextbox = (EditText) findViewById(R.id.search);

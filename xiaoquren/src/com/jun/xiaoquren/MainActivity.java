@@ -52,8 +52,38 @@ public class MainActivity extends MyAbstractActivity {
     
     public void wuyenotifieronclick(View v) { 
         Intent intent = new Intent();
-		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		intent.setClass(MainActivity.this, WuyeNotifierMainActivity.class);
 		startActivity(intent);    	
+    }
+    
+    public void phonenumbersonclick(View v) {  
+        Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		startActivity(intent);
+    }
+    
+    public void bbsonclick(View v) {  
+        Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		startActivity(intent);
+    }
+    
+    public void shopptingsonclick(View v) {  
+        Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		startActivity(intent);
+    }
+    
+    public void waimaionclick(View v) {  
+        Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		startActivity(intent);
+    }
+    
+    public void pingcheonclick(View v) {  
+        Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		startActivity(intent);
     }
 
 }
