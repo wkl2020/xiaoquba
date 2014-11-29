@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
-import com.jun.xiaoquren.model.Xiaoqu;
+import com.jun.xiaoquren.adapter.WuyeNotifierListViewAdapter;
+import com.jun.xiaoquren.model.WuyeNotification;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
 public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnClickListener{
@@ -27,12 +27,12 @@ public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnCl
 
 	// Declare Variables
 	ListView notifierListView;
-	XiaoquListViewAdapter listViewAdapter;
+	WuyeNotifierListViewAdapter listViewAdapter;
 	EditText searchTextbox;
-	String[] xiaoquIds;
-	String[] xiaoquNames;
-	String[] xiaoquAddress;
-	ArrayList<Xiaoqu> xiaoquList = new ArrayList<Xiaoqu>();
+	String[] notificationIds;
+	String[] notificationNames;
+	String[] notificationAddress;
+	ArrayList<WuyeNotification> notificationList = new ArrayList<WuyeNotification>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,28 +40,25 @@ public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnCl
 		setContentView(R.layout.wuye_notifier_main);
 
 		// Generate sample data
-		xiaoquIds = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+		notificationIds = new String[] { "1", "2", "3", "4"};
 
-		xiaoquNames = new String[] { "asdf", "音asdf雅苑", "上asdf海康城",
-				"上海国际豪都asdf花园", "汤臣asdf一品", "asdf汤臣二品", "汤asdf臣三品", "汤asdf臣四品",
-				"汤臣asdf五品", "汤臣asdf六品" };
+		notificationNames = new String[] { "2014年度物业管理费缴纳通知", "电能标调换预告", "家庭活动赛通知",
+				"关于上海市黄浦区汤臣一品业主委员会换届改选小组成员名单的公示"};
 
-		xiaoquAddress = new String[] { "南京西路asdf1899号", "南asdf京西路1899号",
-				"南京西路asdf1899号", "南京西路189asdf9号", "南京西路1asdf899号", "南京asdf西路1899号",
-				"南京西asdf路1899号", "南asdasdff京西路1899号", "南京西路asdf1899号", "南京asdf西路1899号" };
+		notificationAddress = new String[] { "1回复", "2回复", "3回复", "4回复"};
 
 		// Locate the ListView in listview_main.xml
 		notifierListView = (ListView) findViewById(R.id.listview);
 
-		for (int i = 0; i < xiaoquIds.length; i++) 
+		for (int i = 0; i < notificationIds.length; i++) 
 		{
-			Xiaoqu wp = new Xiaoqu(xiaoquIds[i], xiaoquNames[i], xiaoquAddress[i]);
+			WuyeNotification wp = new WuyeNotification(notificationIds[i], notificationNames[i], notificationAddress[i]);
 			// Binds all strings into an array
-			xiaoquList.add(wp);
+			notificationList.add(wp);
 		}
 
 		// Pass results to ListViewAdapter Class
-		listViewAdapter = new XiaoquListViewAdapter(this, xiaoquList);
+		listViewAdapter = new WuyeNotifierListViewAdapter(this, notificationList);
 		
 		// Binds the Adapter to the ListView
 		notifierListView.setAdapter(listViewAdapter);

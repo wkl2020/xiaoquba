@@ -1,0 +1,61 @@
+
+
+
+
+String sql = "create table wkltable(id int, username varchar(20), password varchar(60));";         
+db.execSQL(sql);
+
+
+=constant_table
+create table constant_table (id int, fieldname varchar(50), fieldvalue varchar(50));
+
+- 1, username, wklusername
+- 2, password, wklpassword
+- 3, nickname, wklnickname
+- 4, token,    axjkaeraxfdsaf
+- 5, currentxiaoquname, xinkuaijiayuan
+- 6, currentxiaoquaddr, .....
+- 7, currentxiaoqu, *
+
+insert into constant_table (id, fieldname, fieldvalue) values (1, 'username', 'wklusr');
+insert into constant_table (id, fieldname, fieldvalue) values (2, 'password', 'wklpwd');
+insert into constant_table (id, fieldname, fieldvalue) values (3, 'nickname', 'wklnick');
+insert into constant_table (id, fieldname, fieldvalue) values (4, 'token', 'wkltoken');
+insert into constant_table (id, fieldname, fieldvalue) values (5, 'xiaoquname', 'wklxiqoquname');
+insert into constant_table (id, fieldname, fieldvalue) values (6, 'xiaoquaddr', 'wklxiaoquaddr');
+insert into constant_table (id, fieldname, fieldvalue) values (7, 'xiaoqu', '1');
+
+
+=xiaoqu_list
+create table xiaoqu_list (id int, name varchar(50), address varchar(500));
+
+insert into xiaoqu_list (id, name, address) values (1, 'xiaoquname1', 'xiaoquaddr1');
+insert into xiaoqu_list (id, name, address) values (2, 'xiaoquname2', 'xiaoquaddr2');
+insert into xiaoqu_list (id, name, address) values (3, 'xiaoquname3', 'xiaoquaddr3');
+insert into xiaoqu_list (id, name, address) values (4, 'xiaoquname4', 'xiaoquaddr4');
+insert into xiaoqu_list (id, name, address) values (5, 'xiaoquname5', 'xiaoquaddr5');
+
+=wuye_document
+create table document (id int, type varchar(50), title varchar(50), content varchar(4000), author varchar(50), owner varchar(50), createtime varchar(50), publishtime varchar(50), expiretime varchar(50));
+
+insert into  document (id, type, title, content, author, owner, createtime, publishtime, expiretime) value (1, 'wuye', 'title1', 'content1', 'author1', 'owner1', '2014-11-11 11:11', '2014-11-11 11:11', '2014-11-11 11:11');
+insert into document (id, type, title, content, author, owner, createtime, publishtime, expiretime) value (2, 'wuye', 'title2', 'content2', 'author2', 'owner2', '2014-11-11 11:12', '2014-11-11 11:12', '2014-11-11 11:12');
+insert into document (id, type, title, content, author, owner, createtime, publishtime, expiretime) value (3, 'wuye', 'title3', 'content3', 'author3', 'owner3', '2014-11-11 11:13', '2014-11-11 11:13', '2014-11-11 11:13');
+insert into document (id, type, title, content, author, owner, createtime, publishtime, expiretime) value (4, 'wuye', 'title4', 'content4', 'author4', 'owner4', '2014-11-11 11:14', '2014-11-11 11:14', '2014-11-11 11:14');
+
+=wuye_document_comment
+create table document_comment (id int, document int, author varchar(50), nickname varchar(50), comment varchar(4000), createtime varchar(50));
+
+insert into document_comment (id, document, author, nickname, comment, createtime) values (1, 1, 'author1', 'nickname1', 'comment1', '2014-11-11 11:11');
+insert into document_comment (id, document, author, nickname, comment, createtime) values (2, 2, 'author2', 'nickname2', 'comment2', '2014-11-11 11:12');
+insert into document_comment (id, document, author, nickname, comment, createtime) values (3, 3, 'author3', 'nickname3', 'comment3', '2014-11-11 11:13');
+insert into document_comment (id, document, author, nickname, comment, createtime) values (4, 4, 'author4', 'nickname4', 'comment4', '2014-11-11 11:14');
+
+
+
+
+
+
+
+
+

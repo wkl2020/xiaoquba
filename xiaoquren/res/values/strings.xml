@@ -24,6 +24,7 @@
     <string name="xiaoqu_search_header_label">小区选择</string>
     <string name="personal_header_label">个人中心</string>
     <string name="wuye_notifier_header_label">小区公告</string>
+    <string name="notifier_header_label">公告</string>    
     <string name="return_btn_label">返回</string>
     <string name="aaa">拼车</string>
     <string name="bbb">拼车</string>

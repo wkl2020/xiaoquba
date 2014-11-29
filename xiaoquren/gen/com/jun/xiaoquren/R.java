@@ -198,27 +198,32 @@ public final class R {
         public static final int whats_new_start_btn_pressed=0x7f02009f;
         public static final int xiaohei=0x7f0200a0;
         public static final int xiaohei_big=0x7f0200a1;
+        public static final int yuan=0x7f0200a2;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001d;
-        public static final int add_friend=0x7f090011;
-        public static final int add_friend_shake=0x7f090012;
-        public static final int address=0x7f09001a;
+        public static final int action_settings=0x7f090021;
+        public static final int add_friend=0x7f090012;
+        public static final int add_friend_shake=0x7f090013;
+        public static final int address=0x7f09001b;
         public static final int bbs=0x7f090006;
         public static final int bbs_label=0x7f090009;
-        public static final int btn_back=0x7f090014;
+        public static final int btn_back=0x7f090015;
+        public static final int content=0x7f09001c;
+        public static final int create_time=0x7f09001e;
         public static final int current_xiaoqu_name=0x7f090001;
-        public static final int header_layout=0x7f090013;
-        public static final int listview=0x7f09001c;
+        public static final int dbtest_label=0x7f090011;
+        public static final int header_layout=0x7f090014;
+        public static final int listview=0x7f090020;
         public static final int myxiaoqu_label=0x7f090003;
-        public static final int name=0x7f090018;
-        public static final int namelabel=0x7f090017;
+        public static final int name=0x7f090019;
+        public static final int namelabel=0x7f090018;
+        public static final int ower_name=0x7f09001d;
         public static final int personal_settings=0x7f090002;
         public static final int phonenumbers=0x7f090005;
         public static final int phonenumbers_label=0x7f090008;
         public static final int pingche=0x7f09000d;
         public static final int pingche_label=0x7f090010;
-        public static final int search=0x7f09001b;
+        public static final int search=0x7f09001f;
         public static final int shoppings=0x7f09000b;
         public static final int shoppings_label=0x7f09000e;
         public static final int title=0x7f090000;
@@ -226,10 +231,10 @@ public final class R {
         public static final int waimai_label=0x7f09000f;
         public static final int wuyenotifier=0x7f090004;
         public static final int wuyenotifier_label=0x7f090007;
-        public static final int xiaoquaddresslabel=0x7f090019;
+        public static final int xiaoquaddresslabel=0x7f09001a;
         public static final int xiaoquaround_label=0x7f09000a;
-        public static final int xiaoquid=0x7f090016;
-        public static final int xiaoquidlabel=0x7f090015;
+        public static final int xiaoquid=0x7f090017;
+        public static final int xiaoquidlabel=0x7f090016;
     }
     public static final class layout {
         public static final int main_activity=0x7f030000;
@@ -245,19 +250,20 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int aaa=0x7f060015;
+        public static final int aaa=0x7f060016;
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
-        public static final int bbb=0x7f060016;
+        public static final int bbb=0x7f060017;
         public static final int bbs_label=0x7f06000c;
-        public static final int ccc=0x7f060017;
+        public static final int ccc=0x7f060018;
         public static final int hello_world=0x7f060001;
         public static final int menu_settings=0x7f060003;
         public static final int myxiaoqu_label=0x7f060008;
+        public static final int notifier_header_label=0x7f060014;
         public static final int personal_header_label=0x7f060012;
         public static final int phonenumbers_label=0x7f06000b;
         public static final int pingche_label=0x7f06000f;
-        public static final int return_btn_label=0x7f060014;
+        public static final int return_btn_label=0x7f060015;
         public static final int search_hint_label=0x7f060010;
         public static final int shoppings_label=0x7f06000d;
         public static final int title_activity_main=0x7f060004;
