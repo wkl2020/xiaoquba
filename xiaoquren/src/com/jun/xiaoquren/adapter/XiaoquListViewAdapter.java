@@ -78,7 +78,7 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View arg0) {
 				
-				String selId = (xiaoquList.get(position).getId());
+				String selId = xiaoquList.get(position).getId();
 				String selName = xiaoquList.get(position).getName();
 				String selAddress = xiaoquList.get(position).getAddress();
 				

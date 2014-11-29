@@ -3,11 +3,12 @@ package com.jun.xiaoquren.dao.model;
 public class Document {
 	
 	private Integer id = null;
+	private Integer xiaoquid = null;
 	private String type;
 	private String title;
 	private String content;	
 	private String author;
-	private String owner;
+	private String owner;  // empty now
 	private String createtime;
 	private String publishtime;
 	private String expiretime;
@@ -22,6 +23,14 @@ public class Document {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getXiaoquid() {
+		return xiaoquid;
+	}
+
+	public void setXiaoquid(Integer xiaoquid) {
+		this.xiaoquid = xiaoquid;
 	}
 
 	public String getType() {

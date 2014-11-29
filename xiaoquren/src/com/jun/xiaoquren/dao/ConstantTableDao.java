@@ -72,5 +72,10 @@ public class ConstantTableDao {
 		SQLiteDatabase db = DBUtil.getWritableDatabase();
 		db.delete(DBUtil.ConstantTable, "fieldname=?", new String[]{fieldname});
 	}
+	
+	public static void deleteAll() {
+		SQLiteDatabase db = DBUtil.getWritableDatabase();
+		db.delete(DBUtil.ConstantTable, null, null);
+	}
 
 }

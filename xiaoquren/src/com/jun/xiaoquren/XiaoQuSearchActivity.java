@@ -1,6 +1,7 @@
 package com.jun.xiaoquren;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import android.os.Bundle;
@@ -9,11 +10,12 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
+import com.jun.xiaoquren.dao.DBUtil;
+import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.model.Xiaoqu;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
@@ -29,10 +31,7 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 	ListView xiaoxuListView;
 	XiaoquListViewAdapter listViewAdapter;
 	EditText searchTextbox;
-	String[] xiaoquIds;
-	String[] xiaoquNames;
-	String[] xiaoquAddress;
-	ArrayList<Xiaoqu> xiaoquList = new ArrayList<Xiaoqu>();
+	List<Xiaoqu> xiaoquList = new ArrayList<Xiaoqu>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,25 +39,30 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 		setContentView(R.layout.xiaoqu_search_main);
 
 		// Generate sample data
-		xiaoquIds = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-
-		xiaoquNames = new String[] { "新开家园", "音都雅苑", "上海康城",
-				"上海国际豪都花园", "汤臣一品", "汤臣二品", "汤臣三品", "汤臣四品",
-				"汤臣五品", "汤臣六品" };
-
-		xiaoquAddress = new String[] { "南京西路1899号", "南京西路1899号",
-				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号",
-				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号" };
-
+		
+		Xiaoqu xiaoqu = new Xiaoqu();
+		xiaoqu.setId("1");
+		xiaoqu.setName("新凯家园");
+		xiaoqu.setAddress("南京西路1899号");
+		xiaoquList.add(xiaoqu);
+		
+		xiaoqu = new Xiaoqu();
+		xiaoqu.setId("2");
+		xiaoqu.setName("音都雅苑");
+		xiaoqu.setAddress("南京西路1899号");
+		xiaoquList.add(xiaoqu);
+		
+		xiaoqu = new Xiaoqu();
+		xiaoqu.setId("3");
+		xiaoqu.setName("xiaoqu3");
+		xiaoqu.setAddress("address3");
+		xiaoquList.add(xiaoqu);
+    		
+//		DBUtil.initDBConnection(XiaoquSearchActivity.this);
+//		xiaoquList = XiaoquListDao.findAll();
+		
 		// Locate the ListView in listview_main.xml
 		xiaoxuListView = (ListView) findViewById(R.id.listview);
-
-		for (int i = 0; i < xiaoquIds.length; i++) 
-		{
-			Xiaoqu wp = new Xiaoqu(xiaoquIds[i], xiaoquNames[i], xiaoquAddress[i]);
-			// Binds all strings into an array
-			xiaoquList.add(wp);
-		}
 
 		// Pass results to ListViewAdapter Class
 		listViewAdapter = new XiaoquListViewAdapter(this, xiaoquList);

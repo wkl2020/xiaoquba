@@ -39,6 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+		
 		// 1. Create table wkltable
 		String sql = "create table wkltable(id int, username varchar(20), password varchar(60));";         
         db.execSQL(sql);
@@ -48,11 +49,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
         
         //3. Create table xiaoqu_list 
-        sql = "create table xiaoqu_list (id int, name varchar(50), address varchar(500));";
+        sql = "create table xiaoqu_list (id int, name varchar(50), address varchar(500), ismine varchar(10));";
         db.execSQL(sql);
         
         //4. Create table document  
-        sql = "create table document (id int, type varchar(50), title varchar(50), content varchar(4000), author varchar(50), owner varchar(50), createtime varchar(50), publishtime varchar(50), expiretime varchar(50));";
+        sql = "create table document (id int, xiaoquid int, type varchar(50), title varchar(50), content varchar(4000), author varchar(50), owner varchar(50), createtime varchar(50), publishtime varchar(50), expiretime varchar(50));";
         db.execSQL(sql);
         
         //5. Create table document_comment  

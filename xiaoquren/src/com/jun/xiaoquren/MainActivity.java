@@ -10,7 +10,11 @@ import android.widget.TextView;
 
 import com.jun.xiaoquren.dao.ConstantTableDao;
 import com.jun.xiaoquren.dao.DBUtil;
+import com.jun.xiaoquren.dao.DocumentDao;
+import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
+import com.jun.xiaoquren.dao.model.Document;
+import com.jun.xiaoquren.dao.model.XiaoquList;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
@@ -112,9 +116,22 @@ public class MainActivity extends MyAbstractActivity {
 //            System.out.println("query---->" + username);
 //        }
     	
+    	System.out.println("query------------------------------------------1");
     	List<ConstantTable> constants = ConstantTableDao.findAll();
     	for (ConstantTable con : constants) {
     		System.out.println("query---->ConstantTable---->" + con.getId() + " : " + con.getFieldname() + " : " + con.getFieldvalue());
+    	}
+    	
+    	System.out.println("query------------------------------------------2");
+    	List<XiaoquList> xiaoqulists = XiaoquListDao.findAll();
+    	for (XiaoquList con : xiaoqulists) {
+    		System.out.println("query---->XiaoquList---->" + con.getId() + " : " + con.getName() + " : " + con.getAddress());
+    	}
+    	
+    	System.out.println("query------------------------------------------3");
+    	List<Document> documents = DocumentDao.findAll();
+    	for (Document doc : documents) {
+    		System.out.println("query---->Document---->" + doc.getId() + " : " + doc.getXiaoquid() + " : " + doc.getType() + " : " + doc.getTitle() + " : " + doc.getContent() + " : " + doc.getOwner() + " : " + doc.getCreatetime() + " : " + doc.getPublishtime() + " : " + doc.getExpiretime());
     	}
         		
 //		TextView dbtest_label = (TextView)findViewById(R.id.dbtest_label);

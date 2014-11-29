@@ -3,7 +3,7 @@ package com.jun.xiaoquren.dao.model;
 public class DocumentComment {
 	
 	private Integer id = null;
-	private String document;
+	private Integer document;
 	private String author;
 	private String nickname;
 	private String comment;
@@ -21,11 +21,11 @@ public class DocumentComment {
 		this.id = id;
 	}
 
-	public String getDocument() {
+	public Integer getDocument() {
 		return document;
 	}
 
-	public void setDocument(String document) {
+	public void setDocument(Integer document) {
 		this.document = document;
 	}
 

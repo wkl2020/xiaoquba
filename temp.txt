@@ -55,7 +55,24 @@ insert into document_comment (id, document, author, nickname, comment, createtim
 
 
 
+xiaoquIds = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
+		xiaoquNames = new String[] { "新开家园", "音都雅苑", "上海康城",
+				"上海国际豪都花园", "汤臣一品", "汤臣二品", "汤臣三品", "汤臣四品",
+				"汤臣五品", "汤臣六品" };
 
+		xiaoquAddress = new String[] { "南京西路1899号", "南京西路1899号",
+				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号",
+				"南京西路1899号", "南京西路1899号", "南京西路1899号", "南京西路1899号" };
+
+		// Locate the ListView in listview_main.xml
+		xiaoxuListView = (ListView) findViewById(R.id.listview);
+
+		for (int i = 0; i < xiaoquIds.length; i++) 
+		{
+			Xiaoqu wp = new Xiaoqu(xiaoquIds[i], xiaoquNames[i], xiaoquAddress[i]);
+			// Binds all strings into an array
+			xiaoquList.add(wp);
+		}
 
 

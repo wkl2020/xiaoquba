@@ -4,6 +4,10 @@ public class Xiaoqu {
 	private String id;
 	private String name;
 	private String address;
+	
+	public Xiaoqu() {
+		
+	}
 
 	public Xiaoqu(String id, String name, String address) {
 		this.id = id;
