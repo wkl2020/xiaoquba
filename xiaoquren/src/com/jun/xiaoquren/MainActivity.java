@@ -14,7 +14,7 @@ import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.jun.xiaoquren.dao.model.Document;
-import com.jun.xiaoquren.dao.model.XiaoquList;
+import com.jun.xiaoquren.dao.model.Xiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
@@ -123,8 +123,8 @@ public class MainActivity extends MyAbstractActivity {
     	}
     	
     	System.out.println("query------------------------------------------2");
-    	List<XiaoquList> xiaoqulists = XiaoquListDao.findAll();
-    	for (XiaoquList con : xiaoqulists) {
+    	List<Xiaoqu> xiaoqulists = XiaoquListDao.findAll();
+    	for (Xiaoqu con : xiaoqulists) {
     		System.out.println("query---->XiaoquList---->" + con.getId() + " : " + con.getName() + " : " + con.getAddress());
     	}
     	

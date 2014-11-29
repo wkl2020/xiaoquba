@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.jun.xiaoquren.MainActivity;
 import com.jun.xiaoquren.R;
-import com.jun.xiaoquren.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.Xiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
 
 public class XiaoquListViewAdapter extends BaseAdapter {
@@ -78,7 +78,7 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View arg0) {
 				
-				String selId = xiaoquList.get(position).getId();
+				String selId = String.valueOf(xiaoquList.get(position).getId());
 				String selName = xiaoquList.get(position).getName();
 				String selAddress = xiaoquList.get(position).getAddress();
 				

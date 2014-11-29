@@ -1,12 +1,12 @@
 package com.jun.xiaoquren.dao.model;
 
-public class XiaoquList {
+public class Xiaoqu {
 	
 	private Integer id = null;
 	private String name;
 	private String address;
 
-	public XiaoquList() {
+	public Xiaoqu() {
 		// TODO Auto-generated constructor stub
 	}
 

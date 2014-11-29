@@ -16,7 +16,7 @@ import android.widget.ListView;
 import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
 import com.jun.xiaoquren.dao.DBUtil;
 import com.jun.xiaoquren.dao.XiaoquListDao;
-import com.jun.xiaoquren.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.Xiaoqu;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
 public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickListener{
@@ -38,28 +38,9 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.xiaoqu_search_main);
 
-		// Generate sample data
-		
-		Xiaoqu xiaoqu = new Xiaoqu();
-		xiaoqu.setId("1");
-		xiaoqu.setName("新凯家园");
-		xiaoqu.setAddress("南京西路1899号");
-		xiaoquList.add(xiaoqu);
-		
-		xiaoqu = new Xiaoqu();
-		xiaoqu.setId("2");
-		xiaoqu.setName("音都雅苑");
-		xiaoqu.setAddress("南京西路1899号");
-		xiaoquList.add(xiaoqu);
-		
-		xiaoqu = new Xiaoqu();
-		xiaoqu.setId("3");
-		xiaoqu.setName("xiaoqu3");
-		xiaoqu.setAddress("address3");
-		xiaoquList.add(xiaoqu);
-    		
+		// Generate sample data    		
 //		DBUtil.initDBConnection(XiaoquSearchActivity.this);
-//		xiaoquList = XiaoquListDao.findAll();
+		xiaoquList = XiaoquListDao.findAll();
 		
 		// Locate the ListView in listview_main.xml
 		xiaoxuListView = (ListView) findViewById(R.id.listview);
