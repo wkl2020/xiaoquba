@@ -1,6 +1,7 @@
 package com.jun.xiaoquren;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import android.os.Bundle;
@@ -9,12 +10,12 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.jun.xiaoquren.adapter.WuyeNotifierListViewAdapter;
-import com.jun.xiaoquren.model.WuyeNotification;
+import com.jun.xiaoquren.dao.DocumentDao;
+import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
 public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnClickListener{
@@ -32,7 +33,7 @@ public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnCl
 	String[] notificationIds;
 	String[] notificationNames;
 	String[] notificationAddress;
-	ArrayList<WuyeNotification> notificationList = new ArrayList<WuyeNotification>();
+	List<Document> notificationList = new ArrayList<Document>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,22 +41,23 @@ public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnCl
 		setContentView(R.layout.wuye_notifier_main);
 
 		// Generate sample data
-		notificationIds = new String[] { "1", "2", "3", "4"};
-
-		notificationNames = new String[] { "2014年度物业管理费缴纳通知", "电能标调换预告", "家庭活动赛通知",
-				"关于上海市黄浦区汤臣一品业主委员会换届改选小组成员名单的公示"};
-
-		notificationAddress = new String[] { "1回复", "2回复", "3回复", "4回复"};
+//		notificationIds = new String[] { "1", "2", "3", "4"};
+//
+//		notificationNames = new String[] { "2014年度物业管理费缴纳通知", "电能标调换预告", "家庭活动赛通知",
+//				"关于上海市黄浦区汤臣一品业主委员会换届改选小组成员名单的公示"};
+//
+//		notificationAddress = new String[] { "1回复", "2回复", "3回复", "4回复"};
 
 		// Locate the ListView in listview_main.xml
 		notifierListView = (ListView) findViewById(R.id.listview);
 
-		for (int i = 0; i < notificationIds.length; i++) 
-		{
-			WuyeNotification wp = new WuyeNotification(notificationIds[i], notificationNames[i], notificationAddress[i]);
-			// Binds all strings into an array
-			notificationList.add(wp);
-		}
+//		for (int i = 0; i < notificationIds.length; i++) 
+//		{
+//			Document wp = new Document(notificationIds[i], notificationNames[i], notificationAddress[i]);
+//			// Binds all strings into an array
+//			notificationList.add(wp);
+//		}
+		notificationList = DocumentDao.findAll();
 
 		// Pass results to ListViewAdapter Class
 		listViewAdapter = new WuyeNotifierListViewAdapter(this, notificationList);

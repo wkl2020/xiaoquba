@@ -15,22 +15,22 @@ import android.widget.TextView;
 
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.WuyeNotifierDetailActivity;
-import com.jun.xiaoquren.model.WuyeNotification;
+import com.jun.xiaoquren.dao.model.Document;
 
 public class WuyeNotifierListViewAdapter extends BaseAdapter {
 
 	// Declare Variables
 	Activity mContext;
 	LayoutInflater inflater;
-	private List<WuyeNotification> notificationList = null;
-	private ArrayList<WuyeNotification> copyNotificationArraylist;
+	private List<Document> documentList = null;
+	private ArrayList<Document> copyDocumentArraylist;
 
-	public WuyeNotifierListViewAdapter(Activity context, List<WuyeNotification> notificationList) {
+	public WuyeNotifierListViewAdapter(Activity context, List<Document> documentList) {
 		this.mContext = context;
-		this.notificationList = notificationList;
+		this.documentList = documentList;
 		inflater = LayoutInflater.from(mContext);
-		this.copyNotificationArraylist = new ArrayList<WuyeNotification>();
-		this.copyNotificationArraylist.addAll(notificationList);
+		this.copyDocumentArraylist = new ArrayList<Document>();
+		this.copyDocumentArraylist.addAll(documentList);
 	}
 
 	public class ViewHolder {
@@ -41,12 +41,12 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return notificationList.size();
+		return documentList.size();
 	}
 
 	@Override
-	public WuyeNotification getItem(int position) {
-		return notificationList.get(position);
+	public Document getItem(int position) {
+		return documentList.get(position);
 	}
 
 	@Override
@@ -68,9 +68,9 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 			holder = (ViewHolder) view.getTag();
 		}
 		// Set the results into TextViews
-		holder.id.setText(notificationList.get(position).getId());
-		holder.name.setText(notificationList.get(position).getName());
-		holder.address.setText(notificationList.get(position).getAddress());
+		holder.id.setText(documentList.get(position).getId());
+		holder.name.setText(documentList.get(position).getTitle());
+		holder.address.setText(documentList.get(position).getCreatetime());
 		
 		// Listen for ListView Item Click
 		view.setOnClickListener(new OnClickListener() {
@@ -80,9 +80,9 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 				
 				// Send single item click data to WuyeNotifierDetailActivity Class
 				Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
-				intent.putExtra("id",(notificationList.get(position).getId()));
-				intent.putExtra("name",(notificationList.get(position).getName()));
-				intent.putExtra("address",(notificationList.get(position).getAddress()));
+				intent.putExtra("id",(documentList.get(position).getId()));
+				intent.putExtra("name",(documentList.get(position).getTitle()));
+				intent.putExtra("address",(documentList.get(position).getCreatetime()));
 				mContext.startActivity(intent);
 			}
 		});
@@ -93,17 +93,17 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 	// Filter Class
 	public void filter(String charText) {
 		charText = charText.toLowerCase(Locale.getDefault());
-		notificationList.clear();
+		documentList.clear();
 		if (charText.length() == 0) {
-			notificationList.addAll(copyNotificationArraylist);
+			documentList.addAll(copyDocumentArraylist);
 		} 
 		else 
 		{
-			for (WuyeNotification wp : copyNotificationArraylist) 
+			for (Document wp : copyDocumentArraylist) 
 			{
-				if (wp.getName().toLowerCase(Locale.getDefault()).contains(charText)) 
+				if (wp.getTitle().toLowerCase(Locale.getDefault()).contains(charText)) 
 				{
-					notificationList.add(wp);
+					documentList.add(wp);
 				}
 			}
 		}
