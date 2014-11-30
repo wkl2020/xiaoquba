@@ -13,10 +13,11 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jun.xiaoquren.adapter.WuyeNotifierListViewAdapter;
 import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.model.Document;
+import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.jun.xiaoquren.view.adapter.WuyeNotifierListViewAdapter;
 
 public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnClickListener{
 	public static final String ACTIVITY_NAME = "WuyeNotifierMainActivity";
@@ -27,43 +28,25 @@ public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnCl
 	} 
 
 	// Declare Variables
-	ListView notifierListView;
+	ListView documentListView;
 	WuyeNotifierListViewAdapter listViewAdapter;
 	EditText searchTextbox;
-	String[] notificationIds;
-	String[] notificationNames;
-	String[] notificationAddress;
-	List<Document> notificationList = new ArrayList<Document>();
+	List<Document> documentList = new ArrayList<Document>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wuye_notifier_main);
 
-		// Generate sample data
-//		notificationIds = new String[] { "1", "2", "3", "4"};
-//
-//		notificationNames = new String[] { "2014年度物业管理费缴纳通知", "电能标调换预告", "家庭活动赛通知",
-//				"关于上海市黄浦区汤臣一品业主委员会换届改选小组成员名单的公示"};
-//
-//		notificationAddress = new String[] { "1回复", "2回复", "3回复", "4回复"};
-
 		// Locate the ListView in listview_main.xml
-		notifierListView = (ListView) findViewById(R.id.listview);
-
-//		for (int i = 0; i < notificationIds.length; i++) 
-//		{
-//			Document wp = new Document(notificationIds[i], notificationNames[i], notificationAddress[i]);
-//			// Binds all strings into an array
-//			notificationList.add(wp);
-//		}
-		notificationList = DocumentDao.findAll();
+		documentListView = (ListView) findViewById(R.id.listview);
+		documentList = DocumentDao.findByXiaoquId(Integer.valueOf(LocalUtil.getCurrentXiaoQuId(WuyeNotifierMainActivity.this)));
 
 		// Pass results to ListViewAdapter Class
-		listViewAdapter = new WuyeNotifierListViewAdapter(this, notificationList);
+		listViewAdapter = new WuyeNotifierListViewAdapter(this, documentList);
 		
 		// Binds the Adapter to the ListView
-		notifierListView.setAdapter(listViewAdapter);
+		documentListView.setAdapter(listViewAdapter);
 		
 		// Locate the EditText in listview_main.xml
 		searchTextbox = (EditText) findViewById(R.id.search);

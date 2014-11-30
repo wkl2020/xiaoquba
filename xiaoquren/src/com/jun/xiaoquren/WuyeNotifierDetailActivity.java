@@ -1,11 +1,11 @@
 package com.jun.xiaoquren;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
 public class WuyeNotifierDetailActivity extends MyAbstractActivity implements OnClickListener{
@@ -18,47 +18,34 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
     
 	// Declare Variables
 	TextView id_text;
-	TextView name_text;
-	TextView address_text;
+	TextView title_text;
+	TextView subtitle_text;
 	TextView content_text;
 	TextView ower_name_text;
-	TextView create_time_text;
-	String id;
-	String name;
-	String address;
-	String content;
-	String ower_name;
-	String create_time;
+	TextView create_time_text;	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wuye_notifier_detail);
 		// Retrieve data from MainActivity on item click event
-		Intent i = getIntent();
-		id = i.getStringExtra("id");
-		name = i.getStringExtra("name");
-		address = i.getStringExtra("address");
-		
-		content = "即日起开始收缴2014年年度物业管理费。需缴纳的业主，请前往物业管理处缴纳，如需上门收费的业主，请拨打物业管理处电话：51234566管理与上门会出具正规的统一机打税控发票上门收取。以防不法分子冒充物业管理处人员上门诈骗。";
-		ower_name = "紫竹园物业管理处";
-		create_time = "2014年3月11日";
+		Document document = (Document)getIntent().getSerializableExtra("document");
 
 		// Locate the TextViews in singleitemview.xml
-		id_text = (TextView) findViewById(R.id.xiaoquid);
-		name_text = (TextView) findViewById(R.id.name);
-		address_text = (TextView) findViewById(R.id.address);
-		content_text = (TextView) findViewById(R.id.content);
-		ower_name_text = (TextView) findViewById(R.id.ower_name);
-		create_time_text = (TextView) findViewById(R.id.create_time);
+		id_text = (TextView) findViewById(R.id.document_detail_id);
+		title_text = (TextView) findViewById(R.id.document_detail_title);
+		subtitle_text = (TextView) findViewById(R.id.document_detail_subtitle);
+		content_text = (TextView) findViewById(R.id.document_detail_content);
+		ower_name_text = (TextView) findViewById(R.id.document_detail_ower_name);
+		create_time_text = (TextView) findViewById(R.id.document_detail_create_time);
 
 		// Load the results into the TextViews
-		id_text.setText(id);
-		name_text.setText(name);
-		address_text.setText(address);
-		content_text.setText(content);
-		ower_name_text.setText(ower_name);
-		create_time_text.setText(create_time);
+		id_text.setText(document.getStringId());
+		title_text.setText(document.getTitle());
+		subtitle_text.setText(document.getCreatetime());
+		content_text.setText(document.getContent());
+		ower_name_text.setText(document.getOwner());
+		create_time_text.setText(document.getCreatetime());
 	}
 
 	@Override

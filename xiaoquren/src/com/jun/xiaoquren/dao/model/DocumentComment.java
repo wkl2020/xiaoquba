@@ -1,6 +1,10 @@
 package com.jun.xiaoquren.dao.model;
 
-public class DocumentComment {
+import java.io.Serializable;
+
+public class DocumentComment implements Serializable  {
+
+	private static final long serialVersionUID = -7047730276548094748L;
 	
 	private Integer id = null;
 	private Integer document;
@@ -15,6 +19,10 @@ public class DocumentComment {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getStringId() {
+		return String.valueOf(id);
 	}
 
 	public void setId(Integer id) {

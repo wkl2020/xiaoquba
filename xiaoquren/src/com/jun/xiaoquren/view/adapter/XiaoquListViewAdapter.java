@@ -1,4 +1,4 @@
-package com.jun.xiaoquren.adapter;
+package com.jun.xiaoquren.view.adapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +16,15 @@ import com.jun.xiaoquren.MainActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.dao.model.Xiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
+import com.jun.xiaoquren.view.model.XiaoquViewHolder;
 
 public class XiaoquListViewAdapter extends BaseAdapter {
 
 	// Declare Variables
 	Activity mContext;
 	LayoutInflater inflater;
-	private List<Xiaoqu> xiaoquList = null;
-	private ArrayList<Xiaoqu> copyXiaoquArraylist;
+	private List<Xiaoqu> xiaoquList = null;			// Current shows xiaoqu list, equals with the copyXiaoquArraylist when search inputs is empty
+	private ArrayList<Xiaoqu> copyXiaoquArraylist;  // All xiaoqu list
 
 	public XiaoquListViewAdapter(Activity context, List<Xiaoqu> xiaoquList) {
 		this.mContext = context;
@@ -31,12 +32,6 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 		inflater = LayoutInflater.from(mContext);
 		this.copyXiaoquArraylist = new ArrayList<Xiaoqu>();
 		this.copyXiaoquArraylist.addAll(xiaoquList);
-	}
-
-	public class ViewHolder {
-		TextView id;
-		TextView name;
-		TextView address;
 	}
 
 	@Override
@@ -55,9 +50,9 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 	}
 
 	public View getView(final int position, View view, ViewGroup parent) {
-		final ViewHolder holder;
+		final XiaoquViewHolder holder;
 		if (view == null) {
-			holder = new ViewHolder();
+			holder = new XiaoquViewHolder();
 			view = inflater.inflate(R.layout.xiaoqu_item, null);
 			// Locate the TextViews in listview_item.xml
 			holder.id = (TextView) view.findViewById(R.id.xiaoquid);
@@ -65,23 +60,22 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 			holder.address = (TextView) view.findViewById(R.id.address);
 			view.setTag(holder);
 		} else {
-			holder = (ViewHolder) view.getTag();
+			holder = (XiaoquViewHolder) view.getTag();
 		}
+		
 		// Set the results into TextViews
-//		holder.rank.setText(worldpopulationlist.get(position).getRank());
+		holder.id.setText(xiaoquList.get(position).getStringId());
 		holder.name.setText(xiaoquList.get(position).getName());
 		holder.address.setText(xiaoquList.get(position).getAddress());
 		
-		// Listen for ListView Item Click
+		// Xiaoqu item click event
 		view.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				
 				String selId = String.valueOf(xiaoquList.get(position).getId());
-				String selName = xiaoquList.get(position).getName();
-				String selAddress = xiaoquList.get(position).getAddress();
-				
+				String selName = xiaoquList.get(position).getName();				
 				LocalUtil.saveCurrentXiaoQu(mContext, selName, selId);
 
 				MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME);
@@ -100,13 +94,9 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 		xiaoquList.clear();
 		if (charText.length() == 0) {
 			xiaoquList.addAll(copyXiaoquArraylist);
-		} 
-		else 
-		{
-			for (Xiaoqu wp : copyXiaoquArraylist) 
-			{
-				if (wp.getName().toLowerCase(Locale.getDefault()).contains(charText)) 
-				{
+		} else {
+			for (Xiaoqu wp : copyXiaoquArraylist) {
+				if (wp.getName().toLowerCase(Locale.getDefault()).contains(charText)) {
 					xiaoquList.add(wp);
 				}
 			}

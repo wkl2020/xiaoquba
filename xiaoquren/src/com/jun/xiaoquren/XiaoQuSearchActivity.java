@@ -13,11 +13,10 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jun.xiaoquren.adapter.XiaoquListViewAdapter;
-import com.jun.xiaoquren.dao.DBUtil;
 import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.Xiaoqu;
 import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.jun.xiaoquren.view.adapter.XiaoquListViewAdapter;
 
 public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickListener{
 	public static final String ACTIVITY_NAME = "XiaoquSearchActivity";

@@ -6,49 +6,49 @@
     android:gravity="center_vertical" >
 
     <TextView
-        android:id="@+id/xiaoquidlabel"
+        android:id="@+id/document_item_id_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:text="@string/xiaoquidlabel"/>
+        android:text="@string/document_item_id_label"/>
 
     <TextView
-        android:id="@+id/xiaoquid"
+        android:id="@+id/document_item_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:layout_toRightOf="@+id/xiaoquidlabel" />
+        android:layout_toRightOf="@+id/document_item_id_label" />
 
     <TextView
-        android:id="@+id/namelabel"
+        android:id="@+id/document_item_title_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/xiaoquidlabel"
-        android:text="@string/xiaoqunamelabel" />
+        android:layout_below="@+id/document_item_id_label"
+        android:text="@string/document_item_title_label" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/document_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/xiaoquid"
+        android:layout_below="@+id/document_item_id"
         android:textSize="15sp"
-        android:layout_toRightOf="@+id/namelabel"
+        android:layout_toRightOf="@+id/document_item_title_label"
         android:textColor="#000" />
 
     <TextView
-        android:id="@+id/xiaoquaddresslabel"
+        android:id="@+id/document_item_subtitle_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/namelabel"
-        android:text="@string/xiaoquaddresslabel" />
+        android:layout_below="@+id/document_item_title_label"
+        android:text="@string/document_item_subtitle_label" />
 
     <TextView
-        android:id="@+id/address"
+        android:id="@+id/document_item_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/document_item_title"
         android:textSize="12sp"
-        android:layout_toRightOf="@+id/xiaoquaddresslabel"
+        android:layout_toRightOf="@+id/document_item_subtitle_label"
         android:textColor="#555" />
 
 </RelativeLayout>

@@ -44,44 +44,44 @@ public class DBUtil {
     	if (constants.size() == 0) {
     		ConstantTable newconstant = new ConstantTable();
     		newconstant.setId(1);
-    		newconstant.setFieldname("username");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsUsername);
     		newconstant.setFieldvalue("wklusername");
     		ConstantTableDao.add(newconstant);
     		
     		newconstant = new ConstantTable();
     		newconstant.setId(2);
-    		newconstant.setFieldname("password");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsPassword);
     		newconstant.setFieldvalue("wklpassword");
     		ConstantTableDao.add(newconstant);
     		
     		newconstant = new ConstantTable();
     		newconstant.setId(3);
-    		newconstant.setFieldname("nickname");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsNickname);
     		newconstant.setFieldvalue("wklnickname");
     		ConstantTableDao.add(newconstant);
     		
     		newconstant = new ConstantTable();
     		newconstant.setId(4);
-    		newconstant.setFieldname("token");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsToken);
     		newconstant.setFieldvalue("wkltoken");
     		ConstantTableDao.add(newconstant);
     		
     		newconstant = new ConstantTable();
     		newconstant.setId(5);
-    		newconstant.setFieldname("currentxiaoquname");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsCurrentXiaoquName);
     		newconstant.setFieldvalue("wklcurrentxiaoquname");
     		ConstantTableDao.add(newconstant);
     		
     		newconstant = new ConstantTable();
     		newconstant.setId(6);
-    		newconstant.setFieldname("currentxiaoquaddr");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsCurrentXiaoquAddr);
     		newconstant.setFieldvalue("wklcurrentxiaoquaddr");
     		ConstantTableDao.add(newconstant);
     		
     		newconstant = new ConstantTable();
     		newconstant.setId(7);
-    		newconstant.setFieldname("currentxiaoqu");
-    		newconstant.setFieldvalue("wklcurrentxiaoqu");
+    		newconstant.setFieldname(ConstantTableDao.ConstantsCurrentXiaoquId);
+    		newconstant.setFieldvalue("wklcurrentxiaoquid");
     		ConstantTableDao.add(newconstant);
     	}
     	constants = ConstantTableDao.findAll();

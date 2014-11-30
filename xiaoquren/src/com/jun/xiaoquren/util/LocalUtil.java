@@ -3,6 +3,9 @@ package com.jun.xiaoquren.util;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.jun.xiaoquren.dao.ConstantTableDao;
+import com.jun.xiaoquren.dao.model.ConstantTable;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -30,7 +33,10 @@ public class LocalUtil {
 	}
 	
 	
-	
+	public static void syncConstantsAndSharedPreferences() {
+		// TODO
+		// ....
+	}
 	
 	/**
      * 使用SharedPreferences保存用户登录信息
@@ -46,6 +52,15 @@ public class LocalUtil {
         //设置参数
         editor.putString(USERNAME, username);
         editor.putString(PASSWORD, password);
+        
+        // Save to database
+        ConstantTable usrCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsUsername);
+        ConstantTable pwdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsPassword);        
+        usrCon.setFieldvalue(username);
+        pwdCon.setFieldvalue(password);        
+        ConstantTableDao.updateByName(usrCon);
+        ConstantTableDao.updateByName(pwdCon);
+        
         //提交
         editor.commit();
     }
@@ -58,6 +73,15 @@ public class LocalUtil {
         //设置参数
         editor.putString(CURRENT_XIAOQU_NAME, xiaoquName);
         editor.putString(CURRENT_XIAOQU_ID, xiaoquId);
+        
+        // Save to database
+        ConstantTable xiaoquIdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquId);
+        ConstantTable xiaoquNameCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquName);        
+        xiaoquIdCon.setFieldvalue(xiaoquId);
+        xiaoquNameCon.setFieldvalue(xiaoquName);        
+        ConstantTableDao.updateByName(xiaoquIdCon);
+        ConstantTableDao.updateByName(xiaoquNameCon);
+        
         //提交
         editor.commit();
     }

@@ -1,6 +1,10 @@
 package com.jun.xiaoquren.dao.model;
 
-public class ConstantTable {
+import java.io.Serializable;
+
+public class ConstantTable implements Serializable  {
+
+	private static final long serialVersionUID = -432046111192397802L;
 	
 	private Integer id = null;	
 	private String fieldname;
@@ -12,6 +16,10 @@ public class ConstantTable {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getStringId() {
+		return String.valueOf(id);
 	}
 
 	public void setId(Integer id) {

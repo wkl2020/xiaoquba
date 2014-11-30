@@ -1,6 +1,10 @@
 package com.jun.xiaoquren.dao.model;
 
-public class Xiaoqu {
+import java.io.Serializable;
+
+public class Xiaoqu implements Serializable  {
+
+	private static final long serialVersionUID = -3682150426632758908L;
 	
 	private Integer id = null;
 	private String name;
@@ -12,6 +16,10 @@ public class Xiaoqu {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getStringId() {
+		return String.valueOf(id);
 	}
 
 	public void setId(Integer id) {

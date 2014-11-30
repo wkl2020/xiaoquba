@@ -10,7 +10,15 @@ import android.database.sqlite.SQLiteDatabase;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 
 public class ConstantTableDao {
-
+	
+	public static final String ConstantsUsername = "constatns_username"; 
+	public static final String ConstantsPassword = "constatns_password";
+	public static final String ConstantsNickname = "constatns_nickname";
+	public static final String ConstantsToken = "constatns_token";
+	public static final String ConstantsCurrentXiaoquName = "constatns_currentxiaoquname";
+	public static final String ConstantsCurrentXiaoquAddr = "constatns_currentxiaoquaddr";
+	public static final String ConstantsCurrentXiaoquId = "constatns_currentxiaoquid";
+	
 	public ConstantTableDao() {
 		// TODO Auto-generated constructor stub
 	}

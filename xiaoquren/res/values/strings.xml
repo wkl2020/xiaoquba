@@ -30,5 +30,15 @@
     <string name="bbb">拼车</string>
     <string name="ccc">拼车</string>
     
+    <string name="document_item_subtitle_label">""</string>
+    <string name="document_item_title_label">""</string>
+    <string name="document_item_id_label">""</string>
+    
+    <string name="document_detail_subtitle_label">""</string>
+    <string name="document_detail_title_label">""</string>
+    <string name="document_detail_id_label">""</string>
+    
+    
+    
 
 </resources>

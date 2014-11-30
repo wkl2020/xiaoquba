@@ -40,78 +40,78 @@
             android:layout_below="@+id/header_layout">
 
 	    <TextView
-	        android:id="@+id/xiaoquidlabel"
+	        android:id="@+id/document_detail_id_label"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
         	android:visibility="gone"
-	        android:text="@string/xiaoquidlabel"/>
+	        android:text="@string/document_detail_id_label"/>
 	
 	    <TextView
-	        android:id="@+id/xiaoquid"
+	        android:id="@+id/document_detail_id"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
         	android:visibility="gone"
-	        android:layout_toRightOf="@+id/xiaoquidlabel" />
+	        android:layout_toRightOf="@+id/document_detail_id_label" />
 	
 	    <TextView
-	        android:id="@+id/namelabel"
+	        android:id="@+id/document_detail_title_label"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
         	android:visibility="gone"
-	        android:layout_below="@+id/xiaoquidlabel"
-	        android:text="@string/xiaoqunamelabel" />
+	        android:layout_below="@+id/document_detail_id_label"
+	        android:text="@string/document_detail_title_label" />
 	
 	    <TextView
-	        android:id="@+id/name"
+	        android:id="@+id/document_detail_title"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/xiaoquid"
+	        android:layout_below="@+id/document_detail_id"
 	        android:textSize="17sp"		
-	        android:layout_toRightOf="@+id/namelabel"
+	        android:layout_toRightOf="@+id/document_detail_title_label"
 	        android:textColor="#000" />
 	
 	    <TextView
-	        android:id="@+id/xiaoquaddresslabel"
+	        android:id="@+id/document_detail_subtitle_label"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/namelabel"
+	        android:layout_below="@+id/document_detail_title_label"
         	android:visibility="gone"
-	        android:text="@string/xiaoquaddresslabel" />
+	        android:text="@string/document_detail_subtitle_label" />
 	
 	    <TextView
-	        android:id="@+id/address"
+	        android:id="@+id/document_detail_subtitle"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/name"
+	        android:layout_below="@+id/document_detail_title"
 	        android:layout_marginTop="10dp"
 	        android:textSize="12sp"
-	        android:layout_toRightOf="@+id/xiaoquaddresslabel"
+	        android:layout_toRightOf="@+id/document_detail_subtitle_label"
 	        android:textColor="#555" />
 	    
 	    
 	    <TextView
-	        android:id="@+id/content"
+	        android:id="@+id/document_detail_content"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="16sp"
-	        android:layout_below="@+id/address"
+	        android:layout_below="@+id/document_detail_subtitle"
 	        android:textColor="#000" />
 	    
 	     <TextView
-	        android:id="@+id/ower_name"
+	        android:id="@+id/document_detail_ower_name"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="20dp"
 	        android:textSize="15sp"
-	        android:layout_below="@+id/content"
+	        android:layout_below="@+id/document_detail_content"
 	        android:textColor="#000" />
 	    
 	     <TextView
-	        android:id="@+id/create_time"
+	        android:id="@+id/document_detail_create_time"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="15sp"
-	        android:layout_below="@+id/ower_name"
+	        android:layout_below="@+id/document_detail_ower_name"
 	        android:textColor="#000" />
 	
      </RelativeLayout>
