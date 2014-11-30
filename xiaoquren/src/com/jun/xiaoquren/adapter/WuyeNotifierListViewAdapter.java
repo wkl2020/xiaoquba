@@ -68,7 +68,7 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 			holder = (ViewHolder) view.getTag();
 		}
 		// Set the results into TextViews
-		holder.id.setText(documentList.get(position).getId());
+		holder.id.setText(String.valueOf(documentList.get(position).getId()));
 		holder.name.setText(documentList.get(position).getTitle());
 		holder.address.setText(documentList.get(position).getCreatetime());
 		
@@ -80,7 +80,7 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 				
 				// Send single item click data to WuyeNotifierDetailActivity Class
 				Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
-				intent.putExtra("id",(documentList.get(position).getId()));
+				intent.putExtra("id",String.valueOf(documentList.get(position).getId()));
 				intent.putExtra("name",(documentList.get(position).getTitle()));
 				intent.putExtra("address",(documentList.get(position).getCreatetime()));
 				mContext.startActivity(intent);
