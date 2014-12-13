@@ -15,6 +15,7 @@ import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.Xiaoqu;
+import com.jun.xiaoquren.http.XiaoquHttp;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
@@ -87,9 +88,11 @@ public class MainActivity extends MyAbstractActivity {
     }
     
     public void waimaionclick(View v) {  
-        Intent intent = new Intent();
-		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
-		startActivity(intent);
+//        Intent intent = new Intent();
+//		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+//		startActivity(intent);
+		
+		XiaoquHttp.testGetAllList();
     }
     
     public void pingcheonclick(View v) {  
