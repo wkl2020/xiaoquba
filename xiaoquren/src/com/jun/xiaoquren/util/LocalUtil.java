@@ -105,4 +105,7 @@ public class LocalUtil {
     	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
     	return sharedPre.getString(PASSWORD, "");
     }
+    
+    
+    
 }

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.jun.xiaoquren.MainActivity;
 import com.jun.xiaoquren.R;
-import com.jun.xiaoquren.dao.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.view.model.XiaoquViewHolder;
 
@@ -23,14 +23,14 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 	// Declare Variables
 	Activity mContext;
 	LayoutInflater inflater;
-	private List<Xiaoqu> xiaoquList = null;			// Current shows xiaoqu list, equals with the copyXiaoquArraylist when search inputs is empty
-	private ArrayList<Xiaoqu> copyXiaoquArraylist;  // All xiaoqu list
+	private List<LocalXiaoqu> xiaoquList = null;			// Current shows xiaoqu list, equals with the copyXiaoquArraylist when search inputs is empty
+	private ArrayList<LocalXiaoqu> copyXiaoquArraylist;  // All xiaoqu list
 
-	public XiaoquListViewAdapter(Activity context, List<Xiaoqu> xiaoquList) {
+	public XiaoquListViewAdapter(Activity context, List<LocalXiaoqu> xiaoquList) {
 		this.mContext = context;
 		this.xiaoquList = xiaoquList;
 		inflater = LayoutInflater.from(mContext);
-		this.copyXiaoquArraylist = new ArrayList<Xiaoqu>();
+		this.copyXiaoquArraylist = new ArrayList<LocalXiaoqu>();
 		this.copyXiaoquArraylist.addAll(xiaoquList);
 	}
 
@@ -40,7 +40,7 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public Xiaoqu getItem(int position) {
+	public LocalXiaoqu getItem(int position) {
 		return xiaoquList.get(position);
 	}
 
@@ -95,7 +95,7 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 		if (charText.length() == 0) {
 			xiaoquList.addAll(copyXiaoquArraylist);
 		} else {
-			for (Xiaoqu wp : copyXiaoquArraylist) {
+			for (LocalXiaoqu wp : copyXiaoquArraylist) {
 				if (wp.getName().toLowerCase(Locale.getDefault()).contains(charText)) {
 					xiaoquList.add(wp);
 				}

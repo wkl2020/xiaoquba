@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.jun.xiaoquren.dao.model.Document;
-import com.jun.xiaoquren.dao.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 
 /**
  * Add the transaction for each DB operate
@@ -90,46 +90,46 @@ public class DBUtil {
     	}
     	
     	// XiaoquList
-    	List<Xiaoqu> xiaoqulists = XiaoquListDao.findAll();
+    	List<LocalXiaoqu> xiaoqulists = XiaoquListDao.findAll();
     	if (xiaoqulists.size() == 0) {
-    		Xiaoqu xiaoqu = new Xiaoqu();
+    		LocalXiaoqu xiaoqu = new LocalXiaoqu();
     		xiaoqu.setId(1);
     		xiaoqu.setName("新凯家园");
     		xiaoqu.setAddress("南京西路1899号");
     		XiaoquListDao.add(xiaoqu);
     		
-    		xiaoqu = new Xiaoqu();
+    		xiaoqu = new LocalXiaoqu();
     		xiaoqu.setId(2);
     		xiaoqu.setName("音都雅苑");
     		xiaoqu.setAddress("南京西路1899号");
     		XiaoquListDao.add(xiaoqu);
     		
-    		xiaoqu = new Xiaoqu();
+    		xiaoqu = new LocalXiaoqu();
     		xiaoqu.setId(3);
     		xiaoqu.setName("xiaoqu3");
     		xiaoqu.setAddress("address3");
     		XiaoquListDao.add(xiaoqu);
     		
-    		xiaoqu = new Xiaoqu();
+    		xiaoqu = new LocalXiaoqu();
     		xiaoqu.setId(4);
     		xiaoqu.setName("xiaoqu4");
     		xiaoqu.setAddress("address4");
     		XiaoquListDao.add(xiaoqu);
     		
-    		xiaoqu = new Xiaoqu();
+    		xiaoqu = new LocalXiaoqu();
     		xiaoqu.setId(5);
     		xiaoqu.setName("xiaoqu5");
     		xiaoqu.setAddress("address5");
     		XiaoquListDao.add(xiaoqu);
     		
-    		xiaoqu = new Xiaoqu();
+    		xiaoqu = new LocalXiaoqu();
     		xiaoqu.setId(6);
     		xiaoqu.setName("xiaoqu6");
     		xiaoqu.setAddress("address6");
     		XiaoquListDao.add(xiaoqu);
     	}
     	xiaoqulists = XiaoquListDao.findAll();
-    	for (Xiaoqu con : xiaoqulists) {
+    	for (LocalXiaoqu con : xiaoqulists) {
     		System.out.println("query---->XiaoquList---->" + con.getId() + " : " + con.getName() + " : " + con.getAddress());
     	}
     	

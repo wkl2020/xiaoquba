@@ -14,10 +14,16 @@ import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.jun.xiaoquren.dao.model.Document;
-import com.jun.xiaoquren.dao.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.LocalXiaoqu;
+import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.http.XiaoquHttp;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.util.LogUtils;
 
 public class MainActivity extends MyAbstractActivity {
 	public static final String ACTIVITY_NAME = "MainActivity";
@@ -37,7 +43,7 @@ public class MainActivity extends MyAbstractActivity {
     	
     	String xiaoquName = LocalUtil.getCurrentXiaoQuName(this);
     	if (xiaoquName == null || xiaoquName.isEmpty()) {
-    		xiaoquName = "新凯家园";
+    		xiaoquName = "请选择小区...";
     	}
     	
     	TextView currentXiaoquName = (TextView)findViewById(R.id.current_xiaoqu_name);
@@ -63,10 +69,37 @@ public class MainActivity extends MyAbstractActivity {
 		startActivity(intent);
     }
     
-    public void wuyenotifieronclick(View v) { 
-        Intent intent = new Intent();
-		intent.setClass(MainActivity.this, WuyeNotifierMainActivity.class);
-		startActivity(intent);    	
+    public void wuyenotifieronclick(View v) {
+    	String currentXiaoquId = LocalUtil.getCurrentXiaoQuId(MainActivity.this);
+    	LogUtils.i("Start to connect xiaoqu documents with xiaoqu id: " + currentXiaoquId);
+    	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.XiaoquDocumentsUrl+currentXiaoquId, new RequestCallBack<String>() {
+
+            @Override
+            public void onStart() {
+            	LogUtils.i("Start to connect xiaoqu documents... ");
+            }
+
+            @Override
+            public void onLoading(long total, long current, boolean isUploading) {
+            	LogUtils.i("On loading to connect xiaoqu documents: " + current + "/" + total);
+            }
+
+  			@Override
+  			public void onFailure(HttpException error, String msg) {
+  				LogUtils.i("Error to connect xiaoqu documents: " + msg);
+  			}
+
+  			@Override
+  			public void onSuccess(ResponseInfo<String> response) {
+  				LogUtils.i("Success to connect xiaoqu documents: " + response.result.toString());
+  				String xiaoquDocumentsJsonstr = response.result.toString(); 
+  				
+  				Intent intent = new Intent();
+  				intent.setClass(MainActivity.this, WuyeNotifierMainActivity.class);
+  			    intent.putExtra("xiaoquDocumentsJsonstr", xiaoquDocumentsJsonstr);
+  			    startActivity(intent);    	
+  			}
+  		});
     }
     
     public void phonenumbersonclick(View v) {  
@@ -81,7 +114,7 @@ public class MainActivity extends MyAbstractActivity {
 		startActivity(intent);
     }
     
-    public void shopptingsonclick(View v) {  
+    public void shopptingsonclick(View v) {
         Intent intent = new Intent();
 		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
 		startActivity(intent);
@@ -126,8 +159,8 @@ public class MainActivity extends MyAbstractActivity {
     	}
     	
     	System.out.println("query------------------------------------------2");
-    	List<Xiaoqu> xiaoqulists = XiaoquListDao.findAll();
-    	for (Xiaoqu con : xiaoqulists) {
+    	List<LocalXiaoqu> xiaoqulists = XiaoquListDao.findAll();
+    	for (LocalXiaoqu con : xiaoqulists) {
     		System.out.println("query---->XiaoquList---->" + con.getId() + " : " + con.getName() + " : " + con.getAddress());
     	}
     	
@@ -156,8 +189,33 @@ class XiaoquNameOnClickListener implements View.OnClickListener {
   @Override  
   public void onClick(View v) {
 	  
-	  Intent intent = new Intent();
-	  intent.setClass(parentView, XiaoquSearchActivity.class);
-	  parentView.startActivity(intent); 
+	  LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.GetAllXiaoquListUrl, new RequestCallBack<String>() {
+
+          @Override
+          public void onStart() {
+          	LogUtils.i("Start to connect xiaoqu index...");
+          }
+
+          @Override
+          public void onLoading(long total, long current, boolean isUploading) {
+          	LogUtils.i("On loading to connect xiaoqu index: " + current + "/" + total);
+          }
+
+			@Override
+			public void onFailure(HttpException error, String msg) {
+				LogUtils.i("Error to connect xiaoqu index: " + msg);
+			}
+
+			@Override
+			public void onSuccess(ResponseInfo<String> response) {
+				LogUtils.i("Success to connect xiaoqu index: " + response.result.toString());
+				String xiaoquListJsonstr = response.result.toString(); 
+				
+				Intent intent = new Intent();
+			    intent.setClass(parentView, XiaoquSearchActivity.class);
+			    intent.putExtra("xiaoquListJsonstr", xiaoquListJsonstr);
+			    parentView.startActivity(intent); 
+			}
+		});
   } 
 }

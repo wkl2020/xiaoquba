@@ -13,9 +13,8 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.model.Document;
-import com.jun.xiaoquren.util.LocalUtil;
+import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.WuyeNotifierListViewAdapter;
 
@@ -40,7 +39,10 @@ public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnCl
 
 		// Locate the ListView in listview_main.xml
 		documentListView = (ListView) findViewById(R.id.listview);
-		documentList = DocumentDao.findByXiaoquId(Integer.valueOf(LocalUtil.getCurrentXiaoQuId(WuyeNotifierMainActivity.this)));
+		
+//		documentList = DocumentDao.findByXiaoquId(Integer.valueOf(LocalUtil.getCurrentXiaoQuId(WuyeNotifierMainActivity.this)));
+		String xiaoquDocumentsJsonstr = (String)getIntent().getSerializableExtra("xiaoquDocumentsJsonstr");
+		documentList = JsonTools.getDocumentList(xiaoquDocumentsJsonstr);
 
 		// Pass results to ListViewAdapter Class
 		listViewAdapter = new WuyeNotifierListViewAdapter(this, documentList);

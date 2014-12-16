@@ -3,7 +3,7 @@ package com.jun.xiaoquren.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jun.xiaoquren.dao.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -15,20 +15,20 @@ public class XiaoquListDao {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static Xiaoqu cursorToBean(Cursor cursor) {
+	public static LocalXiaoqu cursorToBean(Cursor cursor) {
 		int id = cursor.getInt(cursor.getColumnIndex("id"));  
         String name = cursor.getString(cursor.getColumnIndex("name"));
         String address = cursor.getString(cursor.getColumnIndex("address"));
         String ismine = cursor.getString(cursor.getColumnIndex("ismine"));
         
-        Xiaoqu xaoqu = new Xiaoqu();
+        LocalXiaoqu xaoqu = new LocalXiaoqu();
 		xaoqu.setId(id);
 		xaoqu.setName(name);
 		xaoqu.setAddress(address);
 		return xaoqu;
 	}
 	
-	public static ContentValues beanToContentValues(Xiaoqu xaoqu) {
+	public static ContentValues beanToContentValues(LocalXiaoqu xaoqu) {
 		ContentValues values = new ContentValues();
 		values.put("id", xaoqu.getId());
 		values.put("name", xaoqu.getName());
@@ -36,8 +36,8 @@ public class XiaoquListDao {
 		return values;
 	}
 	
-	public static List<Xiaoqu> findAll() {
-		List<Xiaoqu> xaoquList = new ArrayList<Xiaoqu>();
+	public static List<LocalXiaoqu> findAll() {
+		List<LocalXiaoqu> xaoquList = new ArrayList<LocalXiaoqu>();
 		SQLiteDatabase db = DBUtil.getReadableDatabase(); 
 		Cursor cursor = db.query(DBUtil.XiaoquListTable, null, null, null, null, null, null);
 		if (cursor != null) {
@@ -49,8 +49,8 @@ public class XiaoquListDao {
 		return xaoquList;
 	}
 	
-	public static Xiaoqu findByName(String name) {
-		Xiaoqu xaoqu = null;
+	public static LocalXiaoqu findByName(String name) {
+		LocalXiaoqu xaoqu = null;
 		SQLiteDatabase db = DBUtil.getReadableDatabase(); 
 		Cursor cursor = db.query(DBUtil.XiaoquListTable, null, "name=?", new String[]{name}, null, null, null);
 		if (cursor != null && cursor.moveToNext()) {
@@ -59,8 +59,8 @@ public class XiaoquListDao {
 		return xaoqu;
 	}
 	
-	public static Xiaoqu findById(int id) {
-		Xiaoqu xaoqu = null;
+	public static LocalXiaoqu findById(int id) {
+		LocalXiaoqu xaoqu = null;
 		SQLiteDatabase db = DBUtil.getReadableDatabase(); 
 		Cursor cursor = db.query(DBUtil.XiaoquListTable, null, "id=?", new String[]{String.valueOf(id)}, null, null, null);
 		if (cursor != null && cursor.moveToNext()) {
@@ -69,17 +69,17 @@ public class XiaoquListDao {
 		return xaoqu;
 	}
 	
-	public static void add(Xiaoqu xaoqu) {
+	public static void add(LocalXiaoqu xaoqu) {
 		SQLiteDatabase db = DBUtil.getWritableDatabase();
 		db.insert(DBUtil.XiaoquListTable, null, beanToContentValues(xaoqu));
 	}
 	
-	public static void updateByName(Xiaoqu xaoqu) {
+	public static void updateByName(LocalXiaoqu xaoqu) {
 		SQLiteDatabase db = DBUtil.getWritableDatabase();		
 		db.update(DBUtil.XiaoquListTable, beanToContentValues(xaoqu), "name=?", new String[]{xaoqu.getName()}); 
 	}
 	
-	public static void updateById(Xiaoqu xaoqu) {
+	public static void updateById(LocalXiaoqu xaoqu) {
 		SQLiteDatabase db = DBUtil.getWritableDatabase();		
 		db.update(DBUtil.XiaoquListTable, beanToContentValues(xaoqu), "id=?", new String[]{String.valueOf(xaoqu.getId())}); 
 	}

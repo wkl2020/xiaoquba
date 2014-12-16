@@ -13,8 +13,8 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jun.xiaoquren.dao.XiaoquListDao;
-import com.jun.xiaoquren.dao.model.Xiaoqu;
+import com.jun.xiaoquren.dao.model.LocalXiaoqu;
+import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.XiaoquListViewAdapter;
 
@@ -30,7 +30,11 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 	ListView xiaoxuListView;
 	XiaoquListViewAdapter listViewAdapter;
 	EditText searchTextbox;
-	List<Xiaoqu> xiaoquList = new ArrayList<Xiaoqu>();
+	List<LocalXiaoqu> xiaoquList = new ArrayList<LocalXiaoqu>();
+	
+	public void setXiaoquList(List<LocalXiaoqu> list) {
+		this.xiaoquList = list;
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,9 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 
 		// Generate sample data    		
 //		DBUtil.initDBConnection(XiaoquSearchActivity.this);
-		xiaoquList = XiaoquListDao.findAll();
+//		xiaoquList = XiaoquListDao.findAll();
+		String xiaoquListJsonstr = (String)getIntent().getSerializableExtra("xiaoquListJsonstr");
+		xiaoquList = JsonTools.getLocalXiaoquList(xiaoquListJsonstr);
 		
 		// Locate the ListView in listview_main.xml
 		xiaoxuListView = (ListView) findViewById(R.id.listview);

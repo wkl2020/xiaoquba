@@ -2,7 +2,7 @@ package com.jun.xiaoquren.dao.model;
 
 import java.io.Serializable;
 
-public class Xiaoqu implements Serializable  {
+public class LocalXiaoqu implements Serializable {
 
 	private static final long serialVersionUID = -3682150426632758908L;
 	
@@ -10,7 +10,7 @@ public class Xiaoqu implements Serializable  {
 	private String name;
 	private String address;
 
-	public Xiaoqu() {
+	public LocalXiaoqu() {
 		// TODO Auto-generated constructor stub
 	}
 
