@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.jun.xiaoquren.dao.ConstantTableDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
+import com.lidroid.xutils.util.LogUtils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -73,6 +74,8 @@ public class LocalUtil {
         //设置参数
         editor.putString(CURRENT_XIAOQU_NAME, xiaoquName);
         editor.putString(CURRENT_XIAOQU_ID, xiaoquId);
+        editor.putBoolean(IsFirstTimeLogin, false);
+        LogUtils.i("Start to init IsFirstTimeLogin to false");
         
         // Save to database
         ConstantTable xiaoquIdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquId);
@@ -107,5 +110,14 @@ public class LocalUtil {
     }
     
     
+    /**
+     * 使用SharedPreferences保存第一次登陆的信息
+     */    
+    private final static String IsFirstTimeLogin = "isfirsttimelogin";
     
+    public static boolean isFirstTimeLogin(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_WORLD_READABLE);
+    	LogUtils.i("Get IsFirstTimeLogin value: " + sharedPre.getBoolean(IsFirstTimeLogin, true));
+    	return sharedPre.getBoolean(IsFirstTimeLogin, true);
+    }
 }
