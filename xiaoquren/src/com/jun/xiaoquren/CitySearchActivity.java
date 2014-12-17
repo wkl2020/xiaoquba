@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import android.content.Intent;
+import com.jun.xiaoquren.dao.model.City;
+import com.jun.xiaoquren.util.LocalUtil;
+import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.jun.xiaoquren.view.adapter.CityListViewAdapter;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,14 +19,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.jun.xiaoquren.dao.model.LocalXiaoqu;
-import com.jun.xiaoquren.http.JsonTools;
-import com.jun.xiaoquren.util.LocalUtil;
-import com.jun.xiaoquren.util.MyAbstractActivity;
-import com.jun.xiaoquren.view.adapter.XiaoquListViewAdapter;
-
-public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickListener {
-	public static final String ACTIVITY_NAME = "XiaoquSearchActivity";
+public class CitySearchActivity extends MyAbstractActivity implements OnClickListener {
+	public static final String ACTIVITY_NAME = "CitySearchActivity";
 
     @Override
 	public String getActivityName() {
@@ -30,34 +28,38 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 	} 
 
 	// Declare Variables
-	ListView xiaoxuListView;
-	XiaoquListViewAdapter listViewAdapter;
+	ListView cityListView;
+	CityListViewAdapter listViewAdapter;
 	EditText searchTextbox;
-	List<LocalXiaoqu> xiaoquList = new ArrayList<LocalXiaoqu>();
+	List<City> cityList = new ArrayList<City>();
 	
-	public void setXiaoquList(List<LocalXiaoqu> list) {
-		this.xiaoquList = list;
+	public void setCityList(List<City> list) {
+		this.cityList = list;
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.xiaoqu_search_main);
+		setContentView(R.layout.city_search_main);
 
-		// Generate sample data    		
-//		DBUtil.initDBConnection(XiaoquSearchActivity.this);
-//		xiaoquList = XiaoquListDao.findAll();
-		String xiaoquListJsonstr = (String)getIntent().getSerializableExtra("xiaoquListJsonstr");
-		xiaoquList = JsonTools.getLocalXiaoquList(xiaoquListJsonstr);
+//		String cityListJsonstr = (String)getIntent().getSerializableExtra("cityListJsonstr");
+//		cityList = JsonTools.getCityList(cityListJsonstr);
+		City city1 = new City();
+		city1.setName("上海");
+		cityList.add(city1);
+		
+		City city2 = new City();
+		city2.setName("北京");
+		cityList.add(city2);
 		
 		// Locate the ListView in listview_main.xml
-		xiaoxuListView = (ListView) findViewById(R.id.listview);
+		cityListView = (ListView) findViewById(R.id.listview);
 
 		// Pass results to ListViewAdapter Class
-		listViewAdapter = new XiaoquListViewAdapter(this, xiaoquList);
+		listViewAdapter = new CityListViewAdapter(this, cityList);
 		
 		// Binds the Adapter to the ListView
-		xiaoxuListView.setAdapter(listViewAdapter);
+		cityListView.setAdapter(listViewAdapter);
 		
 		// Locate the EditText in listview_main.xml
 		searchTextbox = (EditText) findViewById(R.id.search);
@@ -84,13 +86,10 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 			}
 		});
 		
-		// Init city name
-		Button cityButton = (Button) findViewById(R.id.city_selector_btn);
-		cityButton.setText(LocalUtil.getCurrentCityName(this));
-		
-//		Button btnBack = (Button) findViewById(R.id.btn_back);
-//		btnBack.setFocusable(true);
-//		btnBack.requestFocus();
+		if (LocalUtil.isFirstTimeLogin(this)) {
+			Button backBtn = (Button) findViewById(R.id.btn_back);
+			backBtn.setVisibility(View.INVISIBLE);
+		}
 	}
 
 	// Not using options menu in this page
@@ -111,11 +110,5 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 
     public void page_back(View v) {
 		this.finish();
-    }
-    
-    public void onSelectCityBtnClicked(View v) {
-        Intent intent = new Intent();
-		intent.setClass(XiaoquSearchActivity.this, CitySearchActivity.class);
-		startActivity(intent);
     }
 }

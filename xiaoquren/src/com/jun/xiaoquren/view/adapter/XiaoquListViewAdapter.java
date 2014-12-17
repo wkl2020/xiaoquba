@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,6 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.MainActivity;
+import com.jun.xiaoquren.PersonalSettingActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
@@ -77,9 +79,15 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 				String selId = String.valueOf(xiaoquList.get(position).getId());
 				String selName = xiaoquList.get(position).getName();				
 				LocalUtil.saveCurrentXiaoQu(mContext, selName, selId);
-
-				MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME);
-				mainActivity.refreshCurrentXiaoQuName();
+				
+				if (LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME) == null) {
+					Intent intent = new Intent();
+					intent.setClass(mContext, PersonalSettingActivity.class);
+					mContext.startActivity(intent);
+				} else {
+					MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME);
+					mainActivity.refreshCurrentXiaoQuName();
+				}
 				
 				mContext.finish();
 			}

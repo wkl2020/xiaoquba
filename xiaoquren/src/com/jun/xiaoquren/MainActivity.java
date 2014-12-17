@@ -38,14 +38,7 @@ public class MainActivity extends MyAbstractActivity {
     	super.onCreate(arg0);    	
     	setContentView(R.layout.main_activity);
     	
-    	// Create Database
-    	DBUtil.initDBConnection(MainActivity.this);
-    	
-    	String xiaoquName = LocalUtil.getCurrentXiaoQuName(this);
-    	if (xiaoquName == null || xiaoquName.isEmpty()) {
-    		xiaoquName = "请选择小区...";
-    	}
-    	
+    	String xiaoquName = LocalUtil.getCurrentXiaoQuName(this);    	
     	TextView currentXiaoquName = (TextView)findViewById(R.id.current_xiaoqu_name);
     	currentXiaoquName.setText(xiaoquName);
     	
@@ -56,7 +49,7 @@ public class MainActivity extends MyAbstractActivity {
     public void refreshCurrentXiaoQuName() {
     	String xiaoquName = LocalUtil.getCurrentXiaoQuName(this);
     	if (xiaoquName == null || xiaoquName.isEmpty()) {
-    		xiaoquName = "新凯家园";
+    		xiaoquName = "请选择小区...";
     	}
     	
     	TextView currentXiaoquName = (TextView)findViewById(R.id.current_xiaoqu_name);

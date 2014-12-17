@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.jun.xiaoquren.dao.model.City;
 import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.lidroid.xutils.util.LogUtils;
@@ -121,7 +122,56 @@ public class JsonTools {
 	// 3. Document Comment	
 	
 	
+	// 4. Document Eva...
 	
+	
+	
+	// 5. City Name
+	public static City getCityFromJsonStr(String jsonStr) {
+		City city = new City();
+		
+		try {
+			city = getCityFromJsonObject(new JSONObject(jsonStr));
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityFromJsonStr: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return city;
+	}
+	
+	public static City getCityFromJsonObject(JSONObject obj) {
+		City city = new City();
+		
+		try {	
+			city.setId(obj.getInt("id"));
+			city.setName(obj.getString("name"));			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityFromJsonObject: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return city;
+	}
+	
+	public static List<City> getCityList(String jsonStr) {
+		
+		List<City> cityList = new ArrayList<City>();
+		try {
+			JSONArray  array = new JSONArray (jsonStr);
+			
+			for (int i = 0; i < array.length(); i++) {
+                JSONObject item = array.getJSONObject(i);                
+                cityList.add(getCityFromJsonObject(item));
+            }
+			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityList: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return cityList;
+	}
 	
 	
 	

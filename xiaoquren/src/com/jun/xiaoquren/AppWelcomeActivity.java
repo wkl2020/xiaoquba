@@ -53,7 +53,7 @@ public class AppWelcomeActivity extends MyAbstractActivity implements OnViewChan
     }  
   
     public void onClick(View v) {  
-    	startActivity(new Intent(this, MainActivity.class));
+    	startActivity(new Intent(this, CitySearchActivity.class));
     	this.finish();
     }
 

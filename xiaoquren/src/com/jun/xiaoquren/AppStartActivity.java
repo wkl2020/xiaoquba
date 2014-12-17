@@ -9,6 +9,7 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.jun.xiaoquren.dao.DBUtil;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.lidroid.xutils.util.LogUtils;
@@ -21,6 +22,9 @@ public class AppStartActivity extends MyAbstractActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 竖屏锁定
         requestWindowFeature(Window.FEATURE_NO_TITLE); // 取消标题
         setContentView(R.layout.app_start);
+    	
+    	// Create Database
+    	DBUtil.initDBConnection(AppStartActivity.this);
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
         // 监听动画过程

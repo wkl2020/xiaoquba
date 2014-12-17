@@ -29,6 +29,7 @@
         <activity android:name=".MainActivity" android:theme="@style/Anim_style2" />
         <activity android:name=".PersonalSettingActivity" android:theme="@style/Anim_style2" />
         <activity android:name=".XiaoquSearchActivity" android:theme="@style/Anim_style2" />
+        <activity android:name=".CitySearchActivity" android:theme="@style/Anim_style2" />        
         <activity android:name=".WuyeNotifierMainActivity" android:theme="@style/Anim_style2" />
         <activity android:name=".WuyeNotifierDetailActivity" android:theme="@style/Anim_style2" />
         

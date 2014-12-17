@@ -20,6 +20,8 @@ public class LocalUtil {
 	private final static String PASSWORD = "password";
 	private final static String CURRENT_XIAOQU_NAME = "currentxiaoquname";
 	private final static String CURRENT_XIAOQU_ID = "currentxiaoquid";
+	private final static String CURRENT_CITY_NAME = "currentcityname";
+	private final static String CURRENT_CITY_ID = "currentcityid";
 	
 	public static void createNewActivity(String activityName, Activity activity) {
 		activeActivities.put(activityName, activity);
@@ -65,6 +67,31 @@ public class LocalUtil {
         //提交
         editor.commit();
     }
+    
+    public static void saveCurrentCity(Context context,String cityName,String cityId){
+        //获取SharedPreferences对象
+        SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+        //获取Editor对象
+        Editor editor=sharedPre.edit();
+        //设置参数
+        editor.putString(CURRENT_CITY_NAME, cityName);
+        editor.putString(CURRENT_CITY_ID, cityId);
+        editor.putBoolean(IsFirstTimeLogin, false);
+        LogUtils.i("Start to init IsFirstTimeLogin to false");
+        
+        //提交
+        editor.commit();
+    }
+    
+    public static String getCurrentCityName(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+        return sharedPre.getString(CURRENT_CITY_NAME, "请选择城市...");
+    }
+    
+    public static String getCurrentCityId(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+        return sharedPre.getString(CURRENT_CITY_ID, "");
+    }
 
     public static void saveCurrentXiaoQu(Context context,String xiaoquName,String xiaoquId){
         //获取SharedPreferences对象
@@ -91,7 +118,7 @@ public class LocalUtil {
     
     public static String getCurrentXiaoQuName(Context context) {
     	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
-        return sharedPre.getString(CURRENT_XIAOQU_NAME, "");
+        return sharedPre.getString(CURRENT_XIAOQU_NAME, "请选择小区...");
     }
     
     public static String getCurrentXiaoQuId(Context context) {
