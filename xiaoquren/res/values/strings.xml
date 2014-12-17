@@ -20,7 +20,7 @@
     
     <string name="search_hint_label">搜索</string>
     
-    
+    <string name="xiaoqu_search_hint_label">搜索小区名</string>
     <string name="xiaoqu_search_header_label">请选择小区</string>
     <string name="personal_header_label">个人中心</string>
     <string name="wuye_notifier_header_label">小区公告</string>
@@ -40,7 +40,7 @@
     
     <string name="city_selector_btn_label">返回</string>
     <string name="city_search_header_label">请选择城市</string>
-    
+    <string name="city_search_hint_label">搜索城市名</string>
     
 
 </resources>

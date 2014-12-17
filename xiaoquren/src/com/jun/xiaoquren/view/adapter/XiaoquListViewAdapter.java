@@ -14,7 +14,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.MainActivity;
-import com.jun.xiaoquren.PersonalSettingActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
@@ -82,7 +81,7 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 				
 				if (LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME) == null) {
 					Intent intent = new Intent();
-					intent.setClass(mContext, PersonalSettingActivity.class);
+					intent.setClass(mContext, MainActivity.class);
 					mContext.startActivity(intent);
 				} else {
 					MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME);

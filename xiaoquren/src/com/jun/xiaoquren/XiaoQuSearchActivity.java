@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.http.JsonTools;
@@ -85,8 +86,8 @@ public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickL
 		});
 		
 		// Init city name
-		Button cityButton = (Button) findViewById(R.id.city_selector_btn);
-		cityButton.setText(LocalUtil.getCurrentCityName(this));
+		TextView cityView = (TextView) findViewById(R.id.city_name);
+		cityView.setText(LocalUtil.getCurrentCityName(this));
 		
 //		Button btnBack = (Button) findViewById(R.id.btn_back);
 //		btnBack.setFocusable(true);

@@ -44,7 +44,7 @@
 		        android:id="@+id/search"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:hint="@string/search_hint_label" >
+		        android:hint="@string/city_search_hint_label" >
 		
 		        <!-- <requestFocus /> -->
 		    </EditText>

@@ -37,17 +37,18 @@
     	    android:id="@+id/city_layout" 				    
     		android:layout_width="fill_parent"
     		android:layout_height="wrap_content"
-    		android:layout_marginTop="14dp"
     		android:gravity="center_vertical"
     		android:clickable="true"
-    		android:background="@drawable/preference_single_item"
+    		android:background="@drawable/search_bar_bg"
+        	android:onClick="onSelectCityBtnClicked"
     		android:layout_below="@+id/header_layout" >
       		
             <TextView
+                android:id="@+id/city_name"
         		android:layout_width="wrap_content" 
         		android:layout_height="wrap_content"
         		android:padding="8dp" 
-        		android:text="聊天背景"
+        		android:text="请选择城市..."
         		android:textSize="17sp"		
 				android:textColor="#000" /> 
 				
@@ -64,26 +65,16 @@
     	<RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"            
-            android:focusable="true"  
+            android:focusable="true"
+            android:gravity="center_vertical"
         	android:focusableInTouchMode="true"
-            android:layout_below="@+id/city_layout">
-      		
-    	    <Button
-	            android:id="@+id/city_selector_btn"
-	            android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-	            android:text="@string/city_selector_btn_label"
-	            android:textSize="17sp"
-	            android:textColor="#000"
-	            android:onClick="onSelectCityBtnClicked"
-	            android:background="@drawable/title_btn_right" />  
+            android:layout_below="@+id/city_layout">      		
 
 		    <EditText
 		        android:id="@+id/search"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:hint="@string/search_hint_label" 
-				android:layout_below="@+id/city_selector_btn" >
+		        android:hint="@string/xiaoqu_search_hint_label">
 		
 		        <!-- <requestFocus /> -->
 		    </EditText>
