@@ -17,13 +17,15 @@ public final class R {
         public static final int hold=0x7f040005;
         public static final int hold_long=0x7f040006;
         public static final int in_from_right=0x7f040007;
-        public static final int out_to_left=0x7f040008;
-        public static final int push_bottom_in=0x7f040009;
-        public static final int push_bottom_out=0x7f04000a;
-        public static final int push_top_in=0x7f04000b;
-        public static final int push_top_in2=0x7f04000c;
-        public static final int push_top_out=0x7f04000d;
-        public static final int push_top_out2=0x7f04000e;
+        public static final int inputodown=0x7f040008;
+        public static final int out_to_left=0x7f040009;
+        public static final int outdowntoup=0x7f04000a;
+        public static final int push_bottom_in=0x7f04000b;
+        public static final int push_bottom_out=0x7f04000c;
+        public static final int push_top_in=0x7f04000d;
+        public static final int push_top_in2=0x7f04000e;
+        public static final int push_top_out=0x7f04000f;
+        public static final int push_top_out2=0x7f040010;
     }
     public static final class attr {
     }
@@ -194,60 +196,70 @@ public final class R {
         public static final int title_btn_function=0x7f020098;
         public static final int title_btn_right=0x7f020099;
         public static final int title_function_bg=0x7f02009a;
-        public static final int voice_rcd_btn_nor=0x7f02009b;
-        public static final int voice_rcd_btn_pressed=0x7f02009c;
-        public static final int w01=0x7f02009d;
-        public static final int w02=0x7f02009e;
-        public static final int w03=0x7f02009f;
-        public static final int w04=0x7f0200a0;
-        public static final int w05=0x7f0200a1;
-        public static final int w_left=0x7f0200a2;
-        public static final int w_right=0x7f0200a3;
-        public static final int welcome=0x7f0200a4;
-        public static final int welcome_1=0x7f0200a5;
-        public static final int welcome_2=0x7f0200a6;
-        public static final int welcome_3=0x7f0200a7;
-        public static final int whats_new_start_btn_normal=0x7f0200a8;
-        public static final int whats_new_start_btn_pressed=0x7f0200a9;
-        public static final int xiaohei=0x7f0200aa;
-        public static final int xiaohei_big=0x7f0200ab;
-        public static final int yuan=0x7f0200ac;
+        public static final int visitor_head=0x7f02009b;
+        public static final int voice_rcd_btn_nor=0x7f02009c;
+        public static final int voice_rcd_btn_pressed=0x7f02009d;
+        public static final int w01=0x7f02009e;
+        public static final int w02=0x7f02009f;
+        public static final int w03=0x7f0200a0;
+        public static final int w04=0x7f0200a1;
+        public static final int w05=0x7f0200a2;
+        public static final int w_left=0x7f0200a3;
+        public static final int w_right=0x7f0200a4;
+        public static final int welcome=0x7f0200a5;
+        public static final int welcome_1=0x7f0200a6;
+        public static final int welcome_2=0x7f0200a7;
+        public static final int welcome_3=0x7f0200a8;
+        public static final int whats_new_start_btn_normal=0x7f0200a9;
+        public static final int whats_new_start_btn_pressed=0x7f0200aa;
+        public static final int xiaohei=0x7f0200ab;
+        public static final int xiaohei_big=0x7f0200ac;
+        public static final int yuan=0x7f0200ad;
     }
     public static final class id {
-        public static final int action_settings=0x7f090035;
+        public static final int action_settings=0x7f09003f;
+        public static final int add_comment_menu=0x7f090040;
         public static final int add_friend=0x7f09001d;
         public static final int add_friend_shake=0x7f09001e;
-        public static final int address=0x7f090032;
+        public static final int address=0x7f09003c;
         public static final int bbs=0x7f090011;
         public static final int bbs_label=0x7f090014;
         public static final int btn_back=0x7f090008;
-        public static final int city_layout=0x7f090033;
-        public static final int city_name=0x7f090034;
+        public static final int city_layout=0x7f09003d;
+        public static final int city_name=0x7f09003e;
         public static final int current_xiaoqu_name=0x7f09000c;
         public static final int dbtest_label=0x7f09001c;
-        public static final int document_detail_content=0x7f090025;
-        public static final int document_detail_create_time=0x7f090027;
-        public static final int document_detail_id=0x7f090020;
-        public static final int document_detail_id_label=0x7f09001f;
-        public static final int document_detail_ower_name=0x7f090026;
-        public static final int document_detail_subtitle=0x7f090024;
-        public static final int document_detail_subtitle_label=0x7f090023;
-        public static final int document_detail_title=0x7f090022;
-        public static final int document_detail_title_label=0x7f090021;
-        public static final int document_item_id=0x7f090029;
-        public static final int document_item_id_label=0x7f090028;
-        public static final int document_item_subtitle=0x7f09002d;
-        public static final int document_item_subtitle_label=0x7f09002c;
-        public static final int document_item_title=0x7f09002b;
-        public static final int document_item_title_label=0x7f09002a;
+        public static final int document_content_panel=0x7f090024;
+        public static final int document_detail_content=0x7f09002b;
+        public static final int document_detail_create_time=0x7f09002d;
+        public static final int document_detail_id=0x7f090026;
+        public static final int document_detail_id_label=0x7f090025;
+        public static final int document_detail_ower_name=0x7f09002c;
+        public static final int document_detail_subtitle=0x7f09002a;
+        public static final int document_detail_subtitle_label=0x7f090029;
+        public static final int document_detail_title=0x7f090028;
+        public static final int document_detail_title_label=0x7f090027;
+        public static final int document_item_id=0x7f090033;
+        public static final int document_item_id_label=0x7f090032;
+        public static final int document_item_subtitle=0x7f090037;
+        public static final int document_item_subtitle_label=0x7f090036;
+        public static final int document_item_title=0x7f090035;
+        public static final int document_item_title_label=0x7f090034;
+        public static final int evaluation_content=0x7f090022;
+        public static final int evaluation_create_time=0x7f090021;
+        public static final int evaluation_listview=0x7f090031;
+        public static final int evaluation_panel=0x7f090030;
         public static final int header_layout=0x7f090007;
         public static final int id=0x7f090005;
         public static final int img_start=0x7f090000;
         public static final int listview=0x7f09000a;
         public static final int mainRLayout=0x7f090001;
+        public static final int menu_button=0x7f090023;
         public static final int myxiaoqu_label=0x7f09000e;
         public static final int name=0x7f090006;
-        public static final int namelabel=0x7f090030;
+        public static final int namelabel=0x7f09003a;
+        public static final int newest_comments=0x7f09002f;
+        public static final int newst_comment_label=0x7f09002e;
         public static final int personal_settings=0x7f09000d;
         public static final int phonenumbers=0x7f090010;
         public static final int phonenumbers_label=0x7f090013;
@@ -260,14 +272,16 @@ public final class R {
         public static final int shoppings_label=0x7f090019;
         public static final int startBtn=0x7f090003;
         public static final int title=0x7f09000b;
+        public static final int visitor_head=0x7f09001f;
+        public static final int visitor_nickname=0x7f090020;
         public static final int waimai=0x7f090017;
         public static final int waimai_label=0x7f09001a;
         public static final int wuyenotifier=0x7f09000f;
         public static final int wuyenotifier_label=0x7f090012;
-        public static final int xiaoquaddresslabel=0x7f090031;
+        public static final int xiaoquaddresslabel=0x7f09003b;
         public static final int xiaoquaround_label=0x7f090015;
-        public static final int xiaoquid=0x7f09002f;
-        public static final int xiaoquidlabel=0x7f09002e;
+        public static final int xiaoquid=0x7f090039;
+        public static final int xiaoquidlabel=0x7f090038;
     }
     public static final class layout {
         public static final int app_start=0x7f030000;
@@ -277,18 +291,22 @@ public final class R {
         public static final int main_activity=0x7f030004;
         public static final int main_tab_friends=0x7f030005;
         public static final int personal_settings=0x7f030006;
-        public static final int wuye_notifier_detail=0x7f030007;
-        public static final int wuye_notifier_item=0x7f030008;
-        public static final int wuye_notifier_main=0x7f030009;
-        public static final int xiaoqu_item=0x7f03000a;
-        public static final int xiaoqu_search_main=0x7f03000b;
+        public static final int wuye_notifier_comment_item=0x7f030007;
+        public static final int wuye_notifier_detail=0x7f030008;
+        public static final int wuye_notifier_item=0x7f030009;
+        public static final int wuye_notifier_main=0x7f03000a;
+        public static final int xiaoqu_item=0x7f03000b;
+        public static final int xiaoqu_search_main=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int wuye_notifier_detail_menu=0x7f080001;
     }
     public static final class string {
         public static final int aaa=0x7f060017;
         public static final int action_settings=0x7f060002;
+        public static final int add_comment=0x7f060027;
+        public static final int add_comment_menu=0x7f060026;
         public static final int app_name=0x7f060000;
         public static final int bbb=0x7f060018;
         public static final int bbs_label=0x7f06000c;
@@ -302,9 +320,11 @@ public final class R {
         public static final int document_item_id_label=0x7f06001c;
         public static final int document_item_subtitle_label=0x7f06001a;
         public static final int document_item_title_label=0x7f06001b;
+        public static final int evaluation_content=0x7f060024;
         public static final int hello_world=0x7f060001;
         public static final int menu_settings=0x7f060003;
         public static final int myxiaoqu_label=0x7f060008;
+        public static final int newest_comments=0x7f060025;
         public static final int notifier_header_label=0x7f060015;
         public static final int personal_header_label=0x7f060013;
         public static final int phonenumbers_label=0x7f06000b;
@@ -313,6 +333,7 @@ public final class R {
         public static final int search_hint_label=0x7f060010;
         public static final int shoppings_label=0x7f06000d;
         public static final int title_activity_main=0x7f060004;
+        public static final int visitor_nickname=0x7f060023;
         public static final int waimai_label=0x7f06000e;
         public static final int wuye_notifier_header_label=0x7f060014;
         public static final int wuyenotifier_label=0x7f06000a;
@@ -334,6 +355,7 @@ public final class R {
         public static final int Anim_style=0x7f070009;
         public static final int Anim_style2=0x7f07000a;
         public static final int Anim_style_title=0x7f07000b;
+        public static final int AnimationFade=0x7f070012;
         /** 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
@@ -346,7 +368,7 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070012;
+        public static final int AppBaseTheme=0x7f070013;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.

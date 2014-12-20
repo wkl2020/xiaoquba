@@ -11,11 +11,9 @@ import org.json.JSONObject;
 
 import com.jun.xiaoquren.dao.model.City;
 import com.jun.xiaoquren.dao.model.Document;
+import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.lidroid.xutils.util.LogUtils;
-
-
-
 
 public class JsonTools {
 	
@@ -119,7 +117,55 @@ public class JsonTools {
 	}
 	
 	
-	// 3. Document Comment	
+	// 3. Document Comment		
+	public static DocumentComment getCommentFromJsonStr(String jsonStr) {
+		DocumentComment document = new DocumentComment();
+		
+		try {
+			document = getCommentFromJsonObject(new JSONObject(jsonStr));
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityFromJsonStr: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return document;
+	}
+	
+	public static DocumentComment getCommentFromJsonObject(JSONObject obj) {
+		DocumentComment comment = new DocumentComment();
+		
+		try {	
+			comment.setId(obj.getInt("id"));
+			comment.setNickname(obj.getString("nickname"));
+			comment.setContent(obj.getString("content"));
+			comment.setCreateDate(getDateShowStyle(obj.getLong(("createDate"))));
+			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityFromJsonObject: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return comment;
+	}
+	
+	public static List<DocumentComment> getCommentList(String jsonStr) {
+		
+		List<DocumentComment> commentList = new ArrayList<DocumentComment>();
+		try {
+			JSONArray  array = new JSONArray (jsonStr);
+			
+			for (int i = 0; i < array.length(); i++) {
+                JSONObject item = array.getJSONObject(i);                
+                commentList.add(getCommentFromJsonObject(item));
+            }
+			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityList: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return commentList;
+	}
 	
 	
 	// 4. Document Eva...

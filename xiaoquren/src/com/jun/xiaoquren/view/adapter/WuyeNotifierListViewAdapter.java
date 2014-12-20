@@ -16,7 +16,13 @@ import android.widget.TextView;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.WuyeNotifierDetailActivity;
 import com.jun.xiaoquren.dao.model.Document;
+import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.view.model.DocumentViewHolder;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.util.LogUtils;
 
 public class WuyeNotifierListViewAdapter extends BaseAdapter {
 
@@ -77,10 +83,35 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View arg0) {
 				
-				// Send single item click data to WuyeNotifierDetailActivity Class
-				Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
-				intent.putExtra("document", documentList.get(position));
-				mContext.startActivity(intent);
+				Document currentDocument = documentList.get(position);				
+				LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.DocumentCommentsUrl+currentDocument.getId(), new RequestCallBack<String>() {
+
+			          @Override
+			          public void onStart() {
+			          	LogUtils.i("Start to connect comment documentComments...");
+			          }
+
+			          @Override
+			          public void onLoading(long total, long current, boolean isUploading) {
+			          	LogUtils.i("On loading to connect comment documentComments: " + current + "/" + total);
+			          }
+
+						@Override
+						public void onFailure(HttpException error, String msg) {
+							LogUtils.i("Error to connect comment documentComments: " + msg);
+						}
+
+						@Override
+						public void onSuccess(ResponseInfo<String> response) {
+							LogUtils.i("Success to connect comment documentComments: " + response.result.toString());
+							String commentListJsonstr = response.result.toString();
+							
+							Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
+							intent.putExtra("commentListJsonstr", commentListJsonstr);
+							intent.putExtra("document", documentList.get(position));
+							mContext.startActivity(intent);
+						}
+					});
 			}
 		});
 

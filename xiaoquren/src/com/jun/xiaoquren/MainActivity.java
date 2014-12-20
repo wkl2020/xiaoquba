@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.dao.ConstantTableDao;
-import com.jun.xiaoquren.dao.DBUtil;
 import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;

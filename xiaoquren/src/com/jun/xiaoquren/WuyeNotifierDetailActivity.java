@@ -1,12 +1,21 @@
 package com.jun.xiaoquren;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.dao.model.Document;
+import com.jun.xiaoquren.dao.model.DocumentComment;
+import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.jun.xiaoquren.view.adapter.CommentListViewAdapter;
 
 public class WuyeNotifierDetailActivity extends MyAbstractActivity implements OnClickListener{
 	public static final String ACTIVITY_NAME = "WuyeNotifierDetailActivity";
@@ -23,6 +32,19 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	TextView content_text;
 	TextView ower_name_text;
 	TextView create_time_text;	
+	
+	// Declare Variables
+	ListView evaluationListView;
+	CommentListViewAdapter listViewAdapter;
+	List<DocumentComment> commentList = new ArrayList<DocumentComment>();
+	
+	// Menu
+	private Menu mMenu;
+	private MenuItem mMenuButtonAddComment;
+	
+	public void setEvaluationList(List<DocumentComment> list) {
+		this.commentList = list;
+	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,7 +68,57 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 		content_text.setText(document.getContent());
 		ower_name_text.setText(document.getOwner());
 		create_time_text.setText(document.getCreatetime());
+		
+		// Init the comment list view
+		String commentListJsonstr = (String)getIntent().getSerializableExtra("commentListJsonstr");
+		commentList = JsonTools.getCommentList(commentListJsonstr);
+		evaluationListView = (ListView) findViewById(R.id.evaluation_listview);
+		listViewAdapter = new CommentListViewAdapter(this, commentList);
+		evaluationListView.setAdapter(listViewAdapter);
+		
+		// Init the popupwindow
+
 	}
+	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.wuye_notifier_detail_menu, menu);
+        mMenu = menu;
+        mMenuButtonAddComment= menu.findItem(R.id.add_comment_menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        configureMenu(menu);
+        return true;
+    }
+    
+    private void configureMenu(Menu menu) {
+        if (menu == null) {
+            return;
+        }
+
+        menu.findItem(R.id.add_comment_menu).setVisible(true);
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.add_comment_menu: {
+                onAddCommentClicked();
+                return true;
+            }
+            default: {
+                return super.onOptionsItemSelected(item);
+            }
+        }
+    }
+    
+    public void onAddCommentClicked() {
+    	System.out.println("####################### onAddCommentClicked ################################");
+    }
 
 	@Override
 	public void onClick(View v) {
@@ -59,5 +131,9 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 
     public void page_back(View v) {
 		this.finish();
+    }
+    
+    public void onMenuButtonClicked(View v) {
+    	openOptionsMenu();
     }
 }

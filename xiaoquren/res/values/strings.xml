@@ -42,5 +42,14 @@
     <string name="city_search_header_label">请选择城市</string>
     <string name="city_search_hint_label">搜索城市名</string>
     
+    <string name="visitor_nickname">游客</string>
+    <string name="evaluation_content">路过</string>
+    
+    <string name="newest_comments">最新评论</string>
+    <string name="add_comment_menu">增加评论</string>
+    <string name="add_comment">增加评论</string>
+    
+    
+    
 
 </resources>
