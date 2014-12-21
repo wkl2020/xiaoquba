@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"
+    android:background="@drawable/btn_menu_item">
+  
+    <Button  
+        android:id="@+id/add_comment_pop"   
+        android:layout_height="wrap_content" 
+        android:layout_width="200dp" 
+        android:layout_alignParentLeft="true"  
+        android:layout_alignParentTop="true" 
+        android:background="@drawable/btn_menu_item"
+        android:textColor="@drawable/btn_menu_color"
+        android:onClick="onAddCommentPopClick"  
+        android:text="@string/add_comment_menu"/>
+  
+    <Button  
+        android:id="@+id/button3"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:paddingRight="70dp" 
+        android:layout_below="@+id/add_comment_pop"
+        android:background="@drawable/btn_menu_item"
+        android:textColor="@drawable/btn_menu_color"
+        android:gravity="center" 
+        android:text="待增加..." />  
+  
+</RelativeLayout>  

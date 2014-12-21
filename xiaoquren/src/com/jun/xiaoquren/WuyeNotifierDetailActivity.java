@@ -6,9 +6,13 @@ import java.util.List;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.dao.model.Document;
@@ -41,6 +45,8 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	// Menu
 	private Menu mMenu;
 	private MenuItem mMenuButtonAddComment;
+	private PopupWindow popupwindow; 
+	private Button addCommentButton;  
 	
 	public void setEvaluationList(List<DocumentComment> list) {
 		this.commentList = list;
@@ -77,8 +83,32 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 		evaluationListView.setAdapter(listViewAdapter);
 		
 		// Init the popupwindow
-
+		initmPopupWindowView();
+		addCommentButton = (Button) findViewById(R.id.add_comment_pop);
 	}
+	
+	public void onAddCommentPopClick(View v) {
+		System.out.println("####################### onAddCommentPopClick ################################");
+	}
+	
+	 public void initmPopupWindowView() {  
+		  
+	        View customView = getLayoutInflater().inflate(R.layout.wuye_notifier_comment_pop, null, false);  
+	        popupwindow = new PopupWindow(customView, 200, 130);  
+	        popupwindow.setAnimationStyle(R.style.AnimationFade);  
+	        customView.setOnTouchListener(new OnTouchListener() {  
+	  
+	            @Override  
+	            public boolean onTouch(View v, MotionEvent event) {  
+	                if (popupwindow != null && popupwindow.isShowing()) {  
+	                    popupwindow.dismiss();  
+	                    popupwindow = null;  
+	                }
+	                return false;  
+	            }  
+	        });
+	  
+	    }  
 	
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -134,6 +164,13 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
     }
     
     public void onMenuButtonClicked(View v) {
-    	openOptionsMenu();
+//    	openOptionsMenu();
+
+		if (popupwindow != null && popupwindow.isShowing()) {  
+            popupwindow.dismiss();  
+            return;  
+        } else {
+            popupwindow.showAsDropDown(v, 0, 5);  
+        }  
     }
 }

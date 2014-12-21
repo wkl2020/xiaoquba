@@ -28,6 +28,247 @@ public final class R {
         public static final int push_top_out2=0x7f040010;
     }
     public static final class attr {
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int backgroundColorChooseAccountHeader=0x7f010023;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int compatDividerVertical=0x7f010030;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int compatSelectableItemBackground=0x7f010031;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int composerBackgroundColor=0x7f01002f;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int contactPictureFallbackDefaultBackgroundColor=0x7f010032;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionAbout=0x7f010019;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionAdd=0x7f01001a;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionAddAttachment=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionAddCcBcc=0x7f010004;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionArchive=0x7f010005;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionCancel=0x7f01001f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionCompose=0x7f010006;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionCopy=0x7f010009;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionDelete=0x7f010007;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionFlag=0x7f010014;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionImportExport=0x7f01001b;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionMarkAsRead=0x7f010016;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionMarkAsUnread=0x7f010017;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionMove=0x7f010008;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionNextMessage=0x7f01000a;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionPreviousMessage=0x7f01000b;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionRefresh=0x7f01000c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionRemoteSearch=0x7f010018;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionRequestReadReceipt=0x7f010020;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSave=0x7f01001e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSearch=0x7f01000d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSearchFolder=0x7f01000e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSelectAll=0x7f01001d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSend=0x7f01000f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSettings=0x7f010010;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSingleMessageOptions=0x7f010011;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSort=0x7f010012;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionSpam=0x7f010013;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionUnflag=0x7f010015;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconActionUpload=0x7f01001c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconFolder=0x7f010000;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconListItemMenu=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int iconMenuInfoDetails=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int messageComposeAddContactImage=0x7f01002e;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListActiveItemBackgroundColor=0x7f010029;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int messageListCheckbox=0x7f01002b;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListDividerColor=0x7f01002a;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListReadItemBackgroundColor=0x7f010025;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListSelectedBackgroundColor=0x7f010024;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListThreadCountBackground=0x7f010028;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListThreadCountForegroundColor=0x7f010027;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageListUnreadItemBackgroundColor=0x7f010026;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int messageViewAttachmentBackground=0x7f01002d;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int messageViewHeaderBackgroundColor=0x7f01002c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int textColorPrimaryRecipientDropdown=0x7f010021;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int textColorSecondaryRecipientDropdown=0x7f010022;
+    }
+    public static final class color {
+        public static final int message_list_item_footer_background=0x7f050000;
+        public static final int openpgp_black=0x7f050005;
+        public static final int openpgp_blue=0x7f050004;
+        public static final int openpgp_green=0x7f050003;
+        public static final int openpgp_orange=0x7f050002;
+        public static final int openpgp_red=0x7f050001;
+        public static final int openpgp_white=0x7f050006;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -37,251 +278,370 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int bg_start=0x7f020000;
-        public static final int blue_test_icon=0x7f020001;
-        public static final int bottom_bar=0x7f020002;
-        public static final int btn_cancle_normal=0x7f020003;
-        public static final int btn_cancle_pressed=0x7f020004;
-        public static final int btn_close=0x7f020005;
-        public static final int btn_normal=0x7f020006;
-        public static final int btn_pressed=0x7f020007;
-        public static final int btn_style_alert_dialog_button=0x7f020008;
-        public static final int btn_style_alert_dialog_button_normal=0x7f020009;
-        public static final int btn_style_alert_dialog_button_pressed=0x7f02000a;
-        public static final int btn_style_alert_dialog_cancel=0x7f02000b;
-        public static final int btn_style_alert_dialog_cancel_normal=0x7f02000c;
-        public static final int btn_style_alert_dialog_special=0x7f02000d;
-        public static final int btn_style_alert_dialog_special_normal=0x7f02000e;
-        public static final int btn_style_alert_dialog_special_pressed=0x7f02000f;
-        public static final int btn_style_blue=0x7f020010;
-        public static final int btn_style_five_focused=0x7f020011;
-        public static final int btn_style_five_normal=0x7f020012;
-        public static final int btn_style_five_pressed=0x7f020013;
-        public static final int btn_style_four_focused=0x7f020014;
-        public static final int btn_style_four_normal=0x7f020015;
-        public static final int btn_style_four_pressed=0x7f020016;
-        public static final int btn_style_green=0x7f020017;
-        public static final int btn_style_one_disabled=0x7f020018;
-        public static final int btn_style_one_focused=0x7f020019;
-        public static final int btn_style_one_normal=0x7f02001a;
-        public static final int btn_style_one_pressed=0x7f02001b;
-        public static final int btn_style_red=0x7f02001c;
-        public static final int btn_style_two_focused=0x7f02001d;
-        public static final int btn_style_two_normal=0x7f02001e;
-        public static final int btn_style_two_pressed=0x7f02001f;
-        public static final int btn_style_white=0x7f020020;
-        public static final int btn_style_zero_focused=0x7f020021;
-        public static final int btn_style_zero_normal=0x7f020022;
-        public static final int btn_style_zero_pressed=0x7f020023;
-        public static final int btn_wel_nor=0x7f020024;
-        public static final int btn_wel_pressed=0x7f020025;
-        public static final int chat_bg_default=0x7f020026;
-        public static final int chat_footer_bg=0x7f020027;
-        public static final int chat_send_btn=0x7f020028;
-        public static final int chatfrom_bg=0x7f020029;
-        public static final int chatfrom_bg_focused=0x7f02002a;
-        public static final int chatfrom_bg_normal=0x7f02002b;
-        public static final int chatfrom_bg_pressed=0x7f02002c;
-        public static final int chatto_bg=0x7f02002d;
-        public static final int chatto_bg_focused=0x7f02002e;
-        public static final int chatto_bg_normal=0x7f02002f;
-        public static final int chatto_bg_pressed=0x7f020030;
-        public static final int confirm_dialog_bg=0x7f020031;
-        public static final int confirm_dialog_bg2=0x7f020032;
-        public static final int copyright=0x7f020033;
-        public static final int exit_dialog_bg=0x7f020034;
-        public static final int find_more_friend_addfriend_icon=0x7f020035;
-        public static final int find_more_friend_shake=0x7f020036;
-        public static final int green_test_icon=0x7f020037;
-        public static final int ic_action_search=0x7f020038;
-        public static final int ic_launcher=0x7f020039;
-        public static final int ic_launcher_bak=0x7f02003a;
-        public static final int ic_preference_first_normal=0x7f02003b;
-        public static final int ic_preference_first_pressed=0x7f02003c;
-        public static final int ic_preference_last_normal=0x7f02003d;
-        public static final int ic_preference_last_pressed=0x7f02003e;
-        public static final int ic_preference_normal=0x7f02003f;
-        public static final int ic_preference_pressed=0x7f020040;
-        public static final int ic_preference_single_normal=0x7f020041;
-        public static final int ic_preference_single_pressed=0x7f020042;
-        public static final int icon=0x7f020043;
-        public static final int load=0x7f020044;
-        public static final int loading=0x7f020045;
-        public static final int loading_bg=0x7f020046;
-        public static final int login_edit_normal=0x7f020047;
-        public static final int login_edit_pressed=0x7f020048;
-        public static final int login_editbox=0x7f020049;
-        public static final int login_error_icon=0x7f02004a;
-        public static final int menu_bg=0x7f02004b;
-        public static final int menu_bg_normal=0x7f02004c;
-        public static final int menu_bg_normal2=0x7f02004d;
-        public static final int menu_bg_pressed=0x7f02004e;
-        public static final int menu_btn_bg=0x7f02004f;
-        public static final int mini_avatar_shadow=0x7f020050;
-        public static final int mm_listitem=0x7f020051;
-        public static final int mm_listitem_grey_normal=0x7f020052;
-        public static final int mm_listitem_normal=0x7f020053;
-        public static final int mm_listitem_pressed=0x7f020054;
-        public static final int mm_listitem_simple=0x7f020055;
-        public static final int mm_submenu=0x7f020056;
-        public static final int mm_submenu_normal=0x7f020057;
-        public static final int mm_submenu_pressed=0x7f020058;
-        public static final int mm_title_back_focused=0x7f020059;
-        public static final int mm_title_back_normal=0x7f02005a;
-        public static final int mm_title_back_pressed=0x7f02005b;
-        public static final int mm_title_btn_compose_normal=0x7f02005c;
-        public static final int mm_title_btn_contact_normal=0x7f02005d;
-        public static final int mm_title_btn_focused=0x7f02005e;
-        public static final int mm_title_btn_keyboard_normal=0x7f02005f;
-        public static final int mm_title_btn_menu=0x7f020060;
-        public static final int mm_title_btn_menu_disable=0x7f020061;
-        public static final int mm_title_btn_menu_normal=0x7f020062;
-        public static final int mm_title_btn_normal=0x7f020063;
-        public static final int mm_title_btn_pressed=0x7f020064;
-        public static final int mm_title_btn_qrcode_normal=0x7f020065;
-        public static final int mm_title_btn_receiver_normal=0x7f020066;
-        public static final int my_progress_bar_drawable=0x7f020067;
-        public static final int my_wx=0x7f020068;
-        public static final int page=0x7f020069;
-        public static final int page_now=0x7f02006a;
-        public static final int page_point_focused=0x7f02006b;
-        public static final int page_point_unfocused=0x7f02006c;
-        public static final int preference_first_item=0x7f02006d;
-        public static final int preference_item=0x7f02006e;
-        public static final int preference_last_item=0x7f02006f;
-        public static final int preference_single_item=0x7f020070;
-        public static final int red_test_icon=0x7f020071;
-        public static final int renma=0x7f020072;
-        public static final int right=0x7f020073;
-        public static final int search_bar_bg=0x7f020074;
-        public static final int search_bar_edit_bg=0x7f020075;
-        public static final int search_bar_edit_normal=0x7f020076;
-        public static final int search_bar_edit_pressed=0x7f020077;
-        public static final int search_bar_icon_normal=0x7f020078;
-        public static final int selector_btn_welcome=0x7f020079;
-        public static final int selector_page_point=0x7f02007a;
-        public static final int shake_bg=0x7f02007b;
-        public static final int shake_line_up=0x7f02007c;
-        public static final int shake_logo_down=0x7f02007d;
-        public static final int shake_logo_up=0x7f02007e;
-        public static final int shake_report_dragger_down=0x7f02007f;
-        public static final int shake_report_dragger_down_normal=0x7f020080;
-        public static final int shake_report_dragger_down_pressed=0x7f020081;
-        public static final int shake_report_dragger_up=0x7f020082;
-        public static final int shake_report_dragger_up_normal=0x7f020083;
-        public static final int shake_report_dragger_up_pressed=0x7f020084;
-        public static final int shakehideimg_man=0x7f020085;
-        public static final int shakehideimg_man2=0x7f020086;
-        public static final int tab_address=0x7f020087;
-        public static final int tab_address_normal=0x7f020088;
-        public static final int tab_address_pressed=0x7f020089;
-        public static final int tab_bg=0x7f02008a;
-        public static final int tab_bg2=0x7f02008b;
-        public static final int tab_find_frd=0x7f02008c;
-        public static final int tab_find_frd_normal=0x7f02008d;
-        public static final int tab_find_frd_pressed=0x7f02008e;
-        public static final int tab_settings=0x7f02008f;
-        public static final int tab_settings_normal=0x7f020090;
-        public static final int tab_settings_pressed=0x7f020091;
-        public static final int tab_weixin=0x7f020092;
-        public static final int tab_weixin_normal=0x7f020093;
-        public static final int tab_weixin_pressed=0x7f020094;
-        public static final int test_app_icon=0x7f020095;
-        public static final int title_bar=0x7f020096;
-        public static final int title_btn_back=0x7f020097;
-        public static final int title_btn_function=0x7f020098;
-        public static final int title_btn_right=0x7f020099;
-        public static final int title_function_bg=0x7f02009a;
-        public static final int visitor_head=0x7f02009b;
-        public static final int voice_rcd_btn_nor=0x7f02009c;
-        public static final int voice_rcd_btn_pressed=0x7f02009d;
-        public static final int w01=0x7f02009e;
-        public static final int w02=0x7f02009f;
-        public static final int w03=0x7f0200a0;
-        public static final int w04=0x7f0200a1;
-        public static final int w05=0x7f0200a2;
-        public static final int w_left=0x7f0200a3;
-        public static final int w_right=0x7f0200a4;
-        public static final int welcome=0x7f0200a5;
-        public static final int welcome_1=0x7f0200a6;
-        public static final int welcome_2=0x7f0200a7;
-        public static final int welcome_3=0x7f0200a8;
-        public static final int whats_new_start_btn_normal=0x7f0200a9;
-        public static final int whats_new_start_btn_pressed=0x7f0200aa;
-        public static final int xiaohei=0x7f0200ab;
-        public static final int xiaohei_big=0x7f0200ac;
-        public static final int yuan=0x7f0200ad;
+        public static final int action_search_folder_dark=0x7f020000;
+        public static final int action_search_folder_light=0x7f020001;
+        public static final int attached_image_placeholder=0x7f020002;
+        public static final int attachment_text_box_dark=0x7f020003;
+        public static final int attachment_text_box_light=0x7f020004;
+        public static final int bg_start=0x7f020005;
+        public static final int blue_test_icon=0x7f020006;
+        public static final int bottom_bar=0x7f020007;
+        public static final int btn_cancle_normal=0x7f020008;
+        public static final int btn_cancle_pressed=0x7f020009;
+        public static final int btn_check_message_list_dark=0x7f02000a;
+        public static final int btn_check_message_list_light=0x7f02000b;
+        public static final int btn_check_off_normal_holo_dark=0x7f02000c;
+        public static final int btn_check_off_normal_holo_light=0x7f02000d;
+        public static final int btn_check_on_normal_holo_dark=0x7f02000e;
+        public static final int btn_check_on_normal_holo_light=0x7f02000f;
+        public static final int btn_close=0x7f020010;
+        public static final int btn_dialog=0x7f020011;
+        public static final int btn_dialog_disable=0x7f020012;
+        public static final int btn_dialog_normal=0x7f020013;
+        public static final int btn_dialog_pressed=0x7f020014;
+        public static final int btn_dialog_selected=0x7f020015;
+        public static final int btn_edit=0x7f020016;
+        public static final int btn_edit_disable=0x7f020017;
+        public static final int btn_edit_normal=0x7f020018;
+        public static final int btn_edit_pressed=0x7f020019;
+        public static final int btn_edit_selected=0x7f02001a;
+        public static final int btn_header_img=0x7f02001b;
+        public static final int btn_menu_color=0x7f02001c;
+        public static final int btn_menu_item=0x7f02001d;
+        public static final int btn_menu_normal2=0x7f02001e;
+        public static final int btn_menu_pressed2=0x7f02001f;
+        public static final int btn_normal=0x7f020020;
+        public static final int btn_pressed=0x7f020021;
+        public static final int btn_style_alert_dialog_button=0x7f020022;
+        public static final int btn_style_alert_dialog_button_normal=0x7f020023;
+        public static final int btn_style_alert_dialog_button_pressed=0x7f020024;
+        public static final int btn_style_alert_dialog_cancel=0x7f020025;
+        public static final int btn_style_alert_dialog_cancel_normal=0x7f020026;
+        public static final int btn_style_alert_dialog_special=0x7f020027;
+        public static final int btn_style_alert_dialog_special_normal=0x7f020028;
+        public static final int btn_style_alert_dialog_special_pressed=0x7f020029;
+        public static final int btn_style_blue=0x7f02002a;
+        public static final int btn_style_five_focused=0x7f02002b;
+        public static final int btn_style_five_normal=0x7f02002c;
+        public static final int btn_style_five_pressed=0x7f02002d;
+        public static final int btn_style_four_focused=0x7f02002e;
+        public static final int btn_style_four_normal=0x7f02002f;
+        public static final int btn_style_four_pressed=0x7f020030;
+        public static final int btn_style_green=0x7f020031;
+        public static final int btn_style_one_disabled=0x7f020032;
+        public static final int btn_style_one_focused=0x7f020033;
+        public static final int btn_style_one_normal=0x7f020034;
+        public static final int btn_style_one_pressed=0x7f020035;
+        public static final int btn_style_red=0x7f020036;
+        public static final int btn_style_two_focused=0x7f020037;
+        public static final int btn_style_two_normal=0x7f020038;
+        public static final int btn_style_two_pressed=0x7f020039;
+        public static final int btn_style_white=0x7f02003a;
+        public static final int btn_style_zero_focused=0x7f02003b;
+        public static final int btn_style_zero_normal=0x7f02003c;
+        public static final int btn_style_zero_pressed=0x7f02003d;
+        public static final int btn_wel_nor=0x7f02003e;
+        public static final int btn_wel_pressed=0x7f02003f;
+        public static final int button_indicator_next=0x7f020040;
+        public static final int chat_bg_default=0x7f020041;
+        public static final int chat_footer_bg=0x7f020042;
+        public static final int chat_send_btn=0x7f020043;
+        public static final int chatfrom_bg=0x7f020044;
+        public static final int chatfrom_bg_focused=0x7f020045;
+        public static final int chatfrom_bg_normal=0x7f020046;
+        public static final int chatfrom_bg_pressed=0x7f020047;
+        public static final int chatto_bg=0x7f020048;
+        public static final int chatto_bg_focused=0x7f020049;
+        public static final int chatto_bg_normal=0x7f02004a;
+        public static final int chatto_bg_pressed=0x7f02004b;
+        public static final int confirm_dialog_bg=0x7f02004c;
+        public static final int confirm_dialog_bg2=0x7f02004d;
+        public static final int copyright=0x7f02004e;
+        public static final int divider_horizontal_email=0x7f02004f;
+        public static final int dropdown_ic_arrow_normal_holo_dark=0x7f020050;
+        public static final int dropdown_ic_arrow_normal_holo_light=0x7f020051;
+        public static final int exit_dialog_bg=0x7f020052;
+        public static final int find_more_friend_addfriend_icon=0x7f020053;
+        public static final int find_more_friend_shake=0x7f020054;
+        public static final int folder_dark=0x7f020055;
+        public static final int folder_light=0x7f020056;
+        public static final int green_test_icon=0x7f020057;
+        public static final int ic_action_about_dark=0x7f020058;
+        public static final int ic_action_about_light=0x7f020059;
+        public static final int ic_action_add_attachment_dark=0x7f02005a;
+        public static final int ic_action_add_attachment_light=0x7f02005b;
+        public static final int ic_action_add_cc_bbc_light=0x7f02005c;
+        public static final int ic_action_add_cc_bcc_dark=0x7f02005d;
+        public static final int ic_action_add_dark=0x7f02005e;
+        public static final int ic_action_add_light=0x7f02005f;
+        public static final int ic_action_archive_dark=0x7f020060;
+        public static final int ic_action_archive_light=0x7f020061;
+        public static final int ic_action_cancel_dark=0x7f020062;
+        public static final int ic_action_cancel_light=0x7f020063;
+        public static final int ic_action_compose_dark=0x7f020064;
+        public static final int ic_action_compose_light=0x7f020065;
+        public static final int ic_action_copy_dark=0x7f020066;
+        public static final int ic_action_copy_light=0x7f020067;
+        public static final int ic_action_delete_dark=0x7f020068;
+        public static final int ic_action_delete_light=0x7f020069;
+        public static final int ic_action_flag_dark=0x7f02006a;
+        public static final int ic_action_flag_light=0x7f02006b;
+        public static final int ic_action_import_export_dark=0x7f02006c;
+        public static final int ic_action_import_export_light=0x7f02006d;
+        public static final int ic_action_mark_as_read_dark=0x7f02006e;
+        public static final int ic_action_mark_as_read_light=0x7f02006f;
+        public static final int ic_action_mark_as_unread_dark=0x7f020070;
+        public static final int ic_action_mark_as_unread_light=0x7f020071;
+        public static final int ic_action_move_dark=0x7f020072;
+        public static final int ic_action_move_light=0x7f020073;
+        public static final int ic_action_next_message_dark=0x7f020074;
+        public static final int ic_action_next_message_light=0x7f020075;
+        public static final int ic_action_previous_message_dark=0x7f020076;
+        public static final int ic_action_previous_message_light=0x7f020077;
+        public static final int ic_action_refresh_dark=0x7f020078;
+        public static final int ic_action_refresh_light=0x7f020079;
+        public static final int ic_action_remote_search_dark=0x7f02007a;
+        public static final int ic_action_remote_search_light=0x7f02007b;
+        public static final int ic_action_request_read_receipt_dark=0x7f02007c;
+        public static final int ic_action_request_read_receipt_light=0x7f02007d;
+        public static final int ic_action_save_dark=0x7f02007e;
+        public static final int ic_action_save_light=0x7f02007f;
+        public static final int ic_action_search=0x7f020080;
+        public static final int ic_action_search_dark=0x7f020081;
+        public static final int ic_action_search_light=0x7f020082;
+        public static final int ic_action_select_all_dark=0x7f020083;
+        public static final int ic_action_select_all_light=0x7f020084;
+        public static final int ic_action_send_dark=0x7f020085;
+        public static final int ic_action_send_light=0x7f020086;
+        public static final int ic_action_settings_dark=0x7f020087;
+        public static final int ic_action_settings_light=0x7f020088;
+        public static final int ic_action_single_message_options_dark=0x7f020089;
+        public static final int ic_action_single_message_options_light=0x7f02008a;
+        public static final int ic_action_sort_dark=0x7f02008b;
+        public static final int ic_action_sort_light=0x7f02008c;
+        public static final int ic_action_spam_dark=0x7f02008d;
+        public static final int ic_action_spam_light=0x7f02008e;
+        public static final int ic_action_unflag_dark=0x7f02008f;
+        public static final int ic_action_unflag_light=0x7f020090;
+        public static final int ic_action_upload_dark=0x7f020091;
+        public static final int ic_action_upload_light=0x7f020092;
+        public static final int ic_button_add_contact_dark=0x7f020093;
+        public static final int ic_button_add_contact_light=0x7f020094;
+        public static final int ic_contact_picture=0x7f020095;
+        public static final int ic_delete=0x7f020096;
+        public static final int ic_email_answered_small=0x7f020097;
+        public static final int ic_email_attachment=0x7f020098;
+        public static final int ic_email_attachment_small=0x7f020099;
+        public static final int ic_email_forwarded_small=0x7f02009a;
+        public static final int ic_launcher=0x7f02009b;
+        public static final int ic_launcher_bak=0x7f02009c;
+        public static final int ic_notify_check_mail=0x7f02009d;
+        public static final int ic_notify_check_mail_anim_0=0x7f02009e;
+        public static final int ic_notify_check_mail_anim_1=0x7f02009f;
+        public static final int ic_notify_check_mail_anim_2=0x7f0200a0;
+        public static final int ic_notify_check_mail_anim_3=0x7f0200a1;
+        public static final int ic_notify_check_mail_anim_4=0x7f0200a2;
+        public static final int ic_notify_check_mail_anim_5=0x7f0200a3;
+        public static final int ic_notify_new_mail=0x7f0200a4;
+        public static final int ic_preference_first_normal=0x7f0200a5;
+        public static final int ic_preference_first_pressed=0x7f0200a6;
+        public static final int ic_preference_last_normal=0x7f0200a7;
+        public static final int ic_preference_last_pressed=0x7f0200a8;
+        public static final int ic_preference_normal=0x7f0200a9;
+        public static final int ic_preference_pressed=0x7f0200aa;
+        public static final int ic_preference_single_normal=0x7f0200ab;
+        public static final int ic_preference_single_pressed=0x7f0200ac;
+        public static final int ic_unread_widget=0x7f0200ad;
+        public static final int ic_unread_widget_selected=0x7f0200ae;
+        public static final int icon=0x7f0200af;
+        public static final int load=0x7f0200b0;
+        public static final int loading=0x7f0200b1;
+        public static final int loading_bg=0x7f0200b2;
+        public static final int login_edit_normal=0x7f0200b3;
+        public static final int login_edit_pressed=0x7f0200b4;
+        public static final int login_editbox=0x7f0200b5;
+        public static final int login_error_icon=0x7f0200b6;
+        public static final int menu_bg=0x7f0200b7;
+        public static final int menu_bg_normal=0x7f0200b8;
+        public static final int menu_bg_normal2=0x7f0200b9;
+        public static final int menu_bg_pressed=0x7f0200ba;
+        public static final int menu_btn_bg=0x7f0200bb;
+        public static final int mini_avatar_shadow=0x7f0200bc;
+        public static final int mm_listitem=0x7f0200bd;
+        public static final int mm_listitem_grey_normal=0x7f0200be;
+        public static final int mm_listitem_normal=0x7f0200bf;
+        public static final int mm_listitem_pressed=0x7f0200c0;
+        public static final int mm_listitem_simple=0x7f0200c1;
+        public static final int mm_submenu=0x7f0200c2;
+        public static final int mm_submenu_normal=0x7f0200c3;
+        public static final int mm_submenu_pressed=0x7f0200c4;
+        public static final int mm_title_back_focused=0x7f0200c5;
+        public static final int mm_title_back_normal=0x7f0200c6;
+        public static final int mm_title_back_pressed=0x7f0200c7;
+        public static final int mm_title_btn_compose_normal=0x7f0200c8;
+        public static final int mm_title_btn_contact_normal=0x7f0200c9;
+        public static final int mm_title_btn_focused=0x7f0200ca;
+        public static final int mm_title_btn_keyboard_normal=0x7f0200cb;
+        public static final int mm_title_btn_menu=0x7f0200cc;
+        public static final int mm_title_btn_menu_disable=0x7f0200cd;
+        public static final int mm_title_btn_menu_normal=0x7f0200ce;
+        public static final int mm_title_btn_normal=0x7f0200cf;
+        public static final int mm_title_btn_pressed=0x7f0200d0;
+        public static final int mm_title_btn_qrcode_normal=0x7f0200d1;
+        public static final int mm_title_btn_receiver_normal=0x7f0200d2;
+        public static final int my_progress_bar_drawable=0x7f0200d3;
+        public static final int my_wx=0x7f0200d4;
+        public static final int overlay_error=0x7f0200d5;
+        public static final int overlay_ok=0x7f0200d6;
+        public static final int page=0x7f0200d7;
+        public static final int page_now=0x7f0200d8;
+        public static final int page_point_focused=0x7f0200d9;
+        public static final int page_point_unfocused=0x7f0200da;
+        public static final int preference_first_item=0x7f0200db;
+        public static final int preference_item=0x7f0200dc;
+        public static final int preference_last_item=0x7f0200dd;
+        public static final int preference_single_item=0x7f0200de;
+        public static final int preview_unread_widget=0x7f0200df;
+        public static final int red_test_icon=0x7f0200e0;
+        public static final int renma=0x7f0200e1;
+        public static final int right=0x7f0200e2;
+        public static final int rounded_corners=0x7f0200e3;
+        public static final int search_bar_bg=0x7f0200e4;
+        public static final int search_bar_edit_bg=0x7f0200e5;
+        public static final int search_bar_edit_normal=0x7f0200e6;
+        public static final int search_bar_edit_pressed=0x7f0200e7;
+        public static final int search_bar_icon_normal=0x7f0200e8;
+        public static final int selector_btn_welcome=0x7f0200e9;
+        public static final int selector_page_point=0x7f0200ea;
+        public static final int shake_bg=0x7f0200eb;
+        public static final int shake_line_up=0x7f0200ec;
+        public static final int shake_logo_down=0x7f0200ed;
+        public static final int shake_logo_up=0x7f0200ee;
+        public static final int shake_report_dragger_down=0x7f0200ef;
+        public static final int shake_report_dragger_down_normal=0x7f0200f0;
+        public static final int shake_report_dragger_down_pressed=0x7f0200f1;
+        public static final int shake_report_dragger_up=0x7f0200f2;
+        public static final int shake_report_dragger_up_normal=0x7f0200f3;
+        public static final int shake_report_dragger_up_pressed=0x7f0200f4;
+        public static final int shakehideimg_man=0x7f0200f5;
+        public static final int shakehideimg_man2=0x7f0200f6;
+        public static final int tab_address=0x7f0200f7;
+        public static final int tab_address_normal=0x7f0200f8;
+        public static final int tab_address_pressed=0x7f0200f9;
+        public static final int tab_bg=0x7f0200fa;
+        public static final int tab_bg2=0x7f0200fb;
+        public static final int tab_find_frd=0x7f0200fc;
+        public static final int tab_find_frd_normal=0x7f0200fd;
+        public static final int tab_find_frd_pressed=0x7f0200fe;
+        public static final int tab_settings=0x7f0200ff;
+        public static final int tab_settings_normal=0x7f020100;
+        public static final int tab_settings_pressed=0x7f020101;
+        public static final int tab_weixin=0x7f020102;
+        public static final int tab_weixin_normal=0x7f020103;
+        public static final int tab_weixin_pressed=0x7f020104;
+        public static final int test_app_icon=0x7f020105;
+        public static final int thread_count_box_dark=0x7f020106;
+        public static final int thread_count_box_light=0x7f020107;
+        public static final int title_bar=0x7f020108;
+        public static final int title_btn_back=0x7f020109;
+        public static final int title_btn_function=0x7f02010a;
+        public static final int title_btn_right=0x7f02010b;
+        public static final int title_function_bg=0x7f02010c;
+        public static final int unread_count_background=0x7f02010d;
+        public static final int unread_widget_background=0x7f02010e;
+        public static final int unread_widget_icon=0x7f02010f;
+        public static final int visitor_head=0x7f020110;
+        public static final int voice_rcd_btn_nor=0x7f020111;
+        public static final int voice_rcd_btn_pressed=0x7f020112;
+        public static final int w01=0x7f020113;
+        public static final int w02=0x7f020114;
+        public static final int w03=0x7f020115;
+        public static final int w04=0x7f020116;
+        public static final int w05=0x7f020117;
+        public static final int w_left=0x7f020118;
+        public static final int w_right=0x7f020119;
+        public static final int welcome=0x7f02011a;
+        public static final int welcome_1=0x7f02011b;
+        public static final int welcome_2=0x7f02011c;
+        public static final int welcome_3=0x7f02011d;
+        public static final int whats_new_start_btn_normal=0x7f02011e;
+        public static final int whats_new_start_btn_pressed=0x7f02011f;
+        public static final int xiaohei=0x7f020120;
+        public static final int xiaohei_big=0x7f020121;
+        public static final int yuan=0x7f020122;
     }
     public static final class id {
-        public static final int action_settings=0x7f09003f;
-        public static final int add_comment_menu=0x7f090040;
-        public static final int add_friend=0x7f09001d;
-        public static final int add_friend_shake=0x7f09001e;
-        public static final int address=0x7f09003c;
-        public static final int bbs=0x7f090011;
-        public static final int bbs_label=0x7f090014;
-        public static final int btn_back=0x7f090008;
-        public static final int city_layout=0x7f09003d;
-        public static final int city_name=0x7f09003e;
-        public static final int current_xiaoqu_name=0x7f09000c;
-        public static final int dbtest_label=0x7f09001c;
-        public static final int document_content_panel=0x7f090024;
-        public static final int document_detail_content=0x7f09002b;
-        public static final int document_detail_create_time=0x7f09002d;
-        public static final int document_detail_id=0x7f090026;
-        public static final int document_detail_id_label=0x7f090025;
-        public static final int document_detail_ower_name=0x7f09002c;
-        public static final int document_detail_subtitle=0x7f09002a;
-        public static final int document_detail_subtitle_label=0x7f090029;
-        public static final int document_detail_title=0x7f090028;
-        public static final int document_detail_title_label=0x7f090027;
-        public static final int document_item_id=0x7f090033;
-        public static final int document_item_id_label=0x7f090032;
-        public static final int document_item_subtitle=0x7f090037;
-        public static final int document_item_subtitle_label=0x7f090036;
-        public static final int document_item_title=0x7f090035;
-        public static final int document_item_title_label=0x7f090034;
-        public static final int evaluation_content=0x7f090022;
-        public static final int evaluation_create_time=0x7f090021;
-        public static final int evaluation_listview=0x7f090031;
-        public static final int evaluation_panel=0x7f090030;
-        public static final int header_layout=0x7f090007;
-        public static final int id=0x7f090005;
-        public static final int img_start=0x7f090000;
-        public static final int listview=0x7f09000a;
-        public static final int mainRLayout=0x7f090001;
-        public static final int menu_button=0x7f090023;
-        public static final int myxiaoqu_label=0x7f09000e;
-        public static final int name=0x7f090006;
-        public static final int namelabel=0x7f09003a;
-        public static final int newest_comments=0x7f09002f;
-        public static final int newst_comment_label=0x7f09002e;
-        public static final int personal_settings=0x7f09000d;
-        public static final int phonenumbers=0x7f090010;
-        public static final int phonenumbers_label=0x7f090013;
-        public static final int pingche=0x7f090018;
-        public static final int pingche_label=0x7f09001b;
-        public static final int pointLayout=0x7f090004;
-        public static final int scrollLayout=0x7f090002;
-        public static final int search=0x7f090009;
-        public static final int shoppings=0x7f090016;
-        public static final int shoppings_label=0x7f090019;
-        public static final int startBtn=0x7f090003;
-        public static final int title=0x7f09000b;
-        public static final int visitor_head=0x7f09001f;
-        public static final int visitor_nickname=0x7f090020;
-        public static final int waimai=0x7f090017;
-        public static final int waimai_label=0x7f09001a;
-        public static final int wuyenotifier=0x7f09000f;
-        public static final int wuyenotifier_label=0x7f090012;
-        public static final int xiaoquaddresslabel=0x7f09003b;
-        public static final int xiaoquaround_label=0x7f090015;
-        public static final int xiaoquid=0x7f090039;
-        public static final int xiaoquidlabel=0x7f090038;
+        public static final int action_settings=0x7f0a0041;
+        public static final int add_comment_menu=0x7f0a0042;
+        public static final int add_comment_pop=0x7f0a0023;
+        public static final int add_friend=0x7f0a001d;
+        public static final int add_friend_shake=0x7f0a001e;
+        public static final int address=0x7f0a003e;
+        public static final int bbs=0x7f0a0011;
+        public static final int bbs_label=0x7f0a0014;
+        public static final int btn_back=0x7f0a0008;
+        public static final int button3=0x7f0a0024;
+        public static final int city_layout=0x7f0a003f;
+        public static final int city_name=0x7f0a0040;
+        public static final int current_xiaoqu_name=0x7f0a000c;
+        public static final int dbtest_label=0x7f0a001c;
+        public static final int document_content_panel=0x7f0a0026;
+        public static final int document_detail_content=0x7f0a002d;
+        public static final int document_detail_create_time=0x7f0a002f;
+        public static final int document_detail_id=0x7f0a0028;
+        public static final int document_detail_id_label=0x7f0a0027;
+        public static final int document_detail_ower_name=0x7f0a002e;
+        public static final int document_detail_subtitle=0x7f0a002c;
+        public static final int document_detail_subtitle_label=0x7f0a002b;
+        public static final int document_detail_title=0x7f0a002a;
+        public static final int document_detail_title_label=0x7f0a0029;
+        public static final int document_item_id=0x7f0a0035;
+        public static final int document_item_id_label=0x7f0a0034;
+        public static final int document_item_subtitle=0x7f0a0039;
+        public static final int document_item_subtitle_label=0x7f0a0038;
+        public static final int document_item_title=0x7f0a0037;
+        public static final int document_item_title_label=0x7f0a0036;
+        public static final int evaluation_content=0x7f0a0022;
+        public static final int evaluation_create_time=0x7f0a0021;
+        public static final int evaluation_listview=0x7f0a0033;
+        public static final int evaluation_panel=0x7f0a0032;
+        public static final int header_layout=0x7f0a0007;
+        public static final int id=0x7f0a0005;
+        public static final int img_start=0x7f0a0000;
+        public static final int listview=0x7f0a000a;
+        public static final int mainRLayout=0x7f0a0001;
+        public static final int menu_button=0x7f0a0025;
+        public static final int myxiaoqu_label=0x7f0a000e;
+        public static final int name=0x7f0a0006;
+        public static final int namelabel=0x7f0a003c;
+        public static final int newest_comments=0x7f0a0031;
+        public static final int newst_comment_label=0x7f0a0030;
+        public static final int personal_settings=0x7f0a000d;
+        public static final int phonenumbers=0x7f0a0010;
+        public static final int phonenumbers_label=0x7f0a0013;
+        public static final int pingche=0x7f0a0018;
+        public static final int pingche_label=0x7f0a001b;
+        public static final int pointLayout=0x7f0a0004;
+        public static final int scrollLayout=0x7f0a0002;
+        public static final int search=0x7f0a0009;
+        public static final int shoppings=0x7f0a0016;
+        public static final int shoppings_label=0x7f0a0019;
+        public static final int startBtn=0x7f0a0003;
+        public static final int title=0x7f0a000b;
+        public static final int visitor_head=0x7f0a001f;
+        public static final int visitor_nickname=0x7f0a0020;
+        public static final int waimai=0x7f0a0017;
+        public static final int waimai_label=0x7f0a001a;
+        public static final int wuyenotifier=0x7f0a000f;
+        public static final int wuyenotifier_label=0x7f0a0012;
+        public static final int xiaoquaddresslabel=0x7f0a003d;
+        public static final int xiaoquaround_label=0x7f0a0015;
+        public static final int xiaoquid=0x7f0a003b;
+        public static final int xiaoquidlabel=0x7f0a003a;
     }
     public static final class layout {
         public static final int app_start=0x7f030000;
@@ -292,70 +652,71 @@ public final class R {
         public static final int main_tab_friends=0x7f030005;
         public static final int personal_settings=0x7f030006;
         public static final int wuye_notifier_comment_item=0x7f030007;
-        public static final int wuye_notifier_detail=0x7f030008;
-        public static final int wuye_notifier_item=0x7f030009;
-        public static final int wuye_notifier_main=0x7f03000a;
-        public static final int xiaoqu_item=0x7f03000b;
-        public static final int xiaoqu_search_main=0x7f03000c;
+        public static final int wuye_notifier_comment_pop=0x7f030008;
+        public static final int wuye_notifier_detail=0x7f030009;
+        public static final int wuye_notifier_item=0x7f03000a;
+        public static final int wuye_notifier_main=0x7f03000b;
+        public static final int xiaoqu_item=0x7f03000c;
+        public static final int xiaoqu_search_main=0x7f03000d;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int wuye_notifier_detail_menu=0x7f080001;
+        public static final int main=0x7f090000;
+        public static final int wuye_notifier_detail_menu=0x7f090001;
     }
     public static final class string {
-        public static final int aaa=0x7f060017;
-        public static final int action_settings=0x7f060002;
-        public static final int add_comment=0x7f060027;
-        public static final int add_comment_menu=0x7f060026;
-        public static final int app_name=0x7f060000;
-        public static final int bbb=0x7f060018;
-        public static final int bbs_label=0x7f06000c;
-        public static final int ccc=0x7f060019;
-        public static final int city_search_header_label=0x7f060021;
-        public static final int city_search_hint_label=0x7f060022;
-        public static final int city_selector_btn_label=0x7f060020;
-        public static final int document_detail_id_label=0x7f06001f;
-        public static final int document_detail_subtitle_label=0x7f06001d;
-        public static final int document_detail_title_label=0x7f06001e;
-        public static final int document_item_id_label=0x7f06001c;
-        public static final int document_item_subtitle_label=0x7f06001a;
-        public static final int document_item_title_label=0x7f06001b;
-        public static final int evaluation_content=0x7f060024;
-        public static final int hello_world=0x7f060001;
-        public static final int menu_settings=0x7f060003;
-        public static final int myxiaoqu_label=0x7f060008;
-        public static final int newest_comments=0x7f060025;
-        public static final int notifier_header_label=0x7f060015;
-        public static final int personal_header_label=0x7f060013;
-        public static final int phonenumbers_label=0x7f06000b;
-        public static final int pingche_label=0x7f06000f;
-        public static final int return_btn_label=0x7f060016;
-        public static final int search_hint_label=0x7f060010;
-        public static final int shoppings_label=0x7f06000d;
-        public static final int title_activity_main=0x7f060004;
-        public static final int visitor_nickname=0x7f060023;
-        public static final int waimai_label=0x7f06000e;
-        public static final int wuye_notifier_header_label=0x7f060014;
-        public static final int wuyenotifier_label=0x7f06000a;
-        public static final int xiaoqu_search_header_label=0x7f060012;
-        public static final int xiaoqu_search_hint_label=0x7f060011;
-        public static final int xiaoquaddresslabel=0x7f060007;
-        public static final int xiaoquaround_label=0x7f060009;
-        public static final int xiaoquidlabel=0x7f060005;
-        public static final int xiaoqunamelabel=0x7f060006;
+        public static final int aaa=0x7f070017;
+        public static final int action_settings=0x7f070002;
+        public static final int add_comment=0x7f070027;
+        public static final int add_comment_menu=0x7f070026;
+        public static final int app_name=0x7f070000;
+        public static final int bbb=0x7f070018;
+        public static final int bbs_label=0x7f07000c;
+        public static final int ccc=0x7f070019;
+        public static final int city_search_header_label=0x7f070021;
+        public static final int city_search_hint_label=0x7f070022;
+        public static final int city_selector_btn_label=0x7f070020;
+        public static final int document_detail_id_label=0x7f07001f;
+        public static final int document_detail_subtitle_label=0x7f07001d;
+        public static final int document_detail_title_label=0x7f07001e;
+        public static final int document_item_id_label=0x7f07001c;
+        public static final int document_item_subtitle_label=0x7f07001a;
+        public static final int document_item_title_label=0x7f07001b;
+        public static final int evaluation_content=0x7f070024;
+        public static final int hello_world=0x7f070001;
+        public static final int menu_settings=0x7f070003;
+        public static final int myxiaoqu_label=0x7f070008;
+        public static final int newest_comments=0x7f070025;
+        public static final int notifier_header_label=0x7f070015;
+        public static final int personal_header_label=0x7f070013;
+        public static final int phonenumbers_label=0x7f07000b;
+        public static final int pingche_label=0x7f07000f;
+        public static final int return_btn_label=0x7f070016;
+        public static final int search_hint_label=0x7f070010;
+        public static final int shoppings_label=0x7f07000d;
+        public static final int title_activity_main=0x7f070004;
+        public static final int visitor_nickname=0x7f070023;
+        public static final int waimai_label=0x7f07000e;
+        public static final int wuye_notifier_header_label=0x7f070014;
+        public static final int wuyenotifier_label=0x7f07000a;
+        public static final int xiaoqu_search_header_label=0x7f070012;
+        public static final int xiaoqu_search_hint_label=0x7f070011;
+        public static final int xiaoquaddresslabel=0x7f070007;
+        public static final int xiaoquaround_label=0x7f070009;
+        public static final int xiaoquidlabel=0x7f070005;
+        public static final int xiaoqunamelabel=0x7f070006;
     }
     public static final class style {
-        public static final int AnimBottom=0x7f070005;
+        public static final int AnimBottom=0x7f080005;
         /**  ####################以上内容全部来自搬运 ############################################ 
          */
-        public static final int AnimFade=0x7f070004;
-        public static final int AnimHead=0x7f070008;
-        public static final int AnimTop=0x7f070006;
-        public static final int AnimTop2=0x7f070007;
-        public static final int Anim_style=0x7f070009;
-        public static final int Anim_style2=0x7f07000a;
-        public static final int Anim_style_title=0x7f07000b;
-        public static final int AnimationFade=0x7f070012;
+        public static final int AnimFade=0x7f080004;
+        public static final int AnimHead=0x7f080008;
+        public static final int AnimTop=0x7f080006;
+        public static final int AnimTop2=0x7f080007;
+        public static final int Anim_style=0x7f080009;
+        public static final int Anim_style2=0x7f08000a;
+        public static final int Anim_style_title=0x7f08000b;
+        public static final int AnimationFade=0x7f080012;
         /** 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
@@ -368,7 +729,7 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070013;
+        public static final int AppBaseTheme=0x7f080018;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -385,21 +746,726 @@ public final class R {
         All customizations that are NOT specific to a particular API-level can go here. 
     </style> 
          */
-        public static final int AppTheme=0x7f070000;
-        public static final int CustomWindowTitleBackground=0x7f07000c;
+        public static final int AppTheme=0x7f080000;
+        public static final int CustomWindowTitleBackground=0x7f08000c;
         /** 模糊
          */
-        public static final int HeadScale=0x7f070010;
-        public static final int MyDialogStyle=0x7f07000d;
+        public static final int HeadScale=0x7f080010;
+        public static final int MyDialogStyle=0x7f08000d;
         /** 模糊
          */
-        public static final int MyDialogStyleBottom=0x7f07000e;
+        public static final int MyDialogStyleBottom=0x7f08000e;
         /** 模糊
          */
-        public static final int MyDialogStyleTop=0x7f07000f;
-        public static final int MyProgressBar=0x7f070011;
-        public static final int chat_content_date_style=0x7f070002;
-        public static final int chat_text_date_style=0x7f070001;
-        public static final int chat_text_name_style=0x7f070003;
+        public static final int MyDialogStyleTop=0x7f08000f;
+        public static final int MyProgressBar=0x7f080011;
+        public static final int TextAppearance_StatusBar_EventContent_Emphasized=0x7f080015;
+        public static final int Theme_K9_Dark=0x7f08001d;
+        public static final int Theme_K9_Dark_Base=0x7f08001b;
+        /**  Prior to Honeycomb we always use the light theme for dialogs 
+         */
+        public static final int Theme_K9_Dialog_Dark=0x7f08001f;
+        public static final int Theme_K9_Dialog_Light=0x7f08001e;
+        public static final int Theme_K9_Dialog_Translucent_Dark=0x7f080020;
+        public static final int Theme_K9_Dialog_Translucent_Light=0x7f080021;
+        public static final int Theme_K9_Light=0x7f08001c;
+        public static final int Theme_K9_Light_Base=0x7f08001a;
+        public static final int Theme_K9_Startup=0x7f080019;
+        public static final int Theme_K9Dialog=0x7f080013;
+        public static final int UnreadWidgetContainer=0x7f080016;
+        public static final int UnreadWidgetTextView=0x7f080017;
+        /** 
+      Fix a bug with AutoCompleteTextView
+      See https://code.google.com/p/android/issues/detail?id=5237
+    
+         */
+        public static final int Widget_K9_AutoCompleteTextView=0x7f080014;
+        public static final int chat_content_date_style=0x7f080002;
+        public static final int chat_text_date_style=0x7f080001;
+        public static final int chat_text_name_style=0x7f080003;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a K9Styles.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #K9Styles_backgroundColorChooseAccountHeader com.jun.xiaoquren:backgroundColorChooseAccountHeader}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_compatDividerVertical com.jun.xiaoquren:compatDividerVertical}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_compatSelectableItemBackground com.jun.xiaoquren:compatSelectableItemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_composerBackgroundColor com.jun.xiaoquren:composerBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_contactPictureFallbackDefaultBackgroundColor com.jun.xiaoquren:contactPictureFallbackDefaultBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionAbout com.jun.xiaoquren:iconActionAbout}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionAdd com.jun.xiaoquren:iconActionAdd}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionAddAttachment com.jun.xiaoquren:iconActionAddAttachment}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionAddCcBcc com.jun.xiaoquren:iconActionAddCcBcc}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionArchive com.jun.xiaoquren:iconActionArchive}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionCancel com.jun.xiaoquren:iconActionCancel}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionCompose com.jun.xiaoquren:iconActionCompose}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionCopy com.jun.xiaoquren:iconActionCopy}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionDelete com.jun.xiaoquren:iconActionDelete}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionFlag com.jun.xiaoquren:iconActionFlag}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionImportExport com.jun.xiaoquren:iconActionImportExport}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionMarkAsRead com.jun.xiaoquren:iconActionMarkAsRead}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionMarkAsUnread com.jun.xiaoquren:iconActionMarkAsUnread}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionMove com.jun.xiaoquren:iconActionMove}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionNextMessage com.jun.xiaoquren:iconActionNextMessage}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionPreviousMessage com.jun.xiaoquren:iconActionPreviousMessage}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionRefresh com.jun.xiaoquren:iconActionRefresh}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionRemoteSearch com.jun.xiaoquren:iconActionRemoteSearch}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionRequestReadReceipt com.jun.xiaoquren:iconActionRequestReadReceipt}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSave com.jun.xiaoquren:iconActionSave}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSearch com.jun.xiaoquren:iconActionSearch}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSearchFolder com.jun.xiaoquren:iconActionSearchFolder}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSelectAll com.jun.xiaoquren:iconActionSelectAll}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSend com.jun.xiaoquren:iconActionSend}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSettings com.jun.xiaoquren:iconActionSettings}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSingleMessageOptions com.jun.xiaoquren:iconActionSingleMessageOptions}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSort com.jun.xiaoquren:iconActionSort}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionSpam com.jun.xiaoquren:iconActionSpam}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionUnflag com.jun.xiaoquren:iconActionUnflag}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconActionUpload com.jun.xiaoquren:iconActionUpload}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconFolder com.jun.xiaoquren:iconFolder}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconListItemMenu com.jun.xiaoquren:iconListItemMenu}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_iconMenuInfoDetails com.jun.xiaoquren:iconMenuInfoDetails}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageComposeAddContactImage com.jun.xiaoquren:messageComposeAddContactImage}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListActiveItemBackgroundColor com.jun.xiaoquren:messageListActiveItemBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListCheckbox com.jun.xiaoquren:messageListCheckbox}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListDividerColor com.jun.xiaoquren:messageListDividerColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListReadItemBackgroundColor com.jun.xiaoquren:messageListReadItemBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListSelectedBackgroundColor com.jun.xiaoquren:messageListSelectedBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListThreadCountBackground com.jun.xiaoquren:messageListThreadCountBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListThreadCountForegroundColor com.jun.xiaoquren:messageListThreadCountForegroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageListUnreadItemBackgroundColor com.jun.xiaoquren:messageListUnreadItemBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageViewAttachmentBackground com.jun.xiaoquren:messageViewAttachmentBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_messageViewHeaderBackgroundColor com.jun.xiaoquren:messageViewHeaderBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_textColorPrimaryRecipientDropdown com.jun.xiaoquren:textColorPrimaryRecipientDropdown}</code></td><td></td></tr>
+           <tr><td><code>{@link #K9Styles_textColorSecondaryRecipientDropdown com.jun.xiaoquren:textColorSecondaryRecipientDropdown}</code></td><td></td></tr>
+           </table>
+           @see #K9Styles_backgroundColorChooseAccountHeader
+           @see #K9Styles_compatDividerVertical
+           @see #K9Styles_compatSelectableItemBackground
+           @see #K9Styles_composerBackgroundColor
+           @see #K9Styles_contactPictureFallbackDefaultBackgroundColor
+           @see #K9Styles_iconActionAbout
+           @see #K9Styles_iconActionAdd
+           @see #K9Styles_iconActionAddAttachment
+           @see #K9Styles_iconActionAddCcBcc
+           @see #K9Styles_iconActionArchive
+           @see #K9Styles_iconActionCancel
+           @see #K9Styles_iconActionCompose
+           @see #K9Styles_iconActionCopy
+           @see #K9Styles_iconActionDelete
+           @see #K9Styles_iconActionFlag
+           @see #K9Styles_iconActionImportExport
+           @see #K9Styles_iconActionMarkAsRead
+           @see #K9Styles_iconActionMarkAsUnread
+           @see #K9Styles_iconActionMove
+           @see #K9Styles_iconActionNextMessage
+           @see #K9Styles_iconActionPreviousMessage
+           @see #K9Styles_iconActionRefresh
+           @see #K9Styles_iconActionRemoteSearch
+           @see #K9Styles_iconActionRequestReadReceipt
+           @see #K9Styles_iconActionSave
+           @see #K9Styles_iconActionSearch
+           @see #K9Styles_iconActionSearchFolder
+           @see #K9Styles_iconActionSelectAll
+           @see #K9Styles_iconActionSend
+           @see #K9Styles_iconActionSettings
+           @see #K9Styles_iconActionSingleMessageOptions
+           @see #K9Styles_iconActionSort
+           @see #K9Styles_iconActionSpam
+           @see #K9Styles_iconActionUnflag
+           @see #K9Styles_iconActionUpload
+           @see #K9Styles_iconFolder
+           @see #K9Styles_iconListItemMenu
+           @see #K9Styles_iconMenuInfoDetails
+           @see #K9Styles_messageComposeAddContactImage
+           @see #K9Styles_messageListActiveItemBackgroundColor
+           @see #K9Styles_messageListCheckbox
+           @see #K9Styles_messageListDividerColor
+           @see #K9Styles_messageListReadItemBackgroundColor
+           @see #K9Styles_messageListSelectedBackgroundColor
+           @see #K9Styles_messageListThreadCountBackground
+           @see #K9Styles_messageListThreadCountForegroundColor
+           @see #K9Styles_messageListUnreadItemBackgroundColor
+           @see #K9Styles_messageViewAttachmentBackground
+           @see #K9Styles_messageViewHeaderBackgroundColor
+           @see #K9Styles_textColorPrimaryRecipientDropdown
+           @see #K9Styles_textColorSecondaryRecipientDropdown
+         */
+        public static final int[] K9Styles = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
+            0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f,
+            0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013,
+            0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017,
+            0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b,
+            0x7f01001c, 0x7f01001d, 0x7f01001e, 0x7f01001f,
+            0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023,
+            0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027,
+            0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b,
+            0x7f01002c, 0x7f01002d, 0x7f01002e, 0x7f01002f,
+            0x7f010030, 0x7f010031, 0x7f010032
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#backgroundColorChooseAccountHeader}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.jun.xiaoquren:backgroundColorChooseAccountHeader
+        */
+        public static final int K9Styles_backgroundColorChooseAccountHeader = 35;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#compatDividerVertical}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:compatDividerVertical
+        */
+        public static final int K9Styles_compatDividerVertical = 48;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#compatSelectableItemBackground}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:compatSelectableItemBackground
+        */
+        public static final int K9Styles_compatSelectableItemBackground = 49;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#composerBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.jun.xiaoquren:composerBackgroundColor
+        */
+        public static final int K9Styles_composerBackgroundColor = 47;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#contactPictureFallbackDefaultBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:contactPictureFallbackDefaultBackgroundColor
+        */
+        public static final int K9Styles_contactPictureFallbackDefaultBackgroundColor = 50;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionAbout}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionAbout
+        */
+        public static final int K9Styles_iconActionAbout = 25;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionAdd}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionAdd
+        */
+        public static final int K9Styles_iconActionAdd = 26;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionAddAttachment}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionAddAttachment
+        */
+        public static final int K9Styles_iconActionAddAttachment = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionAddCcBcc}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionAddCcBcc
+        */
+        public static final int K9Styles_iconActionAddCcBcc = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionArchive}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionArchive
+        */
+        public static final int K9Styles_iconActionArchive = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionCancel}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionCancel
+        */
+        public static final int K9Styles_iconActionCancel = 31;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionCompose}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionCompose
+        */
+        public static final int K9Styles_iconActionCompose = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionCopy}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionCopy
+        */
+        public static final int K9Styles_iconActionCopy = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionDelete}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionDelete
+        */
+        public static final int K9Styles_iconActionDelete = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionFlag}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionFlag
+        */
+        public static final int K9Styles_iconActionFlag = 20;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionImportExport}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionImportExport
+        */
+        public static final int K9Styles_iconActionImportExport = 27;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionMarkAsRead}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionMarkAsRead
+        */
+        public static final int K9Styles_iconActionMarkAsRead = 22;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionMarkAsUnread}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionMarkAsUnread
+        */
+        public static final int K9Styles_iconActionMarkAsUnread = 23;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionMove}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionMove
+        */
+        public static final int K9Styles_iconActionMove = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionNextMessage}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionNextMessage
+        */
+        public static final int K9Styles_iconActionNextMessage = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionPreviousMessage}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionPreviousMessage
+        */
+        public static final int K9Styles_iconActionPreviousMessage = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionRefresh}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionRefresh
+        */
+        public static final int K9Styles_iconActionRefresh = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionRemoteSearch}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionRemoteSearch
+        */
+        public static final int K9Styles_iconActionRemoteSearch = 24;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionRequestReadReceipt}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionRequestReadReceipt
+        */
+        public static final int K9Styles_iconActionRequestReadReceipt = 32;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSave}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSave
+        */
+        public static final int K9Styles_iconActionSave = 30;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSearch}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSearch
+        */
+        public static final int K9Styles_iconActionSearch = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSearchFolder}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSearchFolder
+        */
+        public static final int K9Styles_iconActionSearchFolder = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSelectAll}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSelectAll
+        */
+        public static final int K9Styles_iconActionSelectAll = 29;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSend}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSend
+        */
+        public static final int K9Styles_iconActionSend = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSettings}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSettings
+        */
+        public static final int K9Styles_iconActionSettings = 16;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSingleMessageOptions}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSingleMessageOptions
+        */
+        public static final int K9Styles_iconActionSingleMessageOptions = 17;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSort}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSort
+        */
+        public static final int K9Styles_iconActionSort = 18;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionSpam}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionSpam
+        */
+        public static final int K9Styles_iconActionSpam = 19;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionUnflag}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionUnflag
+        */
+        public static final int K9Styles_iconActionUnflag = 21;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconActionUpload}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconActionUpload
+        */
+        public static final int K9Styles_iconActionUpload = 28;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconFolder}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconFolder
+        */
+        public static final int K9Styles_iconFolder = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconListItemMenu}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconListItemMenu
+        */
+        public static final int K9Styles_iconListItemMenu = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#iconMenuInfoDetails}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:iconMenuInfoDetails
+        */
+        public static final int K9Styles_iconMenuInfoDetails = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageComposeAddContactImage}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:messageComposeAddContactImage
+        */
+        public static final int K9Styles_messageComposeAddContactImage = 46;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListActiveItemBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListActiveItemBackgroundColor
+        */
+        public static final int K9Styles_messageListActiveItemBackgroundColor = 41;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListCheckbox}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:messageListCheckbox
+        */
+        public static final int K9Styles_messageListCheckbox = 43;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListDividerColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListDividerColor
+        */
+        public static final int K9Styles_messageListDividerColor = 42;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListReadItemBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListReadItemBackgroundColor
+        */
+        public static final int K9Styles_messageListReadItemBackgroundColor = 37;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListSelectedBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListSelectedBackgroundColor
+        */
+        public static final int K9Styles_messageListSelectedBackgroundColor = 36;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListThreadCountBackground}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListThreadCountBackground
+        */
+        public static final int K9Styles_messageListThreadCountBackground = 40;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListThreadCountForegroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListThreadCountForegroundColor
+        */
+        public static final int K9Styles_messageListThreadCountForegroundColor = 39;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageListUnreadItemBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageListUnreadItemBackgroundColor
+        */
+        public static final int K9Styles_messageListUnreadItemBackgroundColor = 38;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageViewAttachmentBackground}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:messageViewAttachmentBackground
+        */
+        public static final int K9Styles_messageViewAttachmentBackground = 45;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#messageViewHeaderBackgroundColor}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.jun.xiaoquren:messageViewHeaderBackgroundColor
+        */
+        public static final int K9Styles_messageViewHeaderBackgroundColor = 44;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#textColorPrimaryRecipientDropdown}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:textColorPrimaryRecipientDropdown
+        */
+        public static final int K9Styles_textColorPrimaryRecipientDropdown = 33;
+        /**
+          <p>This symbol is the offset where the {@link com.jun.xiaoquren.R.attr#textColorSecondaryRecipientDropdown}
+          attribute's value can be found in the {@link #K9Styles} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.jun.xiaoquren:textColorSecondaryRecipientDropdown
+        */
+        public static final int K9Styles_textColorSecondaryRecipientDropdown = 34;
+        /** Attributes that can be used with a SliderPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SliderPreference_android_summary android:summary}</code></td><td></td></tr>
+           </table>
+           @see #SliderPreference_android_summary
+         */
+        public static final int[] SliderPreference = {
+            0x010101e9
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summary}
+          attribute's value can be found in the {@link #SliderPreference} array.
+          @attr name android:summary
+        */
+        public static final int SliderPreference_android_summary = 0;
+    };
 }
