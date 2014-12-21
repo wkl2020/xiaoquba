@@ -76,15 +76,16 @@
 		        android:layout_height="wrap_content"
 		        android:hint="@string/xiaoqu_search_hint_label">
 		
-		        <!-- <requestFocus /> -->
 		    </EditText>
-		
+		    
 		    <ListView
 		        android:id="@+id/listview"
 		        android:layout_width="fill_parent"
 		        android:layout_height="fill_parent"
 		        android:background="@drawable/mm_listitem"
-		        android:layout_below="@+id/search" />
+		        android:layout_below="@+id/search">
+
+		    </ListView>
     
     </RelativeLayout>
 

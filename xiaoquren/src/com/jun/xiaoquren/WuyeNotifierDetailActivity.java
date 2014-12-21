@@ -3,6 +3,7 @@ package com.jun.xiaoquren;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -89,6 +90,11 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	
 	public void onAddCommentPopClick(View v) {
 		System.out.println("####################### onAddCommentPopClick ################################");
+		
+		Intent intent = new Intent();
+		intent.setClass(WuyeNotifierDetailActivity.this, WuyeNotifierCommentAddActivity.class);
+	    intent.putExtra("documentId", id_text.getText());
+	    startActivity(intent);   
 	}
 	
 	 public void initmPopupWindowView() {  

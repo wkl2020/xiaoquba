@@ -10,7 +10,9 @@ public class LocalHttpUtil {
 	public static final String XiaoquDocumentsUrl = ServerURL + "/xiaoqubaserver/main/xiaoqudocuments/"; 
 	
 	// Document Comment
-	public static final String DocumentCommentsUrl = ServerURL + "/xiaoqubaserver/main/documentComments/"; 
+	public static final String DocumentCommentsUrl = ServerURL + "/xiaoqubaserver/main/documentComments/";
+	public static final String AddDocumentCommentUrl = ServerURL + "/xiaoqubaserver/main/documentComment";
+	
 	
 	// Xiaoqu
 	public static final String GetAllXiaoquListUrl = ServerURL + "/xiaoqubaserver/main/xiaoqu/index"; 
