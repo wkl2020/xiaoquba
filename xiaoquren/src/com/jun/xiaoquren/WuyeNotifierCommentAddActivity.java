@@ -1,10 +1,12 @@
 package com.jun.xiaoquren;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -111,12 +113,38 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 			
 			pairs.add(contentPair);
 			pairs.add(documentIdPair);
-			pairs.add(nicknamePair);
+			pairs.add(nicknamePair);	
+			
+//			RequestParams params = new RequestParams();
+//	        params.addQueryStringParameter("content", commentJson.toString());
 			
 			RequestParams params = new RequestParams();
-			params.addQueryStringParameter(pairs);
-			params.addHeader("contentType", "text/plain;charset=UTF-8");
-			params.addHeader("dataType", "text");
+//			params.addQueryStringParameter(pairs);
+//			params.addBodyParameter(pairs);
+			try {				
+				String nickname = "我就测试者";
+				JSONObject commentJson = new JSONObject();
+				commentJson.put("content", content);		
+				commentJson.put("documentId", documentId);
+				commentJson.put("nickname", nickname);	
+				
+				LogUtils.i("CommentJSON: " + commentJson.toString());
+				
+				params.setContentType("application/json;charset=UTF-8");
+				params.setBodyEntity(new StringEntity(commentJson.toString(),"UTF-8"));
+			} catch (UnsupportedEncodingException e) {
+				
+				LogUtils.i("Error occured UnsupportedEncodingException: " + e.getMessage());
+				e.printStackTrace();
+			} catch (JSONException e) {
+				
+				LogUtils.i("Error occured JSONException: " + e.getMessage());
+				e.printStackTrace();
+			}
+//			params.addHeader("contentType", "text/plain;charset=UTF-8");
+//			params.addHeader("dataType", "text");
+//			params.addHeader("contentType", "application/json;charset=UTF-8");
+//			params.addHeader("dataType", "json");
 	        
 	        HttpUtils http = new HttpUtils();
 	        http.send(HttpRequest.HttpMethod.POST,
@@ -146,14 +174,7 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 	                });
 			
 
-//				String nickname = "我就测试者";
-//				JSONObject commentJson = new JSONObject();
-//				commentJson.put("content", content);		
-//				commentJson.put("documentId", documentId);
-//				commentJson.put("nickname", nickname);		
-//				
-//				RequestParams params = new RequestParams();
-//		        params.addQueryStringParameter("content", commentJson.toString());
+
 				
 				
 		}
