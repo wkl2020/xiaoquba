@@ -39,6 +39,12 @@ public class CommentListViewAdapter extends BaseAdapter {
 	public DocumentComment getItem(int position) {
 		return commentList.get(position);
 	}
+	
+	public void setItem(List<DocumentComment> commentList) {
+		this.commentList = commentList;
+		this.copycommentArraylist = new ArrayList<DocumentComment>();
+		this.copycommentArraylist.addAll(commentList);
+	}
 
 	@Override
 	public long getItemId(int position) {

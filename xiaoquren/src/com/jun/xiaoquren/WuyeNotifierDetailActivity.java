@@ -5,13 +5,8 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -19,8 +14,14 @@ import android.widget.TextView;
 import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.http.JsonTools;
+import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.CommentListViewAdapter;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.util.LogUtils;
 
 public class WuyeNotifierDetailActivity extends MyAbstractActivity implements OnClickListener{
 	public static final String ACTIVITY_NAME = "WuyeNotifierDetailActivity";
@@ -43,11 +44,8 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	CommentListViewAdapter listViewAdapter;
 	List<DocumentComment> commentList = new ArrayList<DocumentComment>();
 	
-	// Menu
-	private Menu mMenu;
-	private MenuItem mMenuButtonAddComment;
+	// Popup Window
 	private PopupWindow popupwindow; 
-	private Button addCommentButton;  
 	
 	public void setEvaluationList(List<DocumentComment> list) {
 		this.commentList = list;
@@ -85,7 +83,6 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 		
 		// Init the popupwindow
 		initmPopupWindowView();
-		addCommentButton = (Button) findViewById(R.id.add_comment_pop);
 	}
 	
 	public void onAddCommentPopClick(View v) {
@@ -101,60 +98,82 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 		  
 	        View customView = getLayoutInflater().inflate(R.layout.wuye_notifier_comment_pop, null, false);  
 	        popupwindow = new PopupWindow(customView, 200, 130);  
-	        popupwindow.setAnimationStyle(R.style.AnimationFade);  
-	        customView.setOnTouchListener(new OnTouchListener() {  
-	  
-	            @Override  
-	            public boolean onTouch(View v, MotionEvent event) {  
-	                if (popupwindow != null && popupwindow.isShowing()) {  
-	                    popupwindow.dismiss();  
-	                    popupwindow = null;  
-	                }
-	                return false;  
-	            }  
-	        });
+	        popupwindow.setAnimationStyle(R.style.AnimationFade);
+	        
+	        popupwindow.setTouchable(true);
+	        
+//	        popupwindow.setTouchInterceptor(new OnTouchListener() {
+//
+//	            @Override
+//	            public boolean onTouch(View v, MotionEvent event) {
+//
+//	            	LogUtils.i("popupwindow onTouch event ");
+//	                return false;
+//	                // 这里如果返回true的话，touch事件将被拦截, 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
+//	            }
+//	        });
+
+	        // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
+	        // 我觉得这里是API的一个bug
+	        popupwindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_menu_item));
+	        popupwindow.setOutsideTouchable(true);
+	        
+//	        popupwindow.setBackgroundDrawable(new BitmapDrawable());
+            
+            
+//	        customView.setOnTouchListener(new OnTouchListener() {  
+//	  
+//	            @Override  
+//	            public boolean onTouch(View v, MotionEvent event) {  
+//	                if (popupwindow != null && popupwindow.isShowing()) {  
+//	                    popupwindow.dismiss();  
+//	                    popupwindow = null;  
+//	                }
+////	                return false;  
+//	                return super.onTouchEvent(event);
+//	            }  
+//	        });
 	  
 	    }  
 	
-	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.wuye_notifier_detail_menu, menu);
-        mMenu = menu;
-        mMenuButtonAddComment= menu.findItem(R.id.add_comment_menu);
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        configureMenu(menu);
-        return true;
-    }
+//	@Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.wuye_notifier_detail_menu, menu);
+//        mMenu = menu;
+//        mMenuButtonAddComment= menu.findItem(R.id.add_comment_menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//        configureMenu(menu);
+//        return true;
+//    }
     
-    private void configureMenu(Menu menu) {
-        if (menu == null) {
-            return;
-        }
-
-        menu.findItem(R.id.add_comment_menu).setVisible(true);
-    }
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-        switch (itemId) {
-            case R.id.add_comment_menu: {
-                onAddCommentClicked();
-                return true;
-            }
-            default: {
-                return super.onOptionsItemSelected(item);
-            }
-        }
-    }
-    
-    public void onAddCommentClicked() {
-    	System.out.println("####################### onAddCommentClicked ################################");
-    }
+//    private void configureMenu(Menu menu) {
+//        if (menu == null) {
+//            return;
+//        }
+//        menu.findItem(R.id.add_comment_menu).setVisible(true);
+//    }
+//    
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int itemId = item.getItemId();
+//        switch (itemId) {
+//            case R.id.add_comment_menu: {
+//                onAddCommentClicked();
+//                return true;
+//            }
+//            default: {
+//                return super.onOptionsItemSelected(item);
+//            }
+//        }
+//    }
+//    
+//    public void onAddCommentClicked() {
+//    	System.out.println("####################### onAddCommentClicked ################################");
+//    }
 
 	@Override
 	public void onClick(View v) {
@@ -169,14 +188,46 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 		this.finish();
     }
     
-    public void onMenuButtonClicked(View v) {
-//    	openOptionsMenu();
-
+    public void onPopupButtonClicked(View v) {
 		if (popupwindow != null && popupwindow.isShowing()) {  
             popupwindow.dismiss();  
             return;  
         } else {
             popupwindow.showAsDropDown(v, 0, 5);  
         }  
+    }
+    
+    public void refreshCommentList() {
+    	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.DocumentCommentsUrl+id_text.getText(), new RequestCallBack<String>() {
+
+	          @Override
+	          public void onStart() {
+	          	LogUtils.i("Start to connect comment documentComments...");
+	          }
+
+	          @Override
+	          public void onLoading(long total, long current, boolean isUploading) {
+	          	LogUtils.i("On loading to connect comment documentComments: " + current + "/" + total);
+	          }
+
+				@Override
+				public void onFailure(HttpException error, String msg) {
+					LogUtils.i("Error to connect comment documentComments: " + msg);
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> response) {
+					LogUtils.i("Success to connect comment documentComments: " + response.result.toString());
+					String commentListJsonstr = response.result.toString();
+					commentList = JsonTools.getCommentList(commentListJsonstr);
+					listViewAdapter.setItem(commentList);
+					
+					listViewAdapter.notifyDataSetChanged();
+//					Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
+//					intent.putExtra("commentListJsonstr", commentListJsonstr);
+//					intent.putExtra("document", documentList.get(position));
+//					mContext.startActivity(intent);
+				}
+			});
     }
 }

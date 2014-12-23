@@ -27,6 +27,10 @@ public class LocalUtil {
 		activeActivities.put(activityName, activity);
 	}
 	
+	public static boolean isActiveActivityExists(String activityName) {
+		return activeActivities.get(activityName) != null;
+	}
+	
 	public static Activity getActiveActivity(String activityName) {
 		return activeActivities.get(activityName);
 	}

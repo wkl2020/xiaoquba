@@ -1,13 +1,9 @@
 package com.jun.xiaoquren;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
-import org.apache.http.NameValuePair;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,8 +24,8 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.util.LogUtils;
 
 public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implements OnClickListener {
 	public static final String ACTIVITY_NAME = "WuyeNotifierCommentAddActivity";
@@ -106,25 +102,13 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 			commentContent.setError("内容限50字");
 			commentContent.requestFocus();
 		} else {	
-			List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-			NameValuePair contentPair = new BasicNameValuePair("content", content);
-			NameValuePair documentIdPair = new BasicNameValuePair("documentId",documentId);
-			NameValuePair nicknamePair = new BasicNameValuePair("nickname", "我就测试者");
-			
-			pairs.add(contentPair);
-			pairs.add(documentIdPair);
-			pairs.add(nicknamePair);	
-			
-//			RequestParams params = new RequestParams();
-//	        params.addQueryStringParameter("content", commentJson.toString());
 			
 			RequestParams params = new RequestParams();
-//			params.addQueryStringParameter(pairs);
-//			params.addBodyParameter(pairs);
 			try {				
 				String nickname = "我就测试者";
 				JSONObject commentJson = new JSONObject();
-				commentJson.put("content", content);		
+				commentJson.put("content", content);
+				commentJson.put("documentType", "XiaoquDocumentComment");		
 				commentJson.put("documentId", documentId);
 				commentJson.put("nickname", nickname);	
 				
@@ -141,10 +125,6 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 				LogUtils.i("Error occured JSONException: " + e.getMessage());
 				e.printStackTrace();
 			}
-//			params.addHeader("contentType", "text/plain;charset=UTF-8");
-//			params.addHeader("dataType", "text");
-//			params.addHeader("contentType", "application/json;charset=UTF-8");
-//			params.addHeader("dataType", "json");
 	        
 	        HttpUtils http = new HttpUtils();
 	        http.send(HttpRequest.HttpMethod.POST,
@@ -165,6 +145,17 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 	                    @Override
 	                    public void onSuccess(ResponseInfo<String> responseInfo) {
 	                    	LogUtils.i("onSuccess upload response:" + responseInfo.result);
+	                    	if (responseInfo.result.contains("success")) {
+	                    		if (LocalUtil.isActiveActivityExists(WuyeNotifierDetailActivity.ACTIVITY_NAME)) {
+                    				WuyeNotifierDetailActivity detailPage = (WuyeNotifierDetailActivity)LocalUtil.getActiveActivity(WuyeNotifierDetailActivity.ACTIVITY_NAME);
+                    				detailPage.refreshCommentList();
+                    			}
+	                    		
+	                    		if (LocalUtil.isActiveActivityExists(WuyeNotifierCommentAddActivity.ACTIVITY_NAME)) {
+	                    			WuyeNotifierCommentAddActivity currentPage = (WuyeNotifierCommentAddActivity)LocalUtil.getActiveActivity(WuyeNotifierCommentAddActivity.ACTIVITY_NAME);
+	                    			currentPage.finish();
+	                    		}
+	                    	}
 	                    }
 
 	                    @Override
@@ -172,10 +163,6 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 	                    	LogUtils.i("onFailure " + msg);
 	                    }
 	                });
-			
-
-
-				
 				
 		}
     }
