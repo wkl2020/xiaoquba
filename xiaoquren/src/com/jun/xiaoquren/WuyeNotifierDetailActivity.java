@@ -222,6 +222,9 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 					commentList = JsonTools.getCommentList(commentListJsonstr);
 					listViewAdapter.setItem(commentList);
 					
+					LogUtils.i("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx " + response.result.toString());
+					
+					evaluationListView.setAdapter(listViewAdapter);
 					listViewAdapter.notifyDataSetChanged();
 //					Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
 //					intent.putExtra("commentListJsonstr", commentListJsonstr);
