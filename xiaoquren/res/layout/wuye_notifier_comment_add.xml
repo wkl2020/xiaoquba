@@ -57,6 +57,8 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
+		        android:gravity="top"
+		        android:minLines="3"
 		        android:hint="@string/comment_content_hint_label" >
 		
 		        <!-- <requestFocus /> -->

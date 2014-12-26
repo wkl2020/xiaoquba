@@ -4,10 +4,12 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.provider.Settings.Secure;
 import android.view.View;
 import android.widget.TextView;
-
 import com.jun.xiaoquren.dao.ConstantTableDao;
 import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.XiaoquListDao;
@@ -16,6 +18,7 @@ import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.http.XiaoquHttp;
+import com.jun.xiaoquren.mqtt.PushService;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.lidroid.xutils.exception.HttpException;
@@ -25,7 +28,9 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
 
 public class MainActivity extends MyAbstractActivity {
+	
 	public static final String ACTIVITY_NAME = "MainActivity";
+	private String mDeviceID;
 
     @Override
 	public String getActivityName() {
@@ -42,7 +47,33 @@ public class MainActivity extends MyAbstractActivity {
     	currentXiaoquName.setText(xiaoquName);
     	
     	currentXiaoquName.setOnClickListener(new XiaoquNameOnClickListener(this, MainActivity.this));
- 
+    	
+    	// 因为 mqtt 3.1 版本最后确定已经是一零年的事情了。当时 android 正好是 2.3 版本，当时编写的 wmqtt java 支持包是基于 android 2.3 的方法，到 android 4.0 时，可能有些网络协议的方法规定了一些其他必填的内容，导致了在 4.0 支持包下运行出错。所以必须修改最低 SDK 版本以支持旧的网络协议特性。
+    	if (android.os.Build.VERSION.SDK_INT > 9) {
+    		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+    		StrictMode.setThreadPolicy(policy);
+    	}
+    	
+    	mDeviceID = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
+    	LogUtils.i("PushService mDeviceID: " + mDeviceID);
+
+    	Editor editor = getSharedPreferences(PushService.TAG, MODE_PRIVATE).edit();
+    	editor.putString(PushService.PREF_DEVICE_ID, mDeviceID);
+    	editor.commit();
+    	startPushServiceListening();
+    }
+    
+    public void startPushServiceListening() {
+		PushService.actionStart(getApplicationContext());	
+    }
+    
+    public void stopPushServiceListening() {
+		PushService.actionStop(getApplicationContext());
+    }
+    
+    @Override
+    protected void onResume() {
+    	super.onResume();
     }
     
     public void refreshCurrentXiaoQuName() {
@@ -94,13 +125,13 @@ public class MainActivity extends MyAbstractActivity {
   		});
     }
     
-    public void phonenumbersonclick(View v) {  
+    public void phonenumbersonclick(View v) { 
         Intent intent = new Intent();
 		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
 		startActivity(intent);
     }
     
-    public void bbsonclick(View v) {  
+    public void bbsonclick(View v) { 
         Intent intent = new Intent();
 		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
 		startActivity(intent);
