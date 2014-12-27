@@ -9,7 +9,7 @@
         	android:id="@+id/header_layout"
   			android:layout_width="fill_parent"
   			android:layout_height="45dp"
-  			android:background="@drawable/title_bar"
+  			android:background="@drawable/main_bar_icon"
   			android:gravity="center_vertical"  > 
   			
   			<Button
@@ -44,6 +44,7 @@
 		        android:id="@+id/search"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
+		        android:background="@drawable/search_bar_edit_bg"
 		        android:hint="@string/city_search_hint_label" >
 		
 		        <!-- <requestFocus /> -->
@@ -54,6 +55,9 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="fill_parent"
 		        android:background="@drawable/mm_listitem"
+		        android:layout_marginTop="0dp"
+		        android:divider="#cccccc"
+    			android:dividerHeight="1dp"  
 		        android:layout_below="@+id/search" />
     
     </RelativeLayout>

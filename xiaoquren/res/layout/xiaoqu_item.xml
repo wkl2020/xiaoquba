@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="5dp"
+    android:padding="10dp"
     android:background="@drawable/mm_listitem"  
     android:gravity="center_vertical" >
 
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/xiaoquid"
-        android:textSize="15sp"
+        android:textSize="16sp"
         android:layout_toRightOf="@+id/namelabel"
         android:textColor="#000" />
 
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
-        android:textSize="12sp"
+        android:textSize="13sp"
         android:layout_toRightOf="@+id/xiaoquaddresslabel"
         android:textColor="#555" />
 

@@ -2,7 +2,8 @@
 <selector
   xmlns:android="http://schemas.android.com/apk/res/android">
    
-    <item android:state_pressed="true" android:drawable="@drawable/search_bar_edit_pressed" />
-    <item android:state_selected="true" android:drawable="@drawable/search_bar_edit_pressed" />
-    <item android:drawable="@drawable/search_bar_edit_normal" />
+    <item android:state_pressed="true" android:drawable="@drawable/search_bar_pressed_icon" />
+    <item android:state_selected="true" android:drawable="@drawable/search_bar_pressed_icon" />
+    <item android:state_focused="true" android:drawable="@drawable/search_bar_pressed_icon" />
+    <item android:drawable="@drawable/search_bar_normal_icon" />
 </selector>

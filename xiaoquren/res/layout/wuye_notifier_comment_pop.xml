@@ -6,7 +6,7 @@
   
     <Button  
         android:id="@+id/add_comment_pop"   
-        android:layout_height="wrap_content" 
+        android:layout_height="50dp" 
         android:layout_width="200dp" 
         android:layout_alignParentLeft="true"  
         android:layout_alignParentTop="true" 
@@ -18,7 +18,7 @@
     <Button  
         android:id="@+id/button3"  
         android:layout_width="200dp"  
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/add_comment_pop"
         android:background="@drawable/btn_menu_item"
         android:textColor="@drawable/btn_menu_color"

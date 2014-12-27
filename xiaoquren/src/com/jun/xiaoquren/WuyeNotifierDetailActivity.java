@@ -97,7 +97,7 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	 public void initmPopupWindowView() {  
 		  
 	        View customView = getLayoutInflater().inflate(R.layout.wuye_notifier_comment_pop, null, false);  
-	        popupwindow = new PopupWindow(customView, 200, 130);  
+	        popupwindow = new PopupWindow(customView, 200, 170);  
 	        popupwindow.setAnimationStyle(R.style.AnimationFade);
 	        
 	        popupwindow.setTouchable(true);
@@ -193,7 +193,7 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
             popupwindow.dismiss();  
             return;  
         } else {
-            popupwindow.showAsDropDown(v, 0, 5);  
+            popupwindow.showAsDropDown(v, 5, 5);  
         }  
     }
     

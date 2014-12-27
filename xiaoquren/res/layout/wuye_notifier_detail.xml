@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#eee"
+    android:background="#fff"
     android:orientation="vertical"  >
     
     <RelativeLayout 
         	android:id="@+id/header_layout"
   			android:layout_width="fill_parent"
   			android:layout_height="45dp"
-  			android:background="@drawable/title_bar"
+  			android:background="@drawable/main_bar_icon"
   			android:gravity="center_vertical"  > 
   			
   			<Button
@@ -38,7 +38,7 @@
         		android:layout_alignParentRight="true" 
         		android:layout_centerVertical="true"
         		android:layout_marginRight="5dp"
-        		android:src="@drawable/mm_title_btn_contact_normal"
+        		android:src="@drawable/mm_title_btn_menu_normal"
 				android:background="@drawable/title_btn_right"
 				android:onClick="onPopupButtonClicked" />
 							
@@ -133,7 +133,7 @@
          android:layout_width="fill_parent"
          android:layout_height="40dp"
          android:padding="10dp"
-         android:background="@drawable/search_bar_bg" 
+         android:background="@drawable/section_line" 
          android:layout_below="@+id/document_content_panel" >
 
          <TextView
@@ -141,6 +141,7 @@
 		       android:layout_width="wrap_content"
 		       android:layout_height="wrap_content"
 		       android:singleLine="true"
+		       android:textSize="16sp"
 		       android:textColor="#000"
 			   android:text="@string/newest_comments" />
          
@@ -159,6 +160,8 @@
 		        android:id="@+id/evaluation_listview"
 		        android:layout_width="fill_parent"
 		        android:layout_height="fill_parent"
+		        android:divider="#cccccc"
+    			android:dividerHeight="1dp"  
 		        android:background="@drawable/mm_listitem" />	     
         
      </RelativeLayout>   

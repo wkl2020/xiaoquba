@@ -10,4 +10,8 @@
     <color name="openpgp_black">#000000</color>
     <color name="openpgp_white">#ffffff</color>
     
+    <color name="openpgp_selected">#8038B8</color>
+    <color name="openpgp_read">#c0cdcd</color>
+    <color name="openpgp_unread">#00ffff</color>
+    
 </resources>

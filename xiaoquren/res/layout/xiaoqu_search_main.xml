@@ -9,7 +9,7 @@
         	android:id="@+id/header_layout"
   			android:layout_width="fill_parent"
   			android:layout_height="45dp"
-  			android:background="@drawable/title_bar"
+  			android:background="@drawable/main_bar_icon"
   			android:gravity="center_vertical"  > 
   			
   			<Button
@@ -39,7 +39,7 @@
     		android:layout_height="wrap_content"
     		android:gravity="center_vertical"
     		android:clickable="true"
-    		android:background="@drawable/search_bar_bg"
+    		android:background="@drawable/mm_listitem"
         	android:onClick="onSelectCityBtnClicked"
     		android:layout_below="@+id/header_layout" >
       		
@@ -47,7 +47,7 @@
                 android:id="@+id/city_name"
         		android:layout_width="wrap_content" 
         		android:layout_height="wrap_content"
-        		android:padding="8dp" 
+        		android:padding="10dp" 
         		android:text="请选择城市..."
         		android:textSize="17sp"		
 				android:textColor="#000" /> 
@@ -74,6 +74,7 @@
 		        android:id="@+id/search"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
+		        android:background="@drawable/search_bar_edit_bg"
 		        android:hint="@string/xiaoqu_search_hint_label">
 		
 		    </EditText>
@@ -83,6 +84,8 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="fill_parent"  
 		        android:background="@drawable/mm_listitem"
+		        android:divider="#cccccc"
+    			android:dividerHeight="1dp"  
 		        android:layout_below="@+id/search">
 
 		    </ListView>
