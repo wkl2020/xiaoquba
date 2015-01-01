@@ -18,12 +18,13 @@ import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.WuyeNotifierListViewAdapter;
 
-public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnClickListener{
-	public static final String ACTIVITY_NAME = "WuyeNotifierMainActivity";
+public class WuyeNotifierMainActivity extends MyAbstractActivity implements OnClickListener {
+	
+	public static final String CLASSNAME = "WuyeNotifierMainActivity";
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	} 
 
 	// Declare Variables

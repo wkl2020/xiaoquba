@@ -8,7 +8,9 @@ import android.view.VelocityTracker;
 import android.view.View;  
 import android.widget.Scroller; 
 
-public class ScrollLayout extends ViewGroup { 
+public class ScrollLayout extends ViewGroup {
+	
+	public static final String CLASSNAME = "ScrollLayout";
   
     private int defaultScreen = 0;  
     private int currentScreen;  

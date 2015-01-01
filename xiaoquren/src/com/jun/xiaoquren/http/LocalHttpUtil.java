@@ -4,6 +4,8 @@ import com.lidroid.xutils.HttpUtils;
 
 public class LocalHttpUtil {
 	
+	public static final String CLASSNAME = "LocalHttpUtil";
+	
 	public static final String ServerURL = "http://192.168.1.118:8080";
 	
 	// Document

@@ -11,6 +11,7 @@ import android.provider.Settings.Secure;
 import android.view.View;
 import android.widget.TextView;
 import com.jun.xiaoquren.dao.ConstantTableDao;
+import com.jun.xiaoquren.dao.DBUtil;
 import com.jun.xiaoquren.dao.DocumentDao;
 import com.jun.xiaoquren.dao.XiaoquListDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
@@ -29,12 +30,12 @@ import com.lidroid.xutils.util.LogUtils;
 
 public class MainActivity extends MyAbstractActivity {
 	
-	public static final String ACTIVITY_NAME = "MainActivity";
+	public static final String CLASSNAME = "MainActivity";
 	private String mDeviceID;
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	}
 	 
     @Override
@@ -61,6 +62,12 @@ public class MainActivity extends MyAbstractActivity {
     	editor.putString(PushService.PREF_DEVICE_ID, mDeviceID);
     	editor.commit();
     	startPushServiceListening();
+    }
+    
+    @Override
+    public void finish() {
+    	DBUtil.closeDBConnection(MainActivity.this);
+        super.finish();
     }
     
     public void startPushServiceListening() {

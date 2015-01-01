@@ -16,6 +16,8 @@ import com.jun.xiaoquren.view.model.CommentViewHolder;
 
 public class CommentListViewAdapter extends BaseAdapter {
 
+	public static final String CLASSNAME = "CommentListViewAdapter";
+	
 	// Declare Variables
 	Activity mContext;
 	LayoutInflater inflater;

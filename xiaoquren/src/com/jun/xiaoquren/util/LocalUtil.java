@@ -14,6 +14,8 @@ import android.content.SharedPreferences.Editor;
 
 public class LocalUtil {
 	
+	public static final String CLASSNAME = "LocalUtil";
+	
 	public static Map<String, Activity> activeActivities = new HashMap<String, Activity>();
 	
 	private final static String USERNAME = "username";
@@ -24,6 +26,12 @@ public class LocalUtil {
 	private final static String CURRENT_CITY_ID = "currentcityid";
 	
 	public static void createNewActivity(String activityName, Activity activity) {
+		Activity previousActivity = activeActivities.get(activityName);
+		if (previousActivity != null) {
+			previousActivity.finish();
+			previousActivity = null;
+		}
+		
 		activeActivities.put(activityName, activity);
 	}
 	
@@ -37,6 +45,10 @@ public class LocalUtil {
 	
 	public static void finishActiveActivity(String activityName) {
 		activeActivities.remove(activityName);
+	}
+	
+	public static Map<String, Activity> getAllActivities() {
+		return activeActivities;
 	}
 	
 	

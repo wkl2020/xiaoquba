@@ -11,6 +11,8 @@ import com.jun.xiaoquren.dao.model.ConstantTable;
 
 public class ConstantTableDao {
 	
+	public static final String CLASSNAME = "ConstantTableDao";
+	
 	public static final String ConstantsUsername = "constatns_username"; 
 	public static final String ConstantsPassword = "constatns_password";
 	public static final String ConstantsNickname = "constatns_nickname";

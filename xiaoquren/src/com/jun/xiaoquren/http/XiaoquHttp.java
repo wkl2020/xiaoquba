@@ -8,6 +8,8 @@ import com.lidroid.xutils.util.LogUtils;
 
 public class XiaoquHttp {
 	
+	public static final String CLASSNAME = "XiaoquHttp";
+	
 	public static final String GetAllXiaoquListUrl = "http://192.168.1.118:8080/xiaoqubaserver/main/xiaoqu/index"; 
 
 	public XiaoquHttp() {

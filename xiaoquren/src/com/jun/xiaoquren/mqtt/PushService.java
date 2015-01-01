@@ -7,6 +7,7 @@ import com.ibm.mqtt.MqttPersistence;
 import com.ibm.mqtt.MqttPersistenceException;
 import com.ibm.mqtt.MqttSimpleCallback;
 import com.jun.xiaoquren.MainActivity;
+import com.jun.xiaoquren.util.LocalLog;
 import com.lidroid.xutils.util.LogUtils;
 
 import android.app.AlarmManager;
@@ -24,6 +25,8 @@ import android.net.NetworkInfo;
 import android.os.IBinder;
 
 public class PushService extends Service {
+	public static final String CLASSNAME = "PushService";
+	
 	public static final String		TAG = "QuPushService";
 
 	private static final String		MQTT_HOST = "192.168.1.118";
@@ -36,13 +39,13 @@ public class PushService extends Service {
 	private static int				MQTT_QUALITY_OF_SERVICE   = 0;
 	private static boolean			MQTT_RETAINED_PUBLISH     = false;
 
-	public static String			NOTIF_TITLE = "Qu"; 
+	public static String			NOTIF_TITLE = "小区人"; 
 	public static String			MQTT_CLIENT_ID = "Qu";
 
-	private static final String		ACTION_START = MQTT_CLIENT_ID + ".START";
-	private static final String		ACTION_STOP = MQTT_CLIENT_ID + ".STOP";
-	private static final String		ACTION_KEEPALIVE = MQTT_CLIENT_ID + ".KEEP_ALIVE";
-	private static final String		ACTION_RECONNECT = MQTT_CLIENT_ID + ".RECONNECT";
+	private static final String		ACTION_START = "PushService.START";
+	private static final String		ACTION_STOP = "PushService.STOP";
+	private static final String		ACTION_KEEPALIVE = "PushService.KEEP_ALIVE";
+	private static final String		ACTION_RECONNECT = "PushService.RECONNECT";
 	
 	private ConnectivityManager		mConnMan;
 	private NotificationManager		mNotifMan;
@@ -63,18 +66,24 @@ public class PushService extends Service {
 	private long					mStartTime;
 	
 	public static void actionStart(Context ctx) {
+		LocalLog.info(CLASSNAME, "actionStart", "Start");
+		
 		Intent i = new Intent(ctx, PushService.class);
 		i.setAction(ACTION_START);
 		ctx.startService(i);
 	}
 
 	public static void actionStop(Context ctx) {
+		LocalLog.info(CLASSNAME, "actionStop", "Start");
+		
 		Intent i = new Intent(ctx, PushService.class);
 		i.setAction(ACTION_STOP);
 		ctx.startService(i);
 	}
 	
 	public static void actionPing(Context ctx) {
+		LocalLog.info(CLASSNAME, "actionPing", "Start");
+		
 		Intent i = new Intent(ctx, PushService.class);
 		i.setAction(ACTION_KEEPALIVE);
 		ctx.startService(i);
@@ -84,6 +93,7 @@ public class PushService extends Service {
 	public void onCreate() {
 		super.onCreate();
 		
+		LocalLog.info(CLASSNAME, "onCreate", "Start");
 		LogUtils.i("PushService: on creating service...");
 		mPrefs = getSharedPreferences(TAG, MODE_PRIVATE);
 		mConnMan = (ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
@@ -93,6 +103,7 @@ public class PushService extends Service {
 	}
 
 	private void handleCrashedService() {
+		LocalLog.info(CLASSNAME, "handleCrashedService", "Start wasStarted:" + wasStarted());
 		if (wasStarted() == true) {
 			stopKeepAlives(); 
 			start();
@@ -101,6 +112,7 @@ public class PushService extends Service {
 	
 	@Override
 	public void onDestroy() {
+		LocalLog.info(CLASSNAME, "onDestroy", "Start");
 		LogUtils.i("PushService: Service destroyed (started=" + mStarted + ")");
 
 		if (mStarted == true) {
@@ -111,6 +123,7 @@ public class PushService extends Service {
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
+		LocalLog.info(CLASSNAME, "onStart", "Start Action: " + intent.getAction());
 		LogUtils.i("PushService: Service started with intent=" + intent);
 
 		if (intent.getAction().equals(ACTION_STOP) == true) {
@@ -142,6 +155,7 @@ public class PushService extends Service {
 	}
 
 	private synchronized void start() {
+		LocalLog.info(CLASSNAME, "start", "Start");
 		LogUtils.i("PushService: Starting service...");
 		
 		if (mStarted == true) {
@@ -154,6 +168,8 @@ public class PushService extends Service {
 	}
 
 	private synchronized void stop() {
+		LocalLog.info(CLASSNAME, "stop", "Start");
+		
 		if (mStarted == false) {
 			LogUtils.i("PushService: Attempt to stop connection not active.");
 			return;
@@ -170,9 +186,12 @@ public class PushService extends Service {
 	}
 	
 	// 
-	private synchronized void connect() {		
+	private synchronized void connect() {
+		LocalLog.info(CLASSNAME, "connect", "Start");
 		LogUtils.i("PushService: Connecting...");
+		
 		String deviceID = mPrefs.getString(PREF_DEVICE_ID, null);
+//		String deviceID = "";
 		if (deviceID == null) {
 			LogUtils.i("PushService: Device ID not found.");
 		} else {
@@ -189,6 +208,8 @@ public class PushService extends Service {
 	}
 
 	private synchronized void keepAlive() {
+		LocalLog.info(CLASSNAME, "keepAlive", "Start");
+		
 		try {
 			if (mStarted == true && mConnection != null) {
 				mConnection.sendKeepAlive();
@@ -203,6 +224,8 @@ public class PushService extends Service {
 	}
 
 	private void startKeepAlives() {
+		LocalLog.info(CLASSNAME, "startKeepAlives", "Start");
+		
 		Intent i = new Intent();
 		i.setClass(this, PushService.class);
 		i.setAction(ACTION_KEEPALIVE);
@@ -214,6 +237,8 @@ public class PushService extends Service {
 	}
 
 	private void stopKeepAlives() {
+		LocalLog.info(CLASSNAME, "stopKeepAlives", "Start");
+		
 		Intent i = new Intent();
 		i.setClass(this, PushService.class);
 		i.setAction(ACTION_KEEPALIVE);
@@ -223,6 +248,8 @@ public class PushService extends Service {
 	}
 
 	public void scheduleReconnect(long startTime) {
+		LocalLog.info(CLASSNAME, "scheduleReconnect", "Start");
+		
 		long interval = mPrefs.getLong(PREF_RETRY, INITIAL_RETRY_INTERVAL);
 		long now = System.currentTimeMillis();
 		long elapsed = now - startTime;
@@ -233,6 +260,7 @@ public class PushService extends Service {
 			interval = INITIAL_RETRY_INTERVAL;
 		}
 		
+		LocalLog.info(CLASSNAME, "scheduleReconnect", "Rescheduling connection in " + interval + "ms.");
 		LogUtils.i("PushService: Rescheduling connection in " + interval + "ms.");
 
 		mPrefs.edit().putLong(PREF_RETRY, interval).commit();
@@ -245,6 +273,8 @@ public class PushService extends Service {
 	}
 	
 	public void cancelReconnect() {
+		LocalLog.info(CLASSNAME, "cancelReconnect", "Start");
+		
 		Intent i = new Intent();
 		i.setClass(this, PushService.class);
 		i.setAction(ACTION_RECONNECT);
@@ -253,7 +283,9 @@ public class PushService extends Service {
 		alarmMgr.cancel(pi);
 	}
 	
-	private synchronized void reconnectIfNecessary() {		
+	private synchronized void reconnectIfNecessary() {
+		LocalLog.info(CLASSNAME, "reconnectIfNecessary", "Start mConnection:" + mConnection);
+		
 		if (mStarted == true && mConnection == null) {
 			LogUtils.i("PushService: Reconnecting...");
 			connect();
@@ -265,7 +297,8 @@ public class PushService extends Service {
 		public void onReceive(Context context, Intent intent) {
 			NetworkInfo info = (NetworkInfo)intent.getParcelableExtra (ConnectivityManager.EXTRA_NETWORK_INFO);
 			boolean hasConnectivity = (info != null && info.isConnected()) ? true : false;
-
+			
+			LocalLog.info(CLASSNAME, "BroadcastReceiver:onReceive", "Connectivity changed: connected=" + hasConnectivity);
 			LogUtils.i("PushService: Connectivity changed: connected=" + hasConnectivity);
 
 			if (hasConnectivity) {
@@ -279,6 +312,8 @@ public class PushService extends Service {
 	};
 	
 	private void showNotification(String text) {
+		LocalLog.info(CLASSNAME, "showNotification", "Start");
+		
 		Notification n = new Notification();
 				
 		n.flags |= Notification.FLAG_SHOW_LIGHTS;
@@ -298,6 +333,8 @@ public class PushService extends Service {
 	}
 	
 	private boolean isNetworkAvailable() {
+		LocalLog.info(CLASSNAME, "isNetworkAvailable", "Start");
+		
 		NetworkInfo info = mConnMan.getActiveNetworkInfo();
 		if (info == null) {
 			return false;
@@ -309,14 +346,18 @@ public class PushService extends Service {
 		IMqttClient mqttClient = null;
 		
 		public MQTTConnection(String brokerHostName, String initTopic) throws MqttException {
+			LocalLog.info(CLASSNAME, "MQTTConnection:MQTTConnection", "Start");
+			
 	    	String mqttConnSpec = "tcp://" + brokerHostName + "@" + MQTT_BROKER_PORT_NUM;
         	mqttClient = MqttClient.createMqttClient(mqttConnSpec, MQTT_PERSISTENCE);
         	String clientID = MQTT_CLIENT_ID + "/" + mPrefs.getString(PREF_DEVICE_ID, "");
+//        	String clientID = "OnlineNoticeTopic";
         	mqttClient.connect(clientID, MQTT_CLEAN_START, MQTT_KEEP_ALIVE);
 
 			mqttClient.registerSimpleHandler(this);
 			
-			initTopic = MQTT_CLIENT_ID + "/" + initTopic;
+//			initTopic = MQTT_CLIENT_ID + "/" + initTopic;
+			initTopic = "OnlineNoticeTopic/WYN";
 			subscribeToTopic(initTopic);
 	
 			LogUtils.i("PushService: Connection established to " + brokerHostName + " on topic " + initTopic);
@@ -326,6 +367,8 @@ public class PushService extends Service {
 		}
 		
 		public void disconnect() {
+			LocalLog.info(CLASSNAME, "MQTTConnection:disconnect", "Start");
+			
 			try {			
 				stopKeepAlives();
 				mqttClient.disconnect();
@@ -334,7 +377,8 @@ public class PushService extends Service {
 			}
 		}
 
-		private void subscribeToTopic(String topicName) throws MqttException {
+		private void subscribeToTopic(String topicName) throws MqttException {			
+			LocalLog.info(CLASSNAME, "MQTTConnection:subscribeToTopic", "Start");
 			
 			if ((mqttClient == null) || (mqttClient.isConnected() == false)) {
 				LogUtils.i("PushService: Connection error" + "No connection");	
@@ -344,7 +388,9 @@ public class PushService extends Service {
 			}
 		}	
 
-		private void publishToTopic(String topicName, String message) throws MqttException {		
+		private void publishToTopic(String topicName, String message) throws MqttException {	
+			LocalLog.info(CLASSNAME, "MQTTConnection:publishToTopic", "Start");
+			
 			if ((mqttClient == null) || (mqttClient.isConnected() == false)) {
 				LogUtils.i("PushService: No connection to public to");		
 			} else {
@@ -356,7 +402,9 @@ public class PushService extends Service {
 		}		
 
 		public void connectionLost() throws Exception {
+			LocalLog.info(CLASSNAME, "MQTTConnection:connectionLost", "Start");
 			LogUtils.i("PushService: Loss of connection" + "connection downed");
+			
 			stopKeepAlives();
 			mConnection = null;
 			if (isNetworkAvailable() == true) {
@@ -367,12 +415,17 @@ public class PushService extends Service {
 		public void publishArrived(String topicName, byte[] payload, int qos, boolean retained) {
 			String s = new String(payload);
 			showNotification(s);	
+			
+			LocalLog.info(CLASSNAME, "MQTTConnection:publishArrived", "Got message: " + s);
 			LogUtils.i("PushService: Got message: " + s);
 		}   
 		
 		public void sendKeepAlive() throws MqttException {
+			LocalLog.info(CLASSNAME, "MQTTConnection:sendKeepAlive", "Start");
 			LogUtils.i("PushService: Sending keep alive");
+			
 			publishToTopic(MQTT_CLIENT_ID + "/keepalive", mPrefs.getString(PREF_DEVICE_ID, ""));
+//			publishToTopic("OnlineNoticeTopic/keepalive", "");
 		}		
 	}
 }

@@ -22,11 +22,12 @@ import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.XiaoquListViewAdapter;
 
 public class XiaoquSearchActivity extends MyAbstractActivity implements OnClickListener {
-	public static final String ACTIVITY_NAME = "XiaoquSearchActivity";
+	
+	public static final String CLASSNAME = "XiaoquSearchActivity";
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	} 
 
 	// Declare Variables

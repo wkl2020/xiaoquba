@@ -28,11 +28,12 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
 
 public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implements OnClickListener {
-	public static final String ACTIVITY_NAME = "WuyeNotifierCommentAddActivity";
+	
+	public static final String CLASSNAME = "WuyeNotifierCommentAddActivity";
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	}
     
 	EditText commentContent;
@@ -146,13 +147,13 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 	                    public void onSuccess(ResponseInfo<String> responseInfo) {
 	                    	LogUtils.i("onSuccess upload response:" + responseInfo.result);
 	                    	if (responseInfo.result.contains("success")) {
-	                    		if (LocalUtil.isActiveActivityExists(WuyeNotifierDetailActivity.ACTIVITY_NAME)) {
-                    				WuyeNotifierDetailActivity detailPage = (WuyeNotifierDetailActivity)LocalUtil.getActiveActivity(WuyeNotifierDetailActivity.ACTIVITY_NAME);
+	                    		if (LocalUtil.isActiveActivityExists(WuyeNotifierDetailActivity.CLASSNAME)) {
+                    				WuyeNotifierDetailActivity detailPage = (WuyeNotifierDetailActivity)LocalUtil.getActiveActivity(WuyeNotifierDetailActivity.CLASSNAME);
                     				detailPage.refreshCommentList();
                     			}
 	                    		
-	                    		if (LocalUtil.isActiveActivityExists(WuyeNotifierCommentAddActivity.ACTIVITY_NAME)) {
-	                    			WuyeNotifierCommentAddActivity currentPage = (WuyeNotifierCommentAddActivity)LocalUtil.getActiveActivity(WuyeNotifierCommentAddActivity.ACTIVITY_NAME);
+	                    		if (LocalUtil.isActiveActivityExists(WuyeNotifierCommentAddActivity.CLASSNAME)) {
+	                    			WuyeNotifierCommentAddActivity currentPage = (WuyeNotifierCommentAddActivity)LocalUtil.getActiveActivity(WuyeNotifierCommentAddActivity.CLASSNAME);
 	                    			currentPage.finish();
 	                    		}
 	                    	}

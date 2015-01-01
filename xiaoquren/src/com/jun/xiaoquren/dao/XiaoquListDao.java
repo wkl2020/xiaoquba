@@ -10,6 +10,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class XiaoquListDao {
+	
+	public static final String CLASSNAME = "XiaoquListDao";
 
 	public XiaoquListDao() {
 		// TODO Auto-generated constructor stub

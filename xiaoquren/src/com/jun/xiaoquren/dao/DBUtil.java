@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
+import com.jun.xiaoquren.util.LocalLog;
 
 /**
  * Add the transaction for each DB operate
@@ -15,6 +16,8 @@ import com.jun.xiaoquren.dao.model.LocalXiaoqu;
  *
  */
 public class DBUtil {
+	
+	public static final String CLASSNAME = "DBUtil";
 	
 	public static String ConstantTable = "constant_table";
 	public static String XiaoquListTable = "xiaoqu_list";
@@ -35,9 +38,17 @@ public class DBUtil {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static void initDBConnection(Context context) {
+	public static void closeDBConnection(Context context) {
+		getDatabase().close();
+	}
+	
+	public static void initDBConnection(Context context) {		
+		LocalLog.info(CLASSNAME, "initDBConnection", "Start");
+		
 		database = new DatabaseHelper(context);//这段代码放到Activity类中才用this
     	database.getReadableDatabase();
+    	
+    	LocalLog.info(CLASSNAME, "initDBConnection", "Init finished and add table datas");
     	
     	// ConstantTable
     	List<ConstantTable> constants = ConstantTableDao.findAll();
@@ -179,6 +190,8 @@ public class DBUtil {
     	for (Document doc : documents) {
     		System.out.println("query---->Document---->" + doc.getId() + " : " + doc.getXiaoquid() + " : " + doc.getType() + " : " + doc.getTitle() + " : " + doc.getContent() + " : " + doc.getOwner() + " : " + doc.getCreatetime() + " : " + doc.getPublishtime() + " : " + doc.getExpiretime());
     	}
+    	
+    	LocalLog.info(CLASSNAME, "initDBConnection", "Finished add table datas");
 	}
 	
 	public static SQLiteDatabase getReadableDatabase() {

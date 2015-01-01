@@ -17,6 +17,8 @@ import com.lidroid.xutils.util.LogUtils;
 
 public class JsonTools {
 	
+	public static final String CLASSNAME = "JsonTools";
+	
 	// 1. Xiaoqu
 	public static LocalXiaoqu getLocalXiaoquFromJsonStr(String jsonStr) {
 		LocalXiaoqu xiaoqu = new LocalXiaoqu();

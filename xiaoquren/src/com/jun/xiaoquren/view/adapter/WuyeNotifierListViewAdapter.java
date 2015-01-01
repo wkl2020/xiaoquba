@@ -25,6 +25,8 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
 
 public class WuyeNotifierListViewAdapter extends BaseAdapter {
+	
+	public static final String CLASSNAME = "WuyeNotifierListViewAdapter";
 
 	// Declare Variables
 	Activity mContext;

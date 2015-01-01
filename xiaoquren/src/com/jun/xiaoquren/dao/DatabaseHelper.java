@@ -1,5 +1,7 @@
 package com.jun.xiaoquren.dao;
 
+import com.jun.xiaoquren.util.LocalLog;
+
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +15,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 	
+	public static final String CLASSNAME = "DatabaseHelper";
 	
 	private static final String DB_NAME = "mydata.db"; //数据库名称
 	private static final int version = 1; //数据库版本
@@ -36,9 +39,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		super(context, name, factory, version, errorHandler);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public void close() {
+		super.close();
+	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+		
+		LocalLog.info(CLASSNAME, "onCreate", "Start Create Database and tables");
 		
 		// 1. Create table wkltable
 		String sql = "create table wkltable(id int, username varchar(20), password varchar(60));";         
@@ -59,6 +69,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //5. Create table document_comment  
         sql = "create table document_comment (id int, document int, author varchar(50), nickname varchar(50), comment varchar(4000), createtime varchar(50));";
         db.execSQL(sql);
+        
+        LocalLog.info(CLASSNAME, "onCreate", "End Create Database and tables");
 	}
 
 	@Override

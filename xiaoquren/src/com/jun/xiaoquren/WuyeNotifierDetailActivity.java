@@ -23,12 +23,13 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
 
-public class WuyeNotifierDetailActivity extends MyAbstractActivity implements OnClickListener{
-	public static final String ACTIVITY_NAME = "WuyeNotifierDetailActivity";
+public class WuyeNotifierDetailActivity extends MyAbstractActivity implements OnClickListener {
+	
+	public static final String CLASSNAME = "WuyeNotifierDetailActivity";
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	} 
     
 	// Declare Variables

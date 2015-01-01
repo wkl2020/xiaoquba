@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.jun.xiaoquren.dao.model.Document;
 
 public class DocumentDao {
+	
+	public static final String CLASSNAME = "DocumentDao";
 
 	public DocumentDao() {
 		// TODO Auto-generated constructor stub

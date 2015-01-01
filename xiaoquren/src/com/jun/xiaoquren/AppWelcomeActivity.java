@@ -14,6 +14,13 @@ import android.widget.LinearLayout;
 
 public class AppWelcomeActivity extends MyAbstractActivity implements OnViewChangeListener, OnClickListener {
 	
+	public static final String CLASSNAME = "AppWelcomeActivity";
+
+    @Override
+	public String getActivityName() {
+		return CLASSNAME;
+	} 
+	
 	private LinearLayout pointLayout;  
     private ScrollLayout scrollLayout;  
     private Button mBtnStart;  
@@ -56,9 +63,4 @@ public class AppWelcomeActivity extends MyAbstractActivity implements OnViewChan
     	startActivity(new Intent(this, CitySearchActivity.class));
     	this.finish();
     }
-
-	@Override
-	public String getActivityName() {
-		return "FirstWelcomeActivity";
-	}  
 }

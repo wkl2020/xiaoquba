@@ -20,6 +20,8 @@ import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.view.model.XiaoquViewHolder;
 
 public class XiaoquListViewAdapter extends BaseAdapter {
+	
+	public static final String CLASSNAME = "XiaoquListViewAdapter";
 
 	// Declare Variables
 	Activity mContext;
@@ -79,12 +81,12 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 				String selName = xiaoquList.get(position).getName();				
 				LocalUtil.saveCurrentXiaoQu(mContext, selName, selId);
 				
-				if (LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME) == null) {
+				if (LocalUtil.getActiveActivity(MainActivity.CLASSNAME) == null) {
 					Intent intent = new Intent();
 					intent.setClass(mContext, MainActivity.class);
 					mContext.startActivity(intent);
 				} else {
-					MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.ACTIVITY_NAME);
+					MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.CLASSNAME);
 					mainActivity.refreshCurrentXiaoQuName();
 				}
 				

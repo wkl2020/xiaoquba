@@ -7,11 +7,12 @@ import android.view.View.OnClickListener;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 
 public class PersonalSettingActivity extends MyAbstractActivity implements OnClickListener{
-	public static final String ACTIVITY_NAME = "PersonalSettingActivity";
+	
+	public static final String CLASSNAME = "PersonalSettingActivity";
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	} 
 	
     @Override

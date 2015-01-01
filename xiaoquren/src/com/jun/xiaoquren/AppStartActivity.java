@@ -15,6 +15,13 @@ import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.lidroid.xutils.util.LogUtils;
 
 public class AppStartActivity extends MyAbstractActivity {
+	
+	public static final String CLASSNAME = "AppStartActivity";
+
+    @Override
+	public String getActivityName() {
+		return CLASSNAME;
+	} 
 
 	@Override
 	public void onCreate(Bundle arg0) {
@@ -67,10 +74,5 @@ public class AppStartActivity extends MyAbstractActivity {
         overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
         finish();
     }
-
-	@Override
-	public String getActivityName() {
-		return "AppStart";
-	}
 
 }

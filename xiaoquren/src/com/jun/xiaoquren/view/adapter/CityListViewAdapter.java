@@ -28,6 +28,8 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
 
 public class CityListViewAdapter extends BaseAdapter {
+	
+	public static final String CLASSNAME = "CityListViewAdapter";
 
 	// Declare Variables
 	Activity mContext;
@@ -108,8 +110,8 @@ public class CityListViewAdapter extends BaseAdapter {
 						LogUtils.i("Success to connect xiaoqu index: " + response.result.toString());
 						String xiaoquListJsonstr = response.result.toString(); 
 						
-						if (LocalUtil.getActiveActivity(XiaoquSearchActivity.ACTIVITY_NAME) != null) {
-							XiaoquSearchActivity xiaoquActivity = (XiaoquSearchActivity)LocalUtil.getActiveActivity(XiaoquSearchActivity.ACTIVITY_NAME);
+						if (LocalUtil.getActiveActivity(XiaoquSearchActivity.CLASSNAME) != null) {
+							XiaoquSearchActivity xiaoquActivity = (XiaoquSearchActivity)LocalUtil.getActiveActivity(XiaoquSearchActivity.CLASSNAME);
 							xiaoquActivity.finish();
 						}
 							

@@ -20,11 +20,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class CitySearchActivity extends MyAbstractActivity implements OnClickListener {
-	public static final String ACTIVITY_NAME = "CitySearchActivity";
+	
+	public static final String CLASSNAME = "CitySearchActivity";
 
     @Override
 	public String getActivityName() {
-		return ACTIVITY_NAME;
+		return CLASSNAME;
 	} 
 
 	// Declare Variables
