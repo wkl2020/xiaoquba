@@ -1,5 +1,8 @@
 package com.jun.xiaoquren.http;
 
+import java.util.List;
+
+import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpConnectionParams;
@@ -30,7 +33,9 @@ public class LocalHttpUtil {
 	
 	// UserEntity
 	public static final String AddUserEntityUrl = ServerURL + "/xiaoqubaserver/main/user";
-	public static final String LoginUserUrl = ServerURL + "/xiaoqubaserver/main/j_spring_security_check";
+//	public static final String LoginUserUrl = ServerURL + "/xiaoqubaserver/main/j_spring_security_check";
+	public static final String GetUserByUsername = ServerURL + "/xiaoqubaserver/main/user";
+	
 
 	public LocalHttpUtil() {
 		// TODO Auto-generated constructor stub
@@ -48,7 +53,12 @@ public class LocalHttpUtil {
 	public static final int Default_Http_Conn_Timeout = 20 * 1000;
 	public static final int Default_Http_ReadWrite_Timeout = 20 * 1000;
 	
+	public static String indexPageTag = "Index Page";
+	public static String deniedPageTag = "Access denied!";
+	
 	public static String LoginUrl = "http://192.168.1.118:8080/xiaoqubaserver/main/j_spring_security_check";
+	
+	
 	
 	public static DefaultHttpClient getHttpClient() { 
 		DefaultHttpClient client = new DefaultHttpClient(); //client.getCookieStore().getCookies()  session_id  
@@ -62,4 +72,17 @@ public class LocalHttpUtil {
         
         return client;  
     }  
+	
+	public static String getJSessionId(List<Cookie> cookies) {
+		String jSessionId = "";
+		for(Cookie cookie : cookies) {
+            if("JSESSIONID".equals(cookie.getName())){  
+            	jSessionId = cookie.getValue();
+                break;  
+            }  
+        }
+		return jSessionId;
+	}
+	
+	
 }

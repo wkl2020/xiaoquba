@@ -18,6 +18,9 @@ public class LocalUtil {
 	
 	public static Map<String, Activity> activeActivities = new HashMap<String, Activity>();
 	
+	private final static String USERROLE = "userrole";
+	private final static String NICKNAME = "nickname";
+	private final static String JSESSIONID = "jsessionid";
 	private final static String USERNAME = "username";
 	private final static String PASSWORD = "password";
 	private final static String CURRENT_XIAOQU_NAME = "currentxiaoquname";
@@ -63,14 +66,17 @@ public class LocalUtil {
      * @param username
      * @param password
      */
-    public static void saveLoginInfo(Context context,String username,String password){
-        //获取SharedPreferences对象
+    public static void saveLoginInfo(Context context,String username,String password, 
+    		String jsessionId, String nickname, String userrole){
+    	
         SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
-        //获取Editor对象
         Editor editor=sharedPre.edit();
-        //设置参数
+        
         editor.putString(USERNAME, username);
         editor.putString(PASSWORD, password);
+        editor.putString(NICKNAME, nickname);
+        editor.putString(USERROLE, userrole);
+        editor.putString(JSESSIONID, jsessionId);
         
         // Save to database
         ConstantTable usrCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsUsername);
@@ -150,6 +156,21 @@ public class LocalUtil {
     public static String getPassword(Context context) {
     	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
     	return sharedPre.getString(PASSWORD, "");
+    }
+    
+    public static String getNickname(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+    	return sharedPre.getString(NICKNAME, "");
+    }
+    
+    public static String getJSessionId(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+    	return sharedPre.getString(JSESSIONID, "");
+    }
+    
+    public static String getUserrole(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+    	return sharedPre.getString(USERROLE, "");
     }
     
     

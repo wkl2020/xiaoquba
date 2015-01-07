@@ -9,7 +9,6 @@ import java.util.Locale;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
@@ -27,7 +26,13 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 
 import com.jun.xiaoquren.http.LocalHttpUtil;
+import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.util.LogUtils;
 
 public class AppLoginActivity extends MyAbstractActivity implements OnClickListener{
 	
@@ -87,12 +92,7 @@ public class AppLoginActivity extends MyAbstractActivity implements OnClickListe
 		}
     	
     	if (isValid) {
-    		
-    		
-    		DefaultHttpClient client = LocalHttpUtil.getHttpClient();
-//    		DefaultHttpClient client = new DefaultHttpClient();//client.getCookieStore().getCookies()  session_id  
-//            HttpParams httpParams = client.getParams();  
-//            httpParams.setParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, false); 
+    		DefaultHttpClient client = LocalHttpUtil.getHttpClient(); 
               
             List<NameValuePair> params = new ArrayList<NameValuePair>(1);  
             params.add(new BasicNameValuePair("j_username", username));  
@@ -104,10 +104,8 @@ public class AppLoginActivity extends MyAbstractActivity implements OnClickListe
             	System.out.println(e.getMessage());
                 e.printStackTrace();
             }  
-            
-              
-//            HttpHost request = new HttpHost(login_url);  
-            HttpPost request = new HttpPost("http://192.168.1.118:8080/xiaoqubaserver/main/j_spring_security_check");
+
+            HttpPost request = new HttpPost(LocalHttpUtil.LoginUrl);
             request.setEntity(formEntity);  
             
             HttpResponse response = null;  
@@ -125,154 +123,84 @@ public class AppLoginActivity extends MyAbstractActivity implements OnClickListe
                 return;  
             }  
             
-            System.out.println("ResponseStatusCode: " + response.getStatusLine().getStatusCode()); 
-                    	
-	    	for(Header h : response.getAllHeaders()) {
+            System.out.println("ResponseStatusCode: " + response.getStatusLine().getStatusCode());
+            for(Header h : response.getAllHeaders()) {
 				System.out.println("ResponseHeader: " + h.getName() + " : " + h.getValue());
 			}
-	    	
-	    	for(Cookie cookie : client.getCookieStore().getCookies()) {  
+            String jSessionId = LocalHttpUtil.getJSessionId(client.getCookieStore().getCookies());
+            for(Cookie cookie : client.getCookieStore().getCookies()) {  
             	System.out.println("CookieStore: " + cookie.getName() + " : " + cookie.getValue());
-            	
-                if("JSESSIONID".equals(cookie.getName())){  
-                    String JSESSIONID = cookie.getValue();  
-                    System.out.println("JSESSIONID: " + JSESSIONID);
-                    break;  
-                }  
             }
-              
-            if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-            	System.out.println(response.getStatusLine().getStatusCode()); 
-            	System.out.println("error response" + response.getStatusLine().toString());  
-                return;  
-            }   
-              
+            
             String result = null;  
             try {  
-                result = EntityUtils.toString(response.getEntity(),"UTF-8");  
+            	result = EntityUtils.toString(response.getEntity(),"UTF-8");  
             } catch (Exception e) {  
             	System.out.println(e.getMessage());
-                e.printStackTrace();
-                return;  
-            }   
-            
+            	e.printStackTrace();
+            	return;  
+            } 
             System.out.println("result: " + result.toString());
-    		
-    		
-//===========================DefaultHttpClient=========================================    		
-//    		try {
-//        		DefaultHttpClient client = LocalHttpUtil.getHttpClient();
-//        		HttpPost httpPost = new HttpPost(LocalHttpUtil.LoginUrl);
-//        		
-//    			String postDataJsonStr = "{\"j_username\":\"xjj\",\"j_password\":\"xjj\"}";
-//    			StringEntity inputEntity = new StringEntity(postDataJsonStr);
-//    			inputEntity.setContentType("application/x-www-form-urlencoded");  //application/x-www-form-urlencoded
-////    			inputEntity.setContentType("application/json");  //application/x-www-form-urlencoded
-//    			httpPost.setEntity(inputEntity);
-//    			
-////    			HttpParams param = new BasicHttpParams();   
-//    			
-//    			System.out.println("inputEntity: " + postDataJsonStr);
-//    			
-//    			HttpResponse response = client.execute(httpPost);
-//    			
-//    			CookieStore cookieStore = client.getCookieStore(); 
-//    			List<Cookie> cookies = cookieStore.getCookies();  
-//                for(int i=0;i<cookies.size();i++){  
-//                	System.out.println("CookieStore: " + cookies.get(i).getName() + " : " + cookies.get(i).getValue());
-//                	
-//                    if("JSESSIONID".equals(cookies.get(i).getName())){  
-//                        String JSESSIONID = cookies.get(i).getValue();  
-//                        System.out.println("JSESSIONID: " + JSESSIONID);
-//                        break;  
-//                    }  
-//                }
-//
-//    			System.out.println("responseStr: " + response.toString());
-//    			for(Header h : response.getAllHeaders()) {
-//    				System.out.println("Header: " + h.getName() + " : " + h.getValue());
-//    				
-//    				if (h.getName().equals("Set-Cookie")) {
-//    					String cookies2 = h.getValue();
-//    					cookies2 = cookies2.substring(cookies2.indexOf("JSESSIONID"), cookies2.indexOf(";"));
-//    					
-//    					System.out.println("Cookies2: " + cookies2);
-//    				}
-//    			}
-//    			
-//    			
-//    			String resultDataJsonStr = EntityUtils.toString(response.getEntity(), "utf-8");
-//    			
-//    			System.out.println("JSON: " + resultDataJsonStr);
-//    		} catch (Exception e) {
-//    			System.out.println(e.getMessage());
-//    			e.printStackTrace();     
-//    		}
- 
-//===========================HttpUtils=========================================
-//			RequestParams params = new RequestParams();
-//			try {				
-//				JSONObject commentJson = new JSONObject();
-//				commentJson.put("j_username", username);
-//				commentJson.put("j_password", password);
-//				
-//				LogUtils.i("CommentJSON: " + commentJson.toString());
-//				
-//				params.setContentType("application/json;charset=UTF-8");
-//				params.setBodyEntity(new StringEntity(commentJson.toString(),"UTF-8"));
-//			} catch (UnsupportedEncodingException e) {
-//				
-//				LogUtils.i("Error occured UnsupportedEncodingException: " + e.getMessage());
-//				e.printStackTrace();
-//			} catch (JSONException e) {
-//				
-//				LogUtils.i("Error occured JSONException: " + e.getMessage());
-//				e.printStackTrace();
-//			}
-//			
-//			HttpUtils http = new HttpUtils();
-//	        http.send(HttpRequest.HttpMethod.POST,
-//	        		LocalHttpUtil.LoginUserUrl,
-//	                params,
-//	                new RequestCallBack<String>() {
-//
-//	                    @Override
-//	                    public void onStart() {
-//	                    	LogUtils.i("onStart conn...");
-//	                    }
-//
-//	                    @Override
-//	                    public void onLoading(long total, long current, boolean isUploading) {
-//	                    	LogUtils.i("onLoading " + current + "/" + total);
-//	                    }
-//
-//	                    @Override
-//	                    public void onSuccess(ResponseInfo<String> responseInfo) {
-//	                    	LogUtils.i("onSuccess login user response:" + responseInfo.result);
-//	                    	
-//	                    	
-//	                    	
-//	                    	if (responseInfo.result.contains("success")) {
-//	                    		if (LocalUtil.isActiveActivityExists(AppLoginActivity.CLASSNAME)) {
-//	                    			AppLoginActivity currentPage = (AppLoginActivity)LocalUtil.getActiveActivity(AppLoginActivity.CLASSNAME);
-//	                    			currentPage.finish();
-//                    			}
-//	                    		
-//	                    		// How to show Logged page?
-////	                    		if (LocalUtil.isActiveActivityExists(AppRegisterActivity.CLASSNAME)) {
-////	                    			WuyeNotifierCommentAddActivity currentPage = (WuyeNotifierCommentAddActivity)LocalUtil.getActiveActivity(WuyeNotifierCommentAddActivity.CLASSNAME);
-////	                    			currentPage.finish();
-////	                    		}
-//	                    	}
-//	                    }
-//
-//	                    @Override
-//	                    public void onFailure(HttpException error, String msg) {
-//	                    	LogUtils.i("onFailure " + msg);
-//	                    	
-//	                    	
-//	                    }
-//	                });
+            
+            if (result.contains(LocalHttpUtil.indexPageTag)) { // If login success and goto index page
+            	System.out.println("Login Success!");
+            	LocalUtil.saveLoginInfo(AppLoginActivity.this, username, password, jSessionId, "", "");
+            	
+            	LogUtils.i("Start to get user by username: " + username);
+            	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.GetUserByUsername+username, new RequestCallBack<String>() {
+
+                    @Override
+                    public void onStart() {
+                    	LogUtils.i("Start to get user... ");
+                    }
+
+                    @Override
+                    public void onLoading(long total, long current, boolean isUploading) {
+                    	LogUtils.i("On loading to get user: " + current + "/" + total);
+                    }
+
+          			@Override
+          			public void onFailure(HttpException error, String msg) {
+          				LogUtils.i("Error to get user: " + msg);
+          			}
+
+          			@Override
+          			public void onSuccess(ResponseInfo<String> response) {
+          				LogUtils.i("Success to get user");
+//          				String xiaoquDocumentsJsonstr = response.result.toString(); 
+          				
+//          				Intent intent = new Intent();
+//          				intent.setClass(MainActivity.this, WuyeNotifierMainActivity.class);
+//          			    intent.putExtra("xiaoquDocumentsJsonstr", xiaoquDocumentsJsonstr);
+//          			    startActivity(intent);    	
+          			}
+          		});
+            	
+            	
+            } else if (result.contains(LocalHttpUtil.deniedPageTag)) { // If login failed and goto denied page
+            	System.out.println("Login Failure!");
+            	usernameContent.setError("用户名或密码错误");
+            	usernameContent.requestFocus();
+            }
+            
+            
+            
+            
+//            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+//            	// If login success and return index page
+//            	
+//            	
+//            } else if (response.getStatusLine().getStatusCode() == 302) {
+//            	// else If login success with header location to xiaoqubaserver/main/index
+//            	
+//            	
+//            } else {
+//            	// else If login failure with header location to xiaoqubaserver/main/denied page
+//            	
+//            	System.out.println(response.getStatusLine().getStatusCode()); 
+//            	System.out.println("error response" + response.getStatusLine().toString());  
+//                return;  
+//            }
     	}
     }
 }
