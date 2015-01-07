@@ -49,6 +49,8 @@ public class MainActivity extends MyAbstractActivity {
     	
     	currentXiaoquName.setOnClickListener(new XiaoquNameOnClickListener(this, MainActivity.this));
     	
+    	// 解决Android4.0后主线程不能访问网络异常解决办法
+    	// 由于对于网络状况的不可预见性，很有可能在网络访问的时候造成阻塞，那么这样一来我们的主线程UI线程 就会出现假死的现象，产生很不好的用户体验。所以，默认的情况下如果直接在主线程中访问就报出了这个异常，名字是NetworkOnMainThreadException
     	// 因为 mqtt 3.1 版本最后确定已经是一零年的事情了。当时 android 正好是 2.3 版本，当时编写的 wmqtt java 支持包是基于 android 2.3 的方法，到 android 4.0 时，可能有些网络协议的方法规定了一些其他必填的内容，导致了在 4.0 支持包下运行出错。所以必须修改最低 SDK 版本以支持旧的网络协议特性。
     	if (android.os.Build.VERSION.SDK_INT > 9) {
     		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -71,7 +73,12 @@ public class MainActivity extends MyAbstractActivity {
     }
     
     public void startPushServiceListening() {
-		PushService.actionStart(getApplicationContext());	
+		new Thread() {
+			@Override
+			public void run() {
+				PushService.actionStart(getApplicationContext());
+			}
+		}.start();
     }
     
     public void stopPushServiceListening() {
@@ -140,7 +147,7 @@ public class MainActivity extends MyAbstractActivity {
     
     public void bbsonclick(View v) { 
         Intent intent = new Intent();
-		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		intent.setClass(MainActivity.this, MySettingsActivity.class);
 		startActivity(intent);
     }
     

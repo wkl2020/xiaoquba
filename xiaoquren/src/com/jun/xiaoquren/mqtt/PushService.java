@@ -123,8 +123,10 @@ public class PushService extends Service {
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
-		LocalLog.info(CLASSNAME, "onStart", "Start Action: " + intent.getAction());
+		LocalLog.info(CLASSNAME, "onStart", "Start Action: " + (intent == null ? "intent is NULL":intent.getAction()));
 		LogUtils.i("PushService: Service started with intent=" + intent);
+		
+		if (intent == null) return;
 
 		if (intent.getAction().equals(ACTION_STOP) == true) {
 			stop();
@@ -198,6 +200,7 @@ public class PushService extends Service {
 			try {
 				mConnection = new MQTTConnection(MQTT_HOST, deviceID);
 			} catch (MqttException e) {
+				LocalLog.info(CLASSNAME, "connect:MqttException: ", (e.getMessage() != null ? e.getMessage() : "NULL"));
 				LogUtils.i("PushService: MqttException: " + (e.getMessage() != null ? e.getMessage() : "NULL"));
 	        	if (isNetworkAvailable()) {
 	        		scheduleReconnect(mStartTime);

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        	android:id="@+id/header_layout"
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:background="@drawable/main_bar_icon"
+  			android:gravity="center_vertical"  > 
+  			
+  			<Button
+	            android:id="@+id/btn_back"
+	            android:layout_width="70dp"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:text="@string/return_btn_label"
+	            android:textSize="17sp"
+	            android:textColor="#fff"
+	            android:onClick="page_back"
+	            android:background="@drawable/title_btn_back" />    
+      		
+      		<TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="@string/register_title_label"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" /> 
+							
+		</RelativeLayout>
+		
+    	<ScrollView
+    	    android:id="@+id/content_layout"
+    	    android:layout_below="@+id/header_layout"
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:scrollbarStyle="outsideOverlay">
+			
+        	<LinearLayout
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical"
+            	android:padding="10dp" >
+		
+    	<RelativeLayout
+   			android:layout_width="fill_parent"
+   			android:layout_height="100dp"
+   			android:gravity="center_vertical">
+			
+    	    <TextView
+                android:id="@+id/phonenum_label"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" 
+        		android:layout_centerVertical="true"
+                android:text="@string/phonenum_label"
+                android:textSize="16sp"
+                android:textColor="#000" />
+    	    
+		    <EditText
+		        android:id="@+id/phonenum"
+		        android:inputType="phone"
+		        android:maxLength="11"  
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@+id/phonenum_label"
+		        android:layout_centerVertical="true"
+		        android:hint="@string/phonenum_hint_label" >
+		
+		        <!-- <requestFocus /> -->
+		    </EditText>
+    
+    </RelativeLayout>
+    
+   	<RelativeLayout
+   	    android:id="@+id/password_section"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"            
+        android:focusable="true"  
+       	android:focusableInTouchMode="true">
+		
+   	    <TextView
+            android:id="@+id/password_reg_label"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true" 
+       		android:layout_centerVertical="true"
+            android:text="@string/password_reg_label"
+            android:textSize="16sp"
+            android:textColor="#000" />
+   	    
+	    <EditText
+	        android:id="@+id/password"
+	        android:inputType="textPassword"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/password_reg_label"
+	        android:layout_centerVertical="true"
+	        android:hint="@string/password_reg_hint_label" >
+	
+	        <!-- <requestFocus /> -->
+	    </EditText>
+    
+    </RelativeLayout>
+    
+   	<Button 
+	    android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_marginTop="14dp"
+		android:layout_marginBottom="14dp"
+	    android:layout_marginLeft="70dp"
+		android:layout_marginRight="12dp"
+		android:padding="4dp" 
+		android:text="@string/reg_commit_btn_label"
+		android:textSize="18sp"		
+		android:textColor="#fff"
+		android:gravity="center"
+		android:background="@drawable/btn_style_six"
+		android:onClick="onRegisterActionClicked" />
+   	
+   	 <CheckBox 
+	    android:id="@+id/userprotocol_check" 
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:textColor="#BBB"
+	    android:checked="true"
+	    android:layout_marginLeft="70dp"
+	    android:text="@string/userprotocol_check_label" />   	
+        	
+        	</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

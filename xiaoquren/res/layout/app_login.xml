@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        	android:id="@+id/header_layout"
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:background="@drawable/main_bar_icon"
+  			android:gravity="center_vertical"  > 
+  			
+  			<Button
+	            android:id="@+id/btn_back"
+	            android:layout_width="70dp"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:text="@string/return_btn_label"
+	            android:textSize="17sp"
+	            android:textColor="#fff"
+	            android:onClick="page_back"
+	            android:background="@drawable/title_btn_back" />    
+      		
+      		<TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="@string/login_label"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" /> 
+      		
+			<Button
+	            android:id="@+id/btn_register"
+	            android:layout_width="70dp"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true" 
+	            android:layout_centerVertical="true"
+	            android:text="@string/register_label"
+	            android:textSize="17sp"
+	            android:textColor="#fff"	            
+	            android:onClick="onRegisterClicked"  
+	            android:background="@drawable/title_btn_right" />      
+							
+		</RelativeLayout>
+		
+    	<ScrollView
+    	    android:id="@+id/content_layout"
+    	    android:layout_below="@+id/header_layout"
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:scrollbarStyle="outsideOverlay">
+			
+        	<LinearLayout
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical"
+            	android:padding="10dp" >
+		
+    	<RelativeLayout
+   			android:layout_width="fill_parent"
+   			android:layout_height="100dp"
+   			android:gravity="center_vertical">
+			
+    	    <TextView
+                android:id="@+id/username_label"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" 
+        		android:layout_centerVertical="true"
+                android:text="@string/username_label"
+                android:textSize="16sp"
+                android:textColor="#000" />
+    	    
+		    <EditText
+		        android:id="@+id/username"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:inputType="phone"
+		        android:maxLength="11"  
+		        android:layout_toRightOf="@+id/username_label"
+		        android:layout_centerVertical="true"
+		        android:hint="@string/username_hint_label" >
+		
+		        <!-- <requestFocus /> -->
+		    </EditText>
+    
+    </RelativeLayout>
+    
+   	<RelativeLayout
+   	    android:id="@+id/password_section"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"            
+        android:focusable="true"  
+       	android:focusableInTouchMode="true">
+		
+   	    <TextView
+            android:id="@+id/password_label"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true" 
+       		android:layout_centerVertical="true"
+            android:text="@string/password_label"
+            android:textSize="16sp"
+            android:textColor="#000" />
+   	    
+	    <EditText
+	        android:id="@+id/password"
+	        android:inputType="textPassword"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/password_label"
+	        android:layout_centerVertical="true"
+	        android:hint="@string/password_hint_label" >
+	
+	        <!-- <requestFocus /> -->
+	    </EditText>
+    
+    </RelativeLayout>
+    
+   	<RelativeLayout
+   	    android:id="@+id/forgot_pwd_section"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"            
+        android:focusable="true"  
+       	android:focusableInTouchMode="true">
+		
+   	    <TextView
+            android:id="@+id/forgot_pwd_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" 
+       		android:layout_centerVertical="true"
+            android:text="@string/forgot_pwd_label"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+            android:textColor="#BBB" />
+    
+    </RelativeLayout>
+    
+   	<Button 
+	    android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_marginTop="14dp"
+		android:layout_marginBottom="14dp"
+		android:layout_marginRight="12dp"
+	    android:layout_marginLeft="70dp"
+		android:padding="4dp" 
+		android:text="@string/login_btn_label"
+		android:textSize="18sp"		
+		android:textColor="#fff"
+		android:gravity="center"
+		android:background="@drawable/btn_style_six"
+		android:onClick="onLoginActionClicked" />
+   	
+   	  	
+        	
+        	</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

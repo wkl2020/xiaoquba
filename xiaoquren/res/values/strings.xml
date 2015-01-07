@@ -52,5 +52,24 @@
     <string name="btn_commit_comment">提交</string>
     
     
+    
+    <string name="login_label">登陆</string>
+    <string name="login_btn_label">登陆</string>
+    <string name="register_label">注册</string>
+    <string name="username_label">用户名</string>
+    <string name="password_label">密码</string>
+    <string name="forgot_pwd_label">忘记密码</string>
+    <string name="username_hint_label">手机号</string>
+    <string name="password_hint_label">密码</string>
+    
+    <string name="register_title_label">注册用户</string>    
+    <string name="phonenum_label">手机号</string>
+    <string name="phonenum_hint_label">输入手机号</string>    
+    <string name="password_reg_label">密码</string>
+    <string name="password_reg_hint_label">不少于6位</string>
+    <string name="reg_commit_btn_label">确定</string>
+    <string name="userprotocol_check_label">我已同意用户协议</string>
+    
+    
 
 </resources>
