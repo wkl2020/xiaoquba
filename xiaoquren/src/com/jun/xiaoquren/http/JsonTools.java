@@ -13,6 +13,7 @@ import com.jun.xiaoquren.dao.model.City;
 import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
+import com.jun.xiaoquren.server.model.UserEntity;
 import com.lidroid.xutils.util.LogUtils;
 
 public class JsonTools {
@@ -222,6 +223,46 @@ public class JsonTools {
 	}
 	
 	
+	// 6. UserEntity
+	public static UserEntity getUserEntityFromJsonStr(String jsonStr) {
+		UserEntity user = new UserEntity();
+		
+		try {
+			user = getUserEntityFromJsonObject(new JSONObject(jsonStr));
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityFromJsonStr: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return user;
+	}
+	
+	public static UserEntity getUserEntityFromJsonObject(JSONObject obj) {
+		UserEntity user = new UserEntity();
+		
+		try {	
+			user.setId(obj.getInt("id"));
+			user.setNickname(obj.getString("nickname"));
+			user.setAddress(obj.getString("address"));
+			user.setCompanyName(obj.getString("companyName"));
+			user.setEmail(obj.getString("email"));
+			user.setFirstname(obj.getString("firstname"));
+			user.setLastname(obj.getString("lastname"));
+			user.setPhone(obj.getString("phone"));
+			user.setRole(obj.getString("role"));
+			user.setToken(obj.getString("token"));
+			user.setUsername(obj.getString("username"));
+			user.setXiaoquId(Long.valueOf(obj.getString("xiaoquId")));
+			user.setEnable(Boolean.valueOf(obj.getString("enable")));
+			user.setNickname(obj.getString("nickname"));
+			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getCityFromJsonObject: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return user;
+	}
 	
 	
 	

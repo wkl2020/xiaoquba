@@ -90,6 +90,15 @@ public class LocalUtil {
         editor.commit();
     }
     
+    public static void saveNicknameAndUsrrole(Context context, String nickname, String userrole) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+        Editor editor=sharedPre.edit();
+
+        editor.putString(NICKNAME, nickname);
+        editor.putString(USERROLE, userrole);
+        editor.commit();
+    }
+    
     public static void saveCurrentCity(Context context,String cityName,String cityId){
         //获取SharedPreferences对象
         SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
@@ -160,12 +169,34 @@ public class LocalUtil {
     
     public static String getNickname(Context context) {
     	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
-    	return sharedPre.getString(NICKNAME, "");
+    	return sharedPre.getString(NICKNAME, "游客");
     }
     
     public static String getJSessionId(Context context) {
     	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
     	return sharedPre.getString(JSESSIONID, "");
+    }
+    
+    public static boolean isUserSessionValid(Context context) {
+    	String sessionId = getJSessionId(context);
+    	
+    	// TODO
+    	
+    	return sessionId != null && !sessionId.isEmpty();
+    }
+    
+    public static void userLogout(Context context) {
+    	SharedPreferences sharedPre=context.getSharedPreferences("config", context.MODE_PRIVATE);
+        Editor editor=sharedPre.edit();
+        
+        editor.remove(USERNAME);
+        editor.remove(PASSWORD);
+        editor.remove(NICKNAME);
+        editor.remove(USERROLE);
+        editor.remove(JSESSIONID);
+        
+        //提交
+        editor.commit();
     }
     
     public static String getUserrole(Context context) {

@@ -34,7 +34,7 @@ public class LocalHttpUtil {
 	// UserEntity
 	public static final String AddUserEntityUrl = ServerURL + "/xiaoqubaserver/main/user";
 //	public static final String LoginUserUrl = ServerURL + "/xiaoqubaserver/main/j_spring_security_check";
-	public static final String GetUserByUsername = ServerURL + "/xiaoqubaserver/main/user";
+	public static final String GetUserByUsername = ServerURL + "/xiaoqubaserver/main/getUserbyName?username=";
 	
 
 	public LocalHttpUtil() {

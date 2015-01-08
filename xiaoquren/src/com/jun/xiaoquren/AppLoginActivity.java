@@ -25,7 +25,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
+import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.http.LocalHttpUtil;
+import com.jun.xiaoquren.server.model.UserEntity;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.lidroid.xutils.exception.HttpException;
@@ -167,12 +169,24 @@ public class AppLoginActivity extends MyAbstractActivity implements OnClickListe
           			@Override
           			public void onSuccess(ResponseInfo<String> response) {
           				LogUtils.i("Success to get user");
-//          				String xiaoquDocumentsJsonstr = response.result.toString(); 
+          				System.out.println("Login Success: " + response.result.toString());
+          				UserEntity user = JsonTools.getUserEntityFromJsonStr(response.result.toString()); 
           				
-//          				Intent intent = new Intent();
-//          				intent.setClass(MainActivity.this, WuyeNotifierMainActivity.class);
-//          			    intent.putExtra("xiaoquDocumentsJsonstr", xiaoquDocumentsJsonstr);
-//          			    startActivity(intent);    	
+          				System.out.println("user.nickname: " + user.getId() + " : " + user.getNickname());
+          				
+          				if (LocalUtil.isActiveActivityExists(MySettingsActivity.CLASSNAME)) {
+          					MySettingsActivity settingPage = (MySettingsActivity)LocalUtil.getActiveActivity(MySettingsActivity.CLASSNAME);
+          					settingPage.refreshLoginInfo();
+          					LocalUtil.saveNicknameAndUsrrole(settingPage, user.getNickname(), user.getRole());
+            			}
+          				
+          				if (LocalUtil.isActiveActivityExists(AppLoginActivity.CLASSNAME)) {
+          					AppLoginActivity loginPage = (AppLoginActivity)LocalUtil.getActiveActivity(AppLoginActivity.CLASSNAME);
+          					loginPage.finish();
+            			}
+          				
+          				
+          				
           			}
           		});
             	

@@ -101,8 +101,12 @@ public class MainActivity extends MyAbstractActivity {
     }
     
     public void personalsettings(View v) {  
+//        Intent intent = new Intent();
+//		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+//		startActivity(intent);
+    	
         Intent intent = new Intent();
-		intent.setClass(MainActivity.this, PersonalSettingActivity.class);
+		intent.setClass(MainActivity.this, MySettingsActivity.class);
 		startActivity(intent);
     }
     

@@ -106,7 +106,7 @@ public class WuyeNotifierCommentAddActivity extends MyAbstractActivity implement
 			
 			RequestParams params = new RequestParams();
 			try {				
-				String nickname = "我就测试者";
+				String nickname = LocalUtil.getNickname(WuyeNotifierCommentAddActivity.this);
 				JSONObject commentJson = new JSONObject();
 				commentJson.put("content", content);
 				commentJson.put("documentType", "XiaoquDocumentComment");		

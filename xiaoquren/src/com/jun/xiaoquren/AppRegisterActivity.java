@@ -86,7 +86,7 @@ public class AppRegisterActivity extends MyAbstractActivity implements OnClickLi
 		if (isValid) {
 			RequestParams params = new RequestParams();
 			try {				
-				String nickname = "我是新注册用户";
+				String nickname = "我是新成员";
 				JSONObject commentJson = new JSONObject();
 				commentJson.put("username", phonenum);
 				commentJson.put("phone", phonenum);

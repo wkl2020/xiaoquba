@@ -1,10 +1,13 @@
 package com.jun.xiaoquren.server.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Xiaoqu {
-    private Integer id;
+public class Xiaoqu implements Serializable {  
+	private static final long serialVersionUID = -3827414582117060878L;
+
+	private Integer id;
 
     private String city;
 
