@@ -29,8 +29,7 @@
         </activity>
         
         <activity android:name=".AppWelcomeActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".MainActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".PersonalSettingActivity" android:theme="@style/Anim_style2" />
+        <activity android:name=".MainActivity" android:theme="@style/Anim_style2" />        
         <activity android:name=".XiaoquSearchActivity" android:theme="@style/Anim_style2" />
         <activity android:name=".CitySearchActivity" android:theme="@style/Anim_style2" />  
               
@@ -39,9 +38,9 @@
         <activity android:name=".WuyeNotifierCommentAddActivity" android:theme="@style/Anim_style2" />
         
         <activity android:name=".MySettingsActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".AppLoginActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".AppRegisterActivity" android:theme="@style/Anim_style2" />
-        
+        <activity android:name=".AppLoginActivity" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Anim_style2" />
+        <activity android:name=".AppRegisterActivity" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Anim_style2" />
+        <activity android:name=".PersonalSettingActivity" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Anim_style2" />
         
         <service android:name="com.jun.xiaoquren.mqtt.PushService" android:label="Xiaoquren Notifications" />
         

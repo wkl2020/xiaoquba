@@ -70,6 +70,6 @@
     <string name="reg_commit_btn_label">确定</string>
     <string name="userprotocol_check_label">我已同意用户协议</string>
     
-    
+    <string name="submit_btn_label">提交</string>    
 
 </resources>

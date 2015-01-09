@@ -51,6 +51,10 @@ public class MySettingsActivity extends MyAbstractActivity implements OnClickLis
     	
     	if (LocalUtil.isUserSessionValid(MySettingsActivity.this)) {
     		// go to personal information page
+            Intent intent = new Intent();
+    		intent.setClass(MySettingsActivity.this, PersonalSettingActivity.class);
+    		startActivity(intent);
+    		
     	} else {
 	    	Intent intent = new Intent();
 			intent.setClass(MySettingsActivity.this, AppLoginActivity.class);
