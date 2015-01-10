@@ -1,7 +1,9 @@
 package com.jun.xiaoquren;
 
 import java.util.List;
+import java.util.Map;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences.Editor;
@@ -64,6 +66,9 @@ public class MainActivity extends MyAbstractActivity {
     	editor.putString(PushService.PREF_DEVICE_ID, mDeviceID);
     	editor.commit();
     	startPushServiceListening();
+    	
+    	super.finishAllOtherActivities();
+    	System.out.println("XXXXXXXXXXXX: MainActivity: OnResume: " + LocalUtil.getAllActivities().size());
     }
     
     @Override
@@ -88,6 +93,8 @@ public class MainActivity extends MyAbstractActivity {
     @Override
     protected void onResume() {
     	super.onResume();
+    	super.finishAllOtherActivities();
+    	System.out.println("XXXXXXXXXXXX: MainActivity: OnResume: " + LocalUtil.getAllActivities().size());
     }
     
     public void refreshCurrentXiaoQuName() {

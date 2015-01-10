@@ -8,6 +8,11 @@ import android.view.VelocityTracker;
 import android.view.View;  
 import android.widget.Scroller; 
 
+/**
+ * Show introduce pictures at the first open action
+ * @author Administrator
+ *
+ */
 public class ScrollLayout extends ViewGroup {
 	
 	public static final String CLASSNAME = "ScrollLayout";

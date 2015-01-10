@@ -32,4 +32,15 @@ public abstract class MyAbstractActivity extends Activity {
 		}
         super.finish();
     }
+	
+	public void finishAllOtherActivities() {
+		Map<String, Activity> remainingActivities = LocalUtil.getAllActivities();
+		for (String key: remainingActivities.keySet()) {
+			MyAbstractActivity activity = (MyAbstractActivity)remainingActivities.get(key);
+			if (activity != null && !activity.getActivityName().equals(MainActivity.CLASSNAME)) {
+				activity.finish();
+				activity = null;
+			}
+		}
+	}
 }
