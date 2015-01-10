@@ -3,6 +3,8 @@ package com.jun.xiaoquren.util;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.jun.xiaoquren.AppMainActivity;
+import com.jun.xiaoquren.AppMainFragment;
 import com.jun.xiaoquren.dao.ConstantTableDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.lidroid.xutils.util.LogUtils;
@@ -17,16 +19,6 @@ public class LocalUtil {
 	public static final String CLASSNAME = "LocalUtil";
 	
 	public static Map<String, Activity> activeActivities = new HashMap<String, Activity>();
-	
-	private final static String USERROLE = "userrole";
-	private final static String NICKNAME = "nickname";
-	private final static String JSESSIONID = "jsessionid";
-	private final static String USERNAME = "username";
-	private final static String PASSWORD = "password";
-	private final static String CURRENT_XIAOQU_NAME = "currentxiaoquname";
-	private final static String CURRENT_XIAOQU_ID = "currentxiaoquid";
-	private final static String CURRENT_CITY_NAME = "currentcityname";
-	private final static String CURRENT_CITY_ID = "currentcityid";
 	
 	public static void createNewActivity(String activityName, Activity activity) {
 		Activity previousActivity = activeActivities.get(activityName);
@@ -54,11 +46,51 @@ public class LocalUtil {
 		return activeActivities;
 	}
 	
+	public static void finishAllOtherActivities() {
+//		Map<String, Activity> remainingActivities = LocalUtil.getAllActivities();
+//		for (String key: remainingActivities.keySet()) {
+//			if (!key.equals(AppMainActivity.CLASSNAME)) {
+//				MyAbstractActivity activity = (MyAbstractActivity)remainingActivities.get(key);
+//				activity.finish();
+//				activity = null;
+//			}
+//		}
+	}
 	
+	public static AppMainFragment appMainFragment = null;
+	
+	public static void setAppMainFragment(AppMainFragment fragment) {
+		appMainFragment = fragment;
+	}
+	
+	public static AppMainFragment getAppMainFragment() {
+		return appMainFragment;
+	}
+	
+	public static boolean isAppMainFragmentExists() {
+		return appMainFragment != null;
+	}
+	
+	
+	
+	
+	/**
+	 * Set project constants cache content as below
+	 */
 	public static void syncConstantsAndSharedPreferences() {
 		// TODO
 		// ....
 	}
+	
+	private final static String USERROLE = "userrole";
+	private final static String NICKNAME = "nickname";
+	private final static String JSESSIONID = "jsessionid";
+	private final static String USERNAME = "username";
+	private final static String PASSWORD = "password";
+	private final static String CURRENT_XIAOQU_NAME = "currentxiaoquname";
+	private final static String CURRENT_XIAOQU_ID = "currentxiaoquid";
+	private final static String CURRENT_CITY_NAME = "currentcityname";
+	private final static String CURRENT_CITY_ID = "currentcityid";
 	
 	/**
      * 使用SharedPreferences保存用户登录信息

@@ -14,7 +14,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.CitySearchActivity;
-import com.jun.xiaoquren.MainActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.XiaoquSearchActivity;
 import com.jun.xiaoquren.dao.model.City;

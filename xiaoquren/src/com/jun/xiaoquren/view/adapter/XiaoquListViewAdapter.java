@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.jun.xiaoquren.MainActivity;
+import com.jun.xiaoquren.AppMainActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
@@ -81,13 +81,14 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 				String selName = xiaoquList.get(position).getName();				
 				LocalUtil.saveCurrentXiaoQu(mContext, selName, selId);
 				
-				if (LocalUtil.getActiveActivity(MainActivity.CLASSNAME) == null) {
+				if (LocalUtil.getActiveActivity(AppMainActivity.CLASSNAME) == null) {
 					Intent intent = new Intent();
-					intent.setClass(mContext, MainActivity.class);
+					intent.setClass(mContext, AppMainActivity.class);
 					mContext.startActivity(intent);
 				} else {
-					MainActivity mainActivity = (MainActivity)LocalUtil.getActiveActivity(MainActivity.CLASSNAME);
-					mainActivity.refreshCurrentXiaoQuName();
+					if (LocalUtil.isAppMainFragmentExists()) {
+						LocalUtil.getAppMainFragment().refreshCurrentXiaoQuName();
+					}
 				}
 				
 				mContext.finish();

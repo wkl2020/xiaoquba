@@ -6,7 +6,7 @@ import com.ibm.mqtt.MqttException;
 import com.ibm.mqtt.MqttPersistence;
 import com.ibm.mqtt.MqttPersistenceException;
 import com.ibm.mqtt.MqttSimpleCallback;
-import com.jun.xiaoquren.MainActivity;
+import com.jun.xiaoquren.AppMainActivity;
 import com.jun.xiaoquren.util.LocalLog;
 import com.lidroid.xutils.util.LogUtils;
 
@@ -328,7 +328,7 @@ public class PushService extends Service {
 		n.when = System.currentTimeMillis();
 
 		PendingIntent pi = PendingIntent.getActivity(this, 0,
-		  new Intent(this, MainActivity.class), 0);
+		  new Intent(this, AppMainActivity.class), 0);
 
 		n.setLatestEventInfo(this, NOTIF_TITLE, text, pi);
 

@@ -17,7 +17,12 @@
         All customizations that are NOT specific to a particular API-level can go here. 
     </style> -->
 
-    <style name="AppTheme" parent="android:Theme.Light" /> 
+    <style name="AppTheme" parent="android:Theme.Light" />
+    
+    <style name="tab_title_style">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@drawable/tab_text_color</item>
+    </style>
     
     <style name="chat_text_date_style">
 	    <item name="android:padding">2dp</item>    
