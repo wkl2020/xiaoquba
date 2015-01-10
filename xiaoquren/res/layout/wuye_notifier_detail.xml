@@ -33,7 +33,7 @@
       		
       		<ImageButton
       		    android:id="@+id/menu_button"
-			    android:layout_width="90dp" 
+			    android:layout_width="85dp" 
         		android:layout_height="wrap_content"
         		android:layout_alignParentRight="true" 
         		android:layout_centerVertical="true"
@@ -44,126 +44,137 @@
 							
 	</RelativeLayout>
 	
-    <RelativeLayout
-        android:id="@+id/document_content_panel"
-        android:layout_width="fill_parent"   
-    	android:layout_height="wrap_content"
-    	android:padding="10dp"
-        android:layout_below="@+id/header_layout">
-
-	    <TextView
-	        android:id="@+id/document_detail_id_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-        	android:visibility="gone"
-	        android:text="@string/document_detail_id_label"/>
+    <ScrollView
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:scrollbarStyle="outsideOverlay"
+    		android:layout_below="@+id/header_layout" >
+      		
+        	<LinearLayout
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
 	
-	    <TextView
-	        android:id="@+id/document_detail_id"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-        	android:visibility="gone"
-	        android:layout_toRightOf="@+id/document_detail_id_label" />
-	
-	    <TextView
-	        android:id="@+id/document_detail_title_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-        	android:visibility="gone"
-	        android:layout_below="@+id/document_detail_id_label"
-	        android:text="@string/document_detail_title_label" />
-	
-	    <TextView
-	        android:id="@+id/document_detail_title"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/document_detail_id"
-	        android:textSize="17sp"		
-	        android:layout_toRightOf="@+id/document_detail_title_label"
-	        android:textColor="#000" />
-	
-	    <TextView
-	        android:id="@+id/document_detail_subtitle_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/document_detail_title_label"
-        	android:visibility="gone"
-	        android:text="@string/document_detail_subtitle_label" />
-	
-	    <TextView
-	        android:id="@+id/document_detail_subtitle"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/document_detail_title"
-	        android:layout_marginTop="10dp"
-	        android:textSize="12sp"
-	        android:layout_toRightOf="@+id/document_detail_subtitle_label"
-	        android:textColor="#555" />
-	    
-	    
-	    <TextView
-	        android:id="@+id/document_detail_content"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textSize="16sp"
-	        android:layout_below="@+id/document_detail_subtitle"
-	        android:textColor="#000" />
-	    
-	     <TextView
-	        android:id="@+id/document_detail_ower_name"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_marginTop="20dp"
-	        android:textSize="15sp"
-	        android:layout_below="@+id/document_detail_content"
-	        android:textColor="#000" />
-	    
-	     <TextView
-	        android:id="@+id/document_detail_create_time"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textSize="15sp"
-	        android:layout_below="@+id/document_detail_ower_name"
-	        android:textColor="#000" />
-	
-     </RelativeLayout>
-     
-    <LinearLayout
-        android:id="@+id/newst_comment_label"
-         android:layout_width="fill_parent"
-         android:layout_height="40dp"
-         android:padding="10dp"
-         android:background="@drawable/section_line" 
-         android:layout_below="@+id/document_content_panel" >
-
-         <TextView
-		       android:id="@+id/newest_comments"
-		       android:layout_width="wrap_content"
-		       android:layout_height="wrap_content"
-		       android:singleLine="true"
-		       android:textSize="16sp"
-		       android:textColor="#000"
-			   android:text="@string/newest_comments" />
-         
-     </LinearLayout>
-     
-    <RelativeLayout
-        android:id="@+id/evaluation_panel"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-    	android:layout_marginTop="10dp"
-    	android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_below="@+id/newst_comment_label">
-	     
-        <ListView
-		        android:id="@+id/evaluation_listview"
-		        android:layout_width="fill_parent"
-		        android:layout_height="fill_parent"
-		        android:divider="#cccccc"
-    			android:dividerHeight="1dp"  
-		        android:background="@drawable/mm_listitem" />	     
-        
-     </RelativeLayout>   
+			    <RelativeLayout
+			        android:id="@+id/document_content_panel"
+			        android:layout_width="fill_parent"   
+			    	android:layout_height="wrap_content"
+			    	android:padding="10dp">
+			
+				    <TextView
+				        android:id="@+id/document_detail_id_label"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+			        	android:visibility="gone"
+				        android:text="@string/document_detail_id_label"/>
+				
+				    <TextView
+				        android:id="@+id/document_detail_id"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+			        	android:visibility="gone"
+				        android:layout_toRightOf="@+id/document_detail_id_label" />
+				
+				    <TextView
+				        android:id="@+id/document_detail_title_label"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+			        	android:visibility="gone"
+				        android:layout_below="@+id/document_detail_id_label"
+				        android:text="@string/document_detail_title_label" />
+				
+				    <TextView
+				        android:id="@+id/document_detail_title"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_below="@+id/document_detail_id"
+				        android:textSize="17sp"		
+				        android:layout_toRightOf="@+id/document_detail_title_label"
+				        android:textColor="#000" />
+				
+				    <TextView
+				        android:id="@+id/document_detail_subtitle_label"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_below="@+id/document_detail_title_label"
+			        	android:visibility="gone"
+				        android:text="@string/document_detail_subtitle_label" />
+				
+				    <TextView
+				        android:id="@+id/document_detail_subtitle"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_below="@+id/document_detail_title"
+				        android:layout_marginTop="10dp"
+				        android:textSize="12sp"
+				        android:layout_toRightOf="@+id/document_detail_subtitle_label"
+				        android:textColor="#555" />
+				    
+				    
+				    <TextView
+				        android:id="@+id/document_detail_content"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:textSize="16sp"
+				        android:layout_below="@+id/document_detail_subtitle"
+				        android:textColor="#000" />
+				    
+				     <TextView
+				        android:id="@+id/document_detail_ower_name"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_marginTop="20dp"
+				        android:textSize="15sp"
+				        android:layout_below="@+id/document_detail_content"
+				        android:textColor="#000" />
+				    
+				     <TextView
+				        android:id="@+id/document_detail_create_time"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:textSize="15sp"
+				        android:layout_below="@+id/document_detail_ower_name"
+				        android:textColor="#000" />
+				
+			     </RelativeLayout>
+			     
+			    <LinearLayout
+			        android:id="@+id/newst_comment_label"
+			         android:layout_width="fill_parent"
+			         android:layout_height="40dp"
+			         android:padding="10dp"
+			         android:background="@drawable/section_line" >
+			
+			         <TextView
+					       android:id="@+id/newest_comments"
+					       android:layout_width="wrap_content"
+					       android:layout_height="wrap_content"
+					       android:singleLine="true"
+					       android:textSize="16sp"
+					       android:textColor="#000"
+						   android:text="@string/newest_comments" />
+			         
+			     </LinearLayout>
+			     
+			    <RelativeLayout
+			        android:id="@+id/evaluation_panel"
+			        android:layout_width="fill_parent"
+			        android:layout_height="500dp"
+			    	android:layout_marginTop="10dp"
+			    	android:focusable="true"
+			        android:focusableInTouchMode="true">
+				     
+			        <ListView
+					        android:id="@+id/evaluation_listview"
+					        android:layout_width="fill_parent"
+					        android:layout_height="500dp"
+					        android:divider="#cccccc"
+			    			android:dividerHeight="1dp"  
+					        android:background="@drawable/mm_listitem" />	     
+			        
+			     </RelativeLayout>     	
+        	
+        	</LinearLayout>
+    </ScrollView> 
         
 </RelativeLayout>

@@ -47,14 +47,14 @@ public class LocalUtil {
 	}
 	
 	public static void finishAllOtherActivities() {
-//		Map<String, Activity> remainingActivities = LocalUtil.getAllActivities();
-//		for (String key: remainingActivities.keySet()) {
-//			if (!key.equals(AppMainActivity.CLASSNAME)) {
-//				MyAbstractActivity activity = (MyAbstractActivity)remainingActivities.get(key);
-//				activity.finish();
-//				activity = null;
-//			}
-//		}
+		Map<String, Activity> remainingActivities = LocalUtil.getAllActivities();
+		for (String key: remainingActivities.keySet()) {
+			if (!key.equals(AppMainActivity.CLASSNAME)) {
+				MyAbstractActivity activity = (MyAbstractActivity)remainingActivities.get(key);
+				activity.finish();
+				activity = null;
+			}
+		}
 	}
 	
 	public static AppMainFragment appMainFragment = null;

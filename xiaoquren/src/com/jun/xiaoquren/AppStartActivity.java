@@ -66,7 +66,7 @@ public class AppStartActivity extends MyAbstractActivity {
         } else {
         	
         	LogUtils.i("Xiaoqu info: AppMainFragment.class");
-            intent.setClass(this, AppMainFragment.class);
+            intent.setClass(this, AppMainActivity.class);
         }
         
         LogUtils.i("Xiaoqu info: start you trval");

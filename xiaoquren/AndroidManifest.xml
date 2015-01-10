@@ -29,7 +29,6 @@
         </activity>
         
         <activity android:name=".AppMainActivity" android:theme="@style/Anim_style2" />
-        <activity android:name=".AppMainFragment" android:theme="@style/Anim_style2" />
         <activity android:name=".AppWelcomeActivity" android:theme="@style/Anim_style2" />
         <!-- <activity android:name=".MainActivity" android:theme="@style/Anim_style2" />   --> 
         <activity android:name=".XiaoquSearchActivity" android:theme="@style/Anim_style2" />
