@@ -68,7 +68,7 @@ public class CommentListViewAdapter extends BaseAdapter {
 		}
 		
 		// Set the results into TextViews
-		holder.nickname.setText(commentList.get(position).getNickname());
+		holder.nickname.setText(commentList.get(position).getNickname() + "\n\n" + commentList.get(position).getContent());
 		holder.content.setText(commentList.get(position).getContent());
 		holder.createDate.setText(commentList.get(position).getCreateDate());
 

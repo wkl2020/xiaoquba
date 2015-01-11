@@ -15,7 +15,9 @@ import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.http.LocalHttpUtil;
+import com.jun.xiaoquren.util.LocalViewUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
+import com.jun.xiaoquren.util.MyListView;
 import com.jun.xiaoquren.view.adapter.CommentListViewAdapter;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
@@ -41,7 +43,7 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	TextView create_time_text;	
 	
 	// Declare Variables
-	ListView evaluationListView;
+	MyListView evaluationListView;
 	CommentListViewAdapter listViewAdapter;
 	List<DocumentComment> commentList = new ArrayList<DocumentComment>();
 	
@@ -78,9 +80,10 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 		// Init the comment list view
 		String commentListJsonstr = (String)getIntent().getSerializableExtra("commentListJsonstr");
 		commentList = JsonTools.getCommentList(commentListJsonstr);
-		evaluationListView = (ListView) findViewById(R.id.evaluation_listview);
+		evaluationListView = (MyListView) findViewById(R.id.evaluation_listview);
 		listViewAdapter = new CommentListViewAdapter(this, commentList);
 		evaluationListView.setAdapter(listViewAdapter);
+		LocalViewUtil.setListViewHeightBasedOnChildren(evaluationListView);  
 		
 		// Init the popupwindow
 		initmPopupWindowView();
