@@ -90,12 +90,6 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
 		PushService.actionStop(this.getApplicationContext());
     }
     
-    public void personalsettings(View v) {    	
-        Intent intent = new Intent();
-		intent.setClass(this, MySettingsActivity.class);
-		startActivity(intent);
-    }
-    
     public void wuyenotifieronclick(final View v) {
     	String currentXiaoquId = LocalUtil.getCurrentXiaoQuId(this);
     	LogUtils.i("Start to connect xiaoqu documents with xiaoqu id: " + currentXiaoquId);
@@ -130,21 +124,21 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
     }
     
     public void phonenumbersonclick(View v) { 
-        Intent intent = new Intent();
-		intent.setClass(this, PersonalSettingActivity.class);
-		startActivity(intent);
+//        Intent intent = new Intent();
+//		intent.setClass(this, PersonalSettingActivity.class);
+//		startActivity(intent);
     }
     
     public void bbsonclick(View v) { 
-        Intent intent = new Intent();
-		intent.setClass(this, MySettingsActivity.class);
-		startActivity(intent);
+//        Intent intent = new Intent();
+//		intent.setClass(this, MySettingsActivity.class);
+//		startActivity(intent);
     }
     
     public void shopptingsonclick(View v) {
-        Intent intent = new Intent();
-		intent.setClass(this, PersonalSettingActivity.class);
-		startActivity(intent);
+//        Intent intent = new Intent();
+//		intent.setClass(this, PersonalSettingActivity.class);
+//		startActivity(intent);
     }
     
     public void waimaionclick(View v) {
@@ -153,6 +147,27 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
     
     public void pingcheonclick(View v) {
     	
+    }
+    
+    
+
+    /**
+     * My Settings Page
+     * @param v
+     */
+    public void loginOrRegisterClicked(View v) {
+    	
+    	if (LocalUtil.isUserSessionValid(AppMainActivity.this)) {
+    		// go to personal information page
+            Intent intent = new Intent();
+    		intent.setClass(AppMainActivity.this, PersonalSettingActivity.class);
+    		startActivity(intent);
+    		
+    	} else {
+	    	Intent intent = new Intent();
+			intent.setClass(AppMainActivity.this, AppLoginActivity.class);
+			startActivity(intent);
+    	}
     }
 
 }

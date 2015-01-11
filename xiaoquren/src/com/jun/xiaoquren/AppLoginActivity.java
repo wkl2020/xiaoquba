@@ -174,19 +174,15 @@ public class AppLoginActivity extends MyAbstractActivity implements OnClickListe
           				
           				System.out.println("user.nickname: " + user.getId() + " : " + user.getNickname());
           				
-          				if (LocalUtil.isActiveActivityExists(MySettingsActivity.CLASSNAME)) {
-          					MySettingsActivity settingPage = (MySettingsActivity)LocalUtil.getActiveActivity(MySettingsActivity.CLASSNAME);
-          					settingPage.refreshLoginInfo();
-          					LocalUtil.saveNicknameAndUsrrole(settingPage, user.getNickname(), user.getRole());
+          				if (LocalUtil.isAppSettingFragmentExists()) {
+          					LocalUtil.getAppSettingFragment().refreshLoginInfo();
+          					LocalUtil.saveNicknameAndUsrrole(LocalUtil.getAppSettingFragment().getActivity(), user.getNickname(), user.getRole());
             			}
           				
           				if (LocalUtil.isActiveActivityExists(AppLoginActivity.CLASSNAME)) {
           					AppLoginActivity loginPage = (AppLoginActivity)LocalUtil.getActiveActivity(AppLoginActivity.CLASSNAME);
           					loginPage.finish();
-            			}
-          				
-          				
-          				
+            			}          				
           			}
           		});
             	

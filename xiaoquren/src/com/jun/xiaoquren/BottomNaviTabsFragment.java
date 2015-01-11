@@ -26,8 +26,8 @@ public class BottomNaviTabsFragment extends Fragment  {
     private static final String CURRENT_TAB = "current_tab";
     private Tab[] mTabs = new Tab[] {
             new Tab("Tab 1", "主页", R.drawable.home, R.id.tab1),
-            new Tab("Tab 2", "待定1", R.drawable.favorite_bookmark, R.id.tab2),
-            new Tab("Tab 3", "待定2", R.drawable.star, R.id.tab3),
+//            new Tab("Tab 2", "待定1", R.drawable.favorite_bookmark, R.id.tab2),
+            new Tab("Tab 3", "待定ing", R.drawable.star, R.id.tab3),
             new Tab("Tab 4", "我", R.drawable.user, R.id.tab4)
     };
 
@@ -74,7 +74,22 @@ public class BottomNaviTabsFragment extends Fragment  {
         for (final Tab tab : mTabs) {
             TabSpec spec = createTab(tabHost, tab);
             tabHost.addTab(spec);
-            attachFragment(tab);
+            
+            Fragment frag = null;
+            if ("Tab 1".equals(tab.mTag)) {
+            	frag = new AppMainFragment();     
+            	
+            } else if ("Tab 2".equals(tab.mTag)) {
+            	frag = new AppMainFragment();
+            	
+            } else if ("Tab 3".equals(tab.mTag)) {
+            	frag = new AppMainFragment();
+            	
+            } else if ("Tab 4".equals(tab.mTag)) {
+            	frag = new AppSettingFragment();
+            }
+            
+            attachFragment(tab, frag);
         }
         tabHost.setOnTabChangedListener(new OnTabChangeListener() {
             @Override
@@ -84,8 +99,7 @@ public class BottomNaviTabsFragment extends Fragment  {
         });
     }
 
-    private void attachFragment(final Tab tab) {
-        Fragment frag = new AppMainFragment();
+    private void attachFragment(final Tab tab, Fragment frag) {        
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(tab.mStub, frag, tab.mTag);
         ft.commit();

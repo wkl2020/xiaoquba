@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.jun.xiaoquren.AppMainActivity;
 import com.jun.xiaoquren.AppMainFragment;
+import com.jun.xiaoquren.AppSettingFragment;
 import com.jun.xiaoquren.dao.ConstantTableDao;
 import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.lidroid.xutils.util.LogUtils;
@@ -69,6 +70,20 @@ public class LocalUtil {
 	
 	public static boolean isAppMainFragmentExists() {
 		return appMainFragment != null;
+	}
+	
+	public static AppSettingFragment appSettingFragment = null;
+	
+	public static void setAppSettingFragment(AppSettingFragment fragment) {
+		appSettingFragment = fragment;
+	}
+	
+	public static AppSettingFragment getAppSettingFragment() {
+		return appSettingFragment;
+	}
+	
+	public static boolean isAppSettingFragmentExists() {
+		return appSettingFragment != null;
 	}
 	
 	
