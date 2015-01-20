@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        	android:id="@+id/header_layout"
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:background="@drawable/main_bar_icon"
+  			android:gravity="center_vertical"  > 
+  			
+  			<Button
+	            android:id="@+id/btn_back"
+	            android:layout_width="70dp"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:text="@string/return_btn_label"
+	            android:textSize="17sp"
+	            android:textColor="#fff"
+	            android:onClick="page_back"
+	            android:background="@drawable/title_btn_back" />    
+      		
+      		<TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="@string/parking_stall_info_list_title_label"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" /> 
+      		
+      		<ImageButton
+      		    android:id="@+id/menu_button"
+			    android:layout_width="85dp" 
+        		android:layout_height="wrap_content"
+        		android:layout_alignParentRight="true" 
+        		android:layout_centerVertical="true"
+        		android:layout_marginRight="5dp"
+        		android:src="@drawable/mm_title_btn_menu_normal"
+				android:background="@drawable/title_btn_right"
+				android:onClick="onPopupButtonClicked" />
+							
+		</RelativeLayout>
+		
+    	<RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:focusable="true"  
+        	android:focusableInTouchMode="true"
+            android:layout_below="@+id/header_layout">
+
+		    <EditText
+		        android:id="@+id/search"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/search_bar_edit_bg" 
+		        android:hint="@string/search_hint_label" >
+		        
+		    </EditText>
+		
+		    <ListView
+		        android:id="@+id/listview"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:background="@drawable/mm_listitem"
+		        android:layout_marginTop="0dp"
+		        android:divider="#cccccc"
+    			android:dividerHeight="1dp"  
+		        android:layout_below="@+id/search" />
+    
+    </RelativeLayout>
+
+</RelativeLayout>

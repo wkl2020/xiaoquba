@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jun.xiaoquren.R;
+import com.jun.xiaoquren.dao.model.City;
 import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.view.model.CommentViewHolder;
 
@@ -26,6 +27,8 @@ public class CommentListViewAdapter extends BaseAdapter {
 
 	public CommentListViewAdapter(Activity context, List<DocumentComment> commentList) {
 		this.mContext = context;
+		commentList = commentList == null ? new ArrayList<DocumentComment>() : commentList;
+		
 		this.commentList = commentList;
 		inflater = LayoutInflater.from(mContext);
 		this.copycommentArraylist = new ArrayList<DocumentComment>();

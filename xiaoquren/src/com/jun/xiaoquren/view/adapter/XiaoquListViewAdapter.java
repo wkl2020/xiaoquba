@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.jun.xiaoquren.AppMainActivity;
 import com.jun.xiaoquren.R;
+import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.view.model.XiaoquViewHolder;
@@ -31,6 +32,8 @@ public class XiaoquListViewAdapter extends BaseAdapter {
 
 	public XiaoquListViewAdapter(Activity context, List<LocalXiaoqu> xiaoquList) {
 		this.mContext = context;
+		xiaoquList = xiaoquList == null ? new ArrayList<LocalXiaoqu>() : xiaoquList;
+		
 		this.xiaoquList = xiaoquList;
 		inflater = LayoutInflater.from(mContext);
 		this.copyXiaoquArraylist = new ArrayList<LocalXiaoqu>();

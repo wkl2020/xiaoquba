@@ -43,6 +43,10 @@
         <activity android:name=".AppRegisterActivity" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Anim_style2" />
         <activity android:name=".PersonalSettingActivity" android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Anim_style2" />
         
+        <activity android:name=".ParkingMainActivity" android:theme="@style/Anim_style2" />
+        <activity android:name=".ParkingSearchActivity" android:theme="@style/Anim_style2" />        
+        <activity android:name=".SearchPageActivity" android:theme="@style/Anim_style2" />
+        
         <service android:name="com.jun.xiaoquren.mqtt.PushService" android:label="Xiaoquren Notifications" />
         
     </application>

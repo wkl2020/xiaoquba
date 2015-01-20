@@ -6,8 +6,6 @@ import java.util.Map;
 import com.jun.xiaoquren.AppMainActivity;
 import com.jun.xiaoquren.AppMainFragment;
 import com.jun.xiaoquren.AppSettingFragment;
-import com.jun.xiaoquren.dao.ConstantTableDao;
-import com.jun.xiaoquren.dao.model.ConstantTable;
 import com.lidroid.xutils.util.LogUtils;
 
 import android.app.Activity;
@@ -125,13 +123,13 @@ public class LocalUtil {
         editor.putString(USERROLE, userrole);
         editor.putString(JSESSIONID, jsessionId);
         
-        // Save to database
-        ConstantTable usrCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsUsername);
-        ConstantTable pwdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsPassword);        
-        usrCon.setFieldvalue(username);
-        pwdCon.setFieldvalue(password);        
-        ConstantTableDao.updateByName(usrCon);
-        ConstantTableDao.updateByName(pwdCon);
+//        // Save to database
+//        ConstantTable usrCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsUsername);
+//        ConstantTable pwdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsPassword);        
+//        usrCon.setFieldvalue(username);
+//        pwdCon.setFieldvalue(password);        
+//        ConstantTableDao.updateByName(usrCon);
+//        ConstantTableDao.updateByName(pwdCon);
         
         //提交
         editor.commit();
@@ -182,13 +180,13 @@ public class LocalUtil {
         editor.putBoolean(IsFirstTimeLogin, false);
         LogUtils.i("Start to init IsFirstTimeLogin to false");
         
-        // Save to database
-        ConstantTable xiaoquIdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquId);
-        ConstantTable xiaoquNameCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquName);        
-        xiaoquIdCon.setFieldvalue(xiaoquId);
-        xiaoquNameCon.setFieldvalue(xiaoquName);        
-        ConstantTableDao.updateByName(xiaoquIdCon);
-        ConstantTableDao.updateByName(xiaoquNameCon);
+//        // Save to database
+//        ConstantTable xiaoquIdCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquId);
+//        ConstantTable xiaoquNameCon = ConstantTableDao.findByName(ConstantTableDao.ConstantsCurrentXiaoquName);        
+//        xiaoquIdCon.setFieldvalue(xiaoquId);
+//        xiaoquNameCon.setFieldvalue(xiaoquName);        
+//        ConstantTableDao.updateByName(xiaoquIdCon);
+//        ConstantTableDao.updateByName(xiaoquNameCon);
         
         //提交
         editor.commit();

@@ -13,6 +13,7 @@ import com.jun.xiaoquren.dao.model.City;
 import com.jun.xiaoquren.dao.model.Document;
 import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.dao.model.LocalXiaoqu;
+import com.jun.xiaoquren.server.model.ParkingStallInfo;
 import com.jun.xiaoquren.server.model.UserEntity;
 import com.lidroid.xutils.util.LogUtils;
 
@@ -265,10 +266,119 @@ public class JsonTools {
 	}
 	
 	
+	// 8. SparkingStallInfo
+	public static ParkingStallInfo getParkingStallInfoFromJsonStr(String jsonStr) {
+		ParkingStallInfo parkingStallInfo = new ParkingStallInfo();
+		
+		try {
+			parkingStallInfo = getParkingStallInfoFromJsonObject(new JSONObject(jsonStr));
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getParkingStallInfoFromJsonStr: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return parkingStallInfo;
+	}
 	
+	public static ParkingStallInfo getParkingStallInfoFromJsonObject(JSONObject obj) {
+		ParkingStallInfo parkingStallInfo = new ParkingStallInfo();
+		
+		try {	
+			parkingStallInfo.setId(obj.getInt("id"));
+			parkingStallInfo.setTitle(obj.getString("title"));
+			parkingStallInfo.setContent(obj.getString("content"));
+			parkingStallInfo.setOwner(obj.getString("owner"));
+			parkingStallInfo.setAddress(obj.getString("address"));
+			parkingStallInfo.setAreaMeasure(obj.getDouble("areaMeasure"));
+			parkingStallInfo.setNickname(obj.getString("nickname"));
+			parkingStallInfo.setPhone(obj.getString("phone"));
+			parkingStallInfo.setPrice(obj.getDouble("price"));
+			parkingStallInfo.setPriceUnit(obj.getString("priceUnit"));
+			parkingStallInfo.setYourIdentity(obj.getString("yourIdentity"));
+			parkingStallInfo.setCreateTime(getDateDiffStr(obj.getLong("createDate")));			
+			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getParkingStallInfoFromJsonObject: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return parkingStallInfo;
+	}
+	
+	public static List<ParkingStallInfo> getParkingStallInfoList(String jsonStr) {
+		
+		List<ParkingStallInfo> parkingStallInfoList = new ArrayList<ParkingStallInfo>();
+		try {
+			JSONArray  array = new JSONArray (jsonStr);
+			
+			for (int i = 0; i < array.length(); i++) {
+                JSONObject item = array.getJSONObject(i);                
+                parkingStallInfoList.add(getParkingStallInfoFromJsonObject(item));
+            }
+			
+		} catch (JSONException e) {
+			LogUtils.e("Error occured at getLocalXiaoquList: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return parkingStallInfoList;
+	}
+	
+	
+	
+	
+	// Format date to string format
 	public static String getDateShowStyle(long longdate) {
 		Date date = new Date(longdate);
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		return formatter.format(date);
+	}
+	public static String getDateStringWithMin(long longdate) {
+		Date date = new Date(longdate);
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		return formatter.format(date);
+	}
+	
+	// Get the date diff string with now
+	public static String getDateDiffStr(long longdate) {
+		String result = getDateStringWithMin(longdate);
+		long diff = new Date().getTime() - longdate;
+		
+		// 毫秒
+		if (diff < 1000) {
+			result = "1秒前";
+		} else {
+			diff = diff/1000;
+			// 分
+			if (diff < 60) {
+				result = diff+"秒前";
+			} else {
+				diff = diff/60;
+				// 时
+				if (diff < 60) {
+					result = diff+"分前";
+				} else {
+					diff = diff/60;
+					// 天
+					if (diff < 24) {
+						result = diff+"小时前";
+					} else {
+						diff = diff/24;
+						// 月
+						if (diff < 30) {
+							result = diff+"天前";
+						} else {
+							diff = diff/30;				
+							// 年
+							if (diff < 12) {
+								result = diff+"月前";
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return result;
 	}
 }

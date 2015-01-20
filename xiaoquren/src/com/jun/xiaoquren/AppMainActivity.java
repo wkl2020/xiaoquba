@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 
-import com.jun.xiaoquren.dao.DBUtil;
 import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.mqtt.PushService;
 import com.jun.xiaoquren.util.LocalUtil;
@@ -64,7 +63,7 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
 	
 	@Override
     public void finish() {
-    	DBUtil.closeDBConnection(this);
+//    	DBUtil.closeDBConnection(this);
         super.finish();
         LocalUtil.finishAllOtherActivities();
     	System.out.println("XXXXXXXXXXXX2: AppMainActivity: finish: " + LocalUtil.getAllActivities().size());
@@ -124,15 +123,43 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
     }
     
     public void phonenumbersonclick(View v) { 
-//        Intent intent = new Intent();
-//		intent.setClass(this, PersonalSettingActivity.class);
-//		startActivity(intent);
+        Intent intent = new Intent();
+		intent.setClass(this, PersonalSettingActivity.class);
+		startActivity(intent);
     }
     
-    public void bbsonclick(View v) { 
-//        Intent intent = new Intent();
-//		intent.setClass(this, MySettingsActivity.class);
-//		startActivity(intent);
+    public void parkingonclick(final View v) { 
+
+    	String currentXiaoquId = LocalUtil.getCurrentXiaoQuId(this);
+    	System.out.println("Start to connect xiaoqu ParkingStallInfos with xiaoqu id: " + currentXiaoquId);
+    	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.XiaoquParkingStallInfosUrl+currentXiaoquId, new RequestCallBack<String>() {
+
+            @Override
+            public void onStart() {
+            	System.out.println("Start to connect xiaoqu ParkingStallInfos... ");
+            }
+
+            @Override
+            public void onLoading(long total, long current, boolean isUploading) {
+            	System.out.println("On loading to connect xiaoqu ParkingStallInfos: " + current + "/" + total);
+            }
+
+  			@Override
+  			public void onFailure(HttpException error, String msg) {
+  				System.out.println("Error to connect xiaoqu ParkingStallInfos: " + msg);
+  			}
+
+  			@Override
+  			public void onSuccess(ResponseInfo<String> response) {
+  				System.out.println("Success to connect xiaoqu ParkingStallInfos: " + response.result.toString());
+  				String parkingStallInfosJsonstr = response.result.toString(); 
+  				
+  				Intent intent = new Intent();
+  				intent.setClass(v.getContext(), ParkingMainActivity.class);
+  			    intent.putExtra("parkingStallInfosJsonstr", parkingStallInfosJsonstr);
+  			    startActivity(intent);    	
+  			}
+  		});
     }
     
     public void shopptingsonclick(View v) {
@@ -145,8 +172,38 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
     	
     }
     
-    public void pingcheonclick(View v) {
-    	
+    public void pingcheonclick(final View v) {
+
+    	String currentXiaoquId = LocalUtil.getCurrentXiaoQuId(this);
+    	LogUtils.i("Start to connect xiaoqu ParkingStallInfos with xiaoqu id: " + currentXiaoquId);
+    	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.XiaoquParkingStallInfosUrl+currentXiaoquId, new RequestCallBack<String>() {
+
+            @Override
+            public void onStart() {
+            	LogUtils.i("Start to connect xiaoqu ParkingStallInfos... ");
+            }
+
+            @Override
+            public void onLoading(long total, long current, boolean isUploading) {
+            	LogUtils.i("On loading to connect xiaoqu ParkingStallInfos: " + current + "/" + total);
+            }
+
+  			@Override
+  			public void onFailure(HttpException error, String msg) {
+  				LogUtils.i("Error to connect xiaoqu ParkingStallInfos: " + msg);
+  			}
+
+  			@Override
+  			public void onSuccess(ResponseInfo<String> response) {
+  				LogUtils.i("Success to connect xiaoqu ParkingStallInfos: " + response.result.toString());
+  				String parkingStallInfosJsonstr = response.result.toString(); 
+  				
+  				Intent intent = new Intent();
+  				intent.setClass(v.getContext(), ParkingMainActivity.class);
+  			    intent.putExtra("parkingStallInfosJsonstr", parkingStallInfosJsonstr);
+  			    startActivity(intent);    	
+  			}
+  		});
     }
     
     

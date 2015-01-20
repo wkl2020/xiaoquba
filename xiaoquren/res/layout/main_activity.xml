@@ -83,12 +83,12 @@
                 android:src="@drawable/main_icon_red" />
             
             <ImageView
-                android:id="@+id/bbs"
+                android:id="@+id/parking"
                 android:layout_width="85dp"
 		        android:layout_height="65dp"
 		        android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/phonenumbers"
-                android:onClick="bbsonclick"
+                android:onClick="parkingonclick"
                 android:paddingLeft="5dp"
                 android:src="@drawable/main_icon_blue" />
 
@@ -114,15 +114,15 @@
                 android:textColor="#000" />
              
             <TextView
-                android:id="@+id/bbs_label"
+                android:id="@+id/parking_label"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_below="@+id/bbs"
+                android:layout_below="@+id/parking"
                 android:layout_toRightOf="@+id/phonenumbers_label"
                 android:gravity="center"
                 android:paddingLeft="5dp"
-                android:text="@string/bbs_label"
+                android:text="@string/parking_label"
                 android:textColor="#000" />
 
             

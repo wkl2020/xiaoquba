@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="15dp"
+    android:background="@drawable/mm_listitem"  
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/parking_info_search_item_key"
+        android:layout_weight="2"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/parking_info_search_item_value"
+        android:layout_weight="2"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#ce0000" />
+    
+    <ImageView
+    	android:layout_width="wrap_content"
+		android:layout_height="wrap_content"        	     	
+		android:scaleType="matrix"
+		android:src="@drawable/mm_submenu" />
+
+</LinearLayout>

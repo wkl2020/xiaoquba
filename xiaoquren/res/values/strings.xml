@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">小区人</string>
+    <string name="app_name">1小区微生活</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">设置</string>
     <string name="menu_settings">Settings</string>
@@ -13,7 +13,7 @@
     <string name="xiaoquaround_label">小区周边</string>
     <string name="wuyenotifier_label">小区公告</string>
     <string name="phonenumbers_label">号码通</string>
-    <string name="bbs_label">论坛</string>    
+    <string name="parking_label">小区车位</string>    
     <string name="shoppings_label">商铺</string>
     <string name="waimai_label">外卖</string>
     <string name="pingche_label">拼车</string>
@@ -70,6 +70,19 @@
     <string name="reg_commit_btn_label">确定</string>
     <string name="userprotocol_check_label">我已同意用户协议</string>
     
-    <string name="submit_btn_label">提交</string>    
+    <string name="parking_stall_info_list_title_label">车位出租</string>    
+    <string name="filter_info_pop">筛选条件</string>
+    <string name="publish_info_pop">发布信息</string>
+    <string name="my_info_pop">我的信息</string>
+    
+    <string name="search_label">筛选条件</string>
+    <string name="search_btn_label">搜索</string>
+    
+    <string name="search_page_title_label">条件选择</string>
+    <string name="search_page_btn_label">确定</string>
+    
+    <string name="submit_btn_label">提交</string>   
+    
+    
 
 </resources>

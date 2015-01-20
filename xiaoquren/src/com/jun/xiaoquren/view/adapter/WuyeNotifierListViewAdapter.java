@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.WuyeNotifierDetailActivity;
 import com.jun.xiaoquren.dao.model.Document;
+import com.jun.xiaoquren.dao.model.DocumentComment;
 import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.view.model.DocumentViewHolder;
 import com.lidroid.xutils.exception.HttpException;
@@ -36,6 +37,8 @@ public class WuyeNotifierListViewAdapter extends BaseAdapter {
 
 	public WuyeNotifierListViewAdapter(Activity context, List<Document> documentList) {
 		this.mContext = context;
+		documentList = documentList == null ? new ArrayList<Document>() : documentList;
+		
 		this.documentList = documentList;
 		inflater = LayoutInflater.from(mContext);
 		this.copyDocumentArraylist = new ArrayList<Document>();

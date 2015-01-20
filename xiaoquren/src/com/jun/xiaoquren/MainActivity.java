@@ -157,7 +157,7 @@
 //		startActivity(intent);
 //    }
 //    
-//    public void bbsonclick(View v) { 
+//    public void parkingonclick(View v) { 
 //        Intent intent = new Intent();
 //		intent.setClass(MainActivity.this, MySettingsActivity.class);
 //		startActivity(intent);

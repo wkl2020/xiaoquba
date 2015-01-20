@@ -36,6 +36,11 @@ public class LocalHttpUtil {
 //	public static final String LoginUserUrl = ServerURL + "/xiaoqubaserver/main/j_spring_security_check";
 	public static final String GetUserByUsername = ServerURL + "/xiaoqubaserver/main/getUserbyName?username=";
 	public static final String UpdateUserUrl = ServerURL + "/xiaoqubaserver/main/updateUser";
+	
+	// ParkingStallInfo	
+	public static final String XiaoquParkingStallInfosUrl = ServerURL + "/xiaoqubaserver/main/xiaoqu_parking_stall_infos/";
+	public static final String GetParkingStallInfoByIdUrl = ServerURL + "/xiaoqubaserver/main/parking_stall_info/";
+	
 
 	public LocalHttpUtil() {
 		// TODO Auto-generated constructor stub

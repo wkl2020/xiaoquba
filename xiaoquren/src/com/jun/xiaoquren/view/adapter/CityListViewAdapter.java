@@ -18,6 +18,7 @@ import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.XiaoquSearchActivity;
 import com.jun.xiaoquren.dao.model.City;
 import com.jun.xiaoquren.http.LocalHttpUtil;
+import com.jun.xiaoquren.server.model.ParkingStallInfo;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.view.model.CityViewHolder;
 import com.lidroid.xutils.exception.HttpException;
@@ -38,6 +39,8 @@ public class CityListViewAdapter extends BaseAdapter {
 
 	public CityListViewAdapter(Activity context, List<City> cityList) {
 		this.mContext = context;
+		cityList = cityList == null ? new ArrayList<City>() : cityList;
+		
 		this.cityList = cityList;
 		inflater = LayoutInflater.from(mContext);
 		this.copycityArraylist = new ArrayList<City>();

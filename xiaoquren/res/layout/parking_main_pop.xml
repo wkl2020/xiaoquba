@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="wrap_content"  
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+  
+    <Button  
+        android:id="@+id/filter_info_btn"   
+        android:layout_width="150dp" 
+        android:layout_height="40dp" 
+        android:background="@drawable/btn_menu_item"
+        android:textColor="@drawable/btn_menu_color"
+        android:onClick="onFilterInfoPopClick"  
+        android:gravity="center"
+        android:textSize="15sp" 
+        android:text="@string/filter_info_pop"/>
+  
+    <Button  
+        android:id="@+id/publish_info_btn"  
+        android:layout_width="150dp"  
+        android:layout_height="40dp"
+        android:background="@drawable/btn_menu_item"
+        android:textColor="@drawable/btn_menu_color"
+        android:onClick="onPublishInfoPopClick"  
+        android:gravity="center"
+        android:textSize="15sp" 
+        android:text="@string/publish_info_pop" />  
+  
+    <Button  
+        android:id="@+id/my_info_btn"  
+        android:layout_width="150dp"  
+        android:layout_height="40dp"
+        android:background="@drawable/btn_menu_item"
+        android:textColor="@drawable/btn_menu_color"
+        android:onClick="onMyInfoPopClick"  
+        android:gravity="center"
+        android:textSize="15sp"  
+        android:text="@string/my_info_pop" />  
+  
+</LinearLayout>  

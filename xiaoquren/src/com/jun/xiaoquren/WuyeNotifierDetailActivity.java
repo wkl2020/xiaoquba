@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ListView;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -100,84 +103,28 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	
 	 public void initmPopupWindowView() {  
 		  
-	        View customView = getLayoutInflater().inflate(R.layout.wuye_notifier_comment_pop, null, false);  
-	        popupwindow = new PopupWindow(customView, 200, 170);  
-	        popupwindow.setAnimationStyle(R.style.AnimationFade);
-	        
-	        popupwindow.setTouchable(true);
-	        
-//	        popupwindow.setTouchInterceptor(new OnTouchListener() {
-//
-//	            @Override
-//	            public boolean onTouch(View v, MotionEvent event) {
-//
-//	            	LogUtils.i("popupwindow onTouch event ");
-//	                return false;
-//	                // 这里如果返回true的话，touch事件将被拦截, 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
-//	            }
-//	        });
+        View customView = getLayoutInflater().inflate(R.layout.wuye_notifier_comment_pop, null, false);  
+        popupwindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);  
+        popupwindow.setAnimationStyle(R.style.AnimationFade);
+        popupwindow.setOutsideTouchable(false);
+        popupwindow.setBackgroundDrawable(new BitmapDrawable());
+        popupwindow.setFocusable(true);//如果不加这个，Grid不会响应ItemClick
+        popupwindow.setTouchable(true);
+        
+        popupwindow.setTouchInterceptor(new OnTouchListener() {
 
-	        // 如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
-	        // 我觉得这里是API的一个bug
-	        popupwindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_menu_item));
-	        popupwindow.setOutsideTouchable(true);
-	        
-//	        popupwindow.setBackgroundDrawable(new BitmapDrawable());
-            
-            
-//	        customView.setOnTouchListener(new OnTouchListener() {  
-//	  
-//	            @Override  
-//	            public boolean onTouch(View v, MotionEvent event) {  
-//	                if (popupwindow != null && popupwindow.isShowing()) {  
-//	                    popupwindow.dismiss();  
-//	                    popupwindow = null;  
-//	                }
-////	                return false;  
-//	                return super.onTouchEvent(event);
-//	            }  
-//	        });
-	  
-	    }  
-	
-//	@Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.wuye_notifier_detail_menu, menu);
-//        mMenu = menu;
-//        mMenuButtonAddComment= menu.findItem(R.id.add_comment_menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        configureMenu(menu);
-//        return true;
-//    }
-    
-//    private void configureMenu(Menu menu) {
-//        if (menu == null) {
-//            return;
-//        }
-//        menu.findItem(R.id.add_comment_menu).setVisible(true);
-//    }
-//    
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int itemId = item.getItemId();
-//        switch (itemId) {
-//            case R.id.add_comment_menu: {
-//                onAddCommentClicked();
-//                return true;
-//            }
-//            default: {
-//                return super.onOptionsItemSelected(item);
-//            }
-//        }
-//    }
-//    
-//    public void onAddCommentClicked() {
-//    	System.out.println("####################### onAddCommentClicked ################################");
-//    }
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					
+					System.out.println("onTouch: Y: " + event.getY() + ":X: " + event.getX());                   
+                    if (event.getY() < 0 || event.getX() < 0){  //这里处理，当点击gridview以外区域的时候，菜单关闭
+                        if (popupwindow.isShowing())
+                        	popupwindow.dismiss();
+                    }
+                    return false;
+				}
+        });
+    }  
 
 	@Override
 	public void onClick(View v) {
