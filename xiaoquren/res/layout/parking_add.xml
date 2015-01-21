@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:background="#eee"
+      android:orientation="vertical" >
+      
+      <RelativeLayout 
+  			android:id="@+id/title" 
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:background="@drawable/main_bar_icon"
+  			android:orientation="vertical"
+  			android:gravity="center_horizontal"  >  
+      		
+      		<Button
+	            android:id="@+id/btn_back"
+	            android:layout_width="70dp"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:text="@string/return_btn_label"
+	            android:textSize="17sp"
+	            android:textColor="#fff"
+	            android:onClick="page_back"
+	            android:background="@drawable/title_btn_back" />    
+      		
+      		<TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="@string/publish_info_header_title"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" />
+      		
+			<TextView
+      		    android:id="@+id/parking_save_button"
+			    android:layout_width="90dp" 
+        		android:layout_height="wrap_content"
+        		android:layout_marginRight="5dp"
+        		android:text="@string/publish_info_save_btn"
+        		android:layout_alignParentRight="true" 
+        		android:layout_centerVertical="true"
+        		android:gravity="center|center"
+	            android:textSize="17sp"
+	            android:textColor="#fff"
+        		android:src="@drawable/title_btn_function"
+				android:background="@drawable/title_btn_right"/> 
+				
+	   </RelativeLayout>
+	   
+      <ScrollView
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:scrollbarStyle="outsideOverlay" >
+        	<LinearLayout
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            	
+        <RelativeLayout
+            android:id="@+id/publish_supply_type_section"
+     		android:layout_width="fill_parent"
+     		android:layout_height="wrap_content"
+     		android:gravity="center_vertical"
+     		android:clickable="true"
+     		android:background="@drawable/list_single_item" >
+     		
+     		<TextView
+     		    android:id="@+id/publish_supply_type_label"
+ 				android:layout_width="80dp" 
+ 				android:layout_height="wrap_content"
+ 				android:text="@string/publish_supply_type"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+				android:textColor="#000" />
+     		
+     		<TextView
+		        android:id="@+id/publish_supply_type"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+		        android:text="@string/publish_default_supply_type"
+                android:layout_toRightOf="@+id/publish_supply_type_label" />
+     		
+     		<ImageView
+     			android:layout_width="wrap_content"
+ 				android:layout_height="wrap_content"        	     	
+ 				android:scaleType="matrix"
+ 				android:layout_centerVertical="true"
+ 				android:layout_alignParentRight="true"
+ 				android:clickable="true"
+ 				android:src="@drawable/mm_submenu" /> 
+ 				     					
+		</RelativeLayout>
+		
+        <RelativeLayout
+            android:id="@+id/publish_identity_section"
+     		android:layout_width="fill_parent"
+     		android:layout_height="wrap_content"
+     		android:gravity="center_vertical"
+     		android:clickable="true"
+     		android:background="@drawable/list_single_item" >
+     		
+     		<TextView
+     		    android:id="@+id/publish_identity_label"
+ 				android:layout_width="80dp" 
+ 				android:layout_height="wrap_content"
+ 				android:text="@string/publish_identity"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+				android:textColor="#000" />
+     		
+     		<TextView
+		        android:id="@+id/publish_identity"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+		        android:text="@string/publish_default_identity"
+                android:layout_toRightOf="@+id/publish_identity_label"/>
+     		
+     		<ImageView
+     			android:layout_width="wrap_content"
+ 				android:layout_height="wrap_content"        	     	
+ 				android:scaleType="matrix"
+ 				android:layout_centerVertical="true"
+ 				android:layout_alignParentRight="true"
+ 				android:clickable="true"
+ 				android:src="@drawable/mm_submenu" /> 
+ 				     					
+		</RelativeLayout>	    
+	   
+       <RelativeLayout
+            android:id="@+id/publish_title_section"
+     		android:layout_width="fill_parent"
+     		android:layout_height="wrap_content"
+     		android:gravity="center_vertical"
+     		android:clickable="true"
+     		android:background="@drawable/list_single_item" >
+     		
+     		<TextView
+     		    android:id="@+id/publish_title_label"
+ 				android:layout_width="80dp" 
+ 				android:layout_height="wrap_content"
+ 				android:text="@string/publish_title"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+				android:textColor="#000" />
+     		
+     		<EditText
+		        android:id="@+id/publish_title_content"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+ 				android:layout_marginTop="4dp"
+ 				android:textSize="15sp"		
+                android:layout_toRightOf="@+id/publish_title_label"
+		        android:minLines="1"
+		        android:hint="@string/publish_title_content_hint_label" />
+ 				     					
+		</RelativeLayout>
+		
+        <RelativeLayout
+            android:id="@+id/publish_address_section"
+     		android:layout_width="fill_parent"
+     		android:layout_height="wrap_content"
+     		android:gravity="center_vertical"
+     		android:clickable="true"
+     		android:background="@drawable/list_single_item" >
+     		
+     		<TextView
+     		    android:id="@+id/publish_address_label"
+ 				android:layout_width="80dp" 
+ 				android:layout_height="wrap_content"
+ 				android:text="@string/publish_address"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+				android:textColor="#000" />
+     		
+     		<EditText
+		        android:id="@+id/publish_address_content"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+ 				android:layout_marginTop="4dp"
+ 				android:textSize="15sp"		
+                android:layout_toRightOf="@+id/publish_address_label"
+		        android:minLines="1"
+		        android:hint="@string/publish_address_content_hint_label" />
+ 				     					
+		 </RelativeLayout>
+		
+        <RelativeLayout
+            android:id="@+id/publish_desc_section"
+     		android:layout_width="fill_parent"
+     		android:layout_height="wrap_content"
+     		android:gravity="center_vertical"
+     		android:clickable="true"
+     		android:background="@drawable/list_single_item" >
+     		
+     		<TextView
+     		    android:id="@+id/publish_desc_label"
+ 				android:layout_width="80dp" 
+ 				android:layout_height="wrap_content"
+ 				android:padding="8dp"
+ 				android:textSize="15sp"		
+ 				android:text="@string/publish_desc"
+				android:textColor="#000" />
+     		
+     		<EditText
+		        android:id="@+id/publish_desc_content"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+ 				android:layout_marginTop="4dp"
+ 				android:textSize="15sp"		
+                android:layout_toRightOf="@+id/publish_desc_label"
+		        android:minLines="3"
+		        android:hint="@string/publish_desc_content_hint_label" />
+ 				     					
+		 </RelativeLayout>
+		 
+        </LinearLayout>
+        </ScrollView>
+      
+</LinearLayout>      

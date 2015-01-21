@@ -93,7 +93,10 @@ public class ParkingMainActivity extends MyAbstractActivity {
 	}
 	
 	public void onPublishInfoPopClick(View v) {
-		Toast.makeText(ParkingMainActivity.this, "onPublishInfoPopClick!", Toast.LENGTH_LONG).show();
+
+		Intent intent = new Intent();
+		intent.setClass(ParkingMainActivity.this, ParkingAddActivity.class);
+		startActivity(intent);
 	}
 	
 	public void onMyInfoPopClick(View v) {
