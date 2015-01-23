@@ -56,6 +56,13 @@ public class ParkingMainViewAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
+	
+	public void resetListData(List<ParkingStallInfo> parkingStallInfoList) {
+		parkingStallInfoList = parkingStallInfoList == null ? new ArrayList<ParkingStallInfo>() : parkingStallInfoList; 		
+		this.parkingStallInfoList = parkingStallInfoList;
+		this.copyParkingStallInfoArraylist = new ArrayList<ParkingStallInfo>();
+		this.copyParkingStallInfoArraylist.addAll(parkingStallInfoList);
+	}
 
 	/*
 	 * View for each ParkingStallInfo

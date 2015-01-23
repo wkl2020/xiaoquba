@@ -101,6 +101,7 @@
      		android:layout_height="wrap_content"
      		android:gravity="center_vertical"
      		android:clickable="true"
+     		android:onClick="identityOnClicked"
      		android:background="@drawable/list_single_item" >
      		
      		<TextView
@@ -154,6 +155,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_title_label"
 		        android:minLines="1"
@@ -183,6 +185,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_address_label"
 		        android:minLines="1"
@@ -212,6 +215,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_desc_label"
 		        android:minLines="3"
@@ -241,6 +245,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_area_label"
 		        android:hint="@string/publish_area_content_hint_label" />
@@ -269,6 +274,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_price_label"
 		        android:hint="@string/publish_price_content_hint_label" />
@@ -281,6 +287,7 @@
      		android:layout_height="wrap_content"
      		android:gravity="center_vertical"
      		android:clickable="true"
+     		android:onClick="unitOnClicked"
      		android:background="@drawable/list_single_item" >
      		
      		<TextView
@@ -334,6 +341,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_nickname_label"
 		        android:hint="@string/publish_nickname_content_hint_label" />
@@ -362,6 +370,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
  				android:layout_marginTop="4dp"
+ 				android:layout_marginRight="4dp"
  				android:textSize="15sp"		
                 android:layout_toRightOf="@+id/publish_phone_label"
 		        android:hint="@string/publish_phone_content_hint_label" />

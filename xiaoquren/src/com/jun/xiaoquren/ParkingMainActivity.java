@@ -20,9 +20,16 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.jun.xiaoquren.http.JsonTools;
+import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.server.model.ParkingStallInfo;
+import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.ParkingMainViewAdapter;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.util.LogUtils;
 
 public class ParkingMainActivity extends MyAbstractActivity {
 
@@ -146,6 +153,39 @@ public class ParkingMainActivity extends MyAbstractActivity {
 
     public void page_back(View v) {
 		this.finish();
+    }
+    
+    public void refreshList() {
+    	
+    	String currentXiaoquId = LocalUtil.getCurrentXiaoQuId(this);
+    	System.out.println("Start to connect xiaoqu ParkingStallInfos with xiaoqu id: " + currentXiaoquId);
+    	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.XiaoquParkingStallInfosUrl+currentXiaoquId, new RequestCallBack<String>() {
+
+            @Override
+            public void onStart() {
+            	System.out.println("Start to connect xiaoqu ParkingStallInfos... ");
+            }
+
+            @Override
+            public void onLoading(long total, long current, boolean isUploading) {
+            	System.out.println("On loading to connect xiaoqu ParkingStallInfos: " + current + "/" + total);
+            }
+
+  			@Override
+  			public void onFailure(HttpException error, String msg) {
+  				System.out.println("Error to connect xiaoqu ParkingStallInfos: " + msg);
+  			}
+
+  			@Override
+  			public void onSuccess(ResponseInfo<String> response) {
+  				System.out.println("Success to connect xiaoqu ParkingStallInfos: " + response.result.toString());
+  				String parkingStallInfosJsonstr = response.result.toString(); 
+  				infoList = JsonTools.getParkingStallInfoList(parkingStallInfosJsonstr);  				
+  				listViewAdapter.resetListData(infoList);
+  		    	infoListView.setAdapter(listViewAdapter);
+  		    	listViewAdapter.notifyDataSetChanged();
+  			}
+  		});
     }
 
 }
