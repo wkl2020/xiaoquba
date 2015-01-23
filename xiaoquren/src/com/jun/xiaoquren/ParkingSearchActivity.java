@@ -33,10 +33,10 @@ public class ParkingSearchActivity  extends MyAbstractActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.parking_search);
 		searchListView = (ListView) findViewById(R.id.listview);		
-		searchKeyList.add(LocalViewUtil.Info_Search_First);
-		searchKeyList.add(LocalViewUtil.Info_Search_Second);
-		searchKeyList.add(LocalViewUtil.Info_Search_Third);
-		searchKeyList.add(LocalViewUtil.Info_Search_Fourth);
+		searchKeyList.add(LocalViewUtil.Info_Search_Supply);
+		searchKeyList.add(LocalViewUtil.Info_Search_Identity);
+		searchKeyList.add(LocalViewUtil.Info_Search_Area);
+		searchKeyList.add(LocalViewUtil.Info_Search_Price);
 
 		// Pass results to ListViewAdapter Class
 		listViewAdapter = new ParkingSearchViewAdapter(this, searchKeyList);

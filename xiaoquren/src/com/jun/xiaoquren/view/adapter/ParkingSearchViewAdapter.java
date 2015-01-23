@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jun.xiaoquren.ParkingMainActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.SearchPageActivity;
 import com.jun.xiaoquren.util.LocalViewUtil;
@@ -79,6 +80,7 @@ public class ParkingSearchViewAdapter extends BaseAdapter {
 				
 				Intent intent = new Intent(mContext, SearchPageActivity.class);
 				intent.putExtra("listName", key);
+				intent.putExtra("parentPageName", ParkingMainActivity.CLASSNAME);				
 				mContext.startActivity(intent);
 			}
 		});

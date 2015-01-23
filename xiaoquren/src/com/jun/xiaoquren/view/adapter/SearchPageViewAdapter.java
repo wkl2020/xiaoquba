@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.jun.xiaoquren.ParkingAddActivity;
+import com.jun.xiaoquren.ParkingMainActivity;
 import com.jun.xiaoquren.ParkingSearchActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.util.LocalUtil;
@@ -26,28 +28,47 @@ public class SearchPageViewAdapter extends BaseAdapter {
 	LayoutInflater inflater;
 	private List<String> list = null;
 	String listName = "";
+	String parentPageName = "";
 	
 
-	public SearchPageViewAdapter(Activity context, String listName) {
+	public SearchPageViewAdapter(Activity context, String listName, String parentPageName) {
 		this.mContext = context;
 		inflater = LayoutInflater.from(mContext);
 		this.listName = listName;
+		this.parentPageName = parentPageName;
 		
-		if (LocalViewUtil.Info_Search_First.equals(listName)) {
-			this.list = LocalViewUtil.FirstInfoList;
+		if (ParkingMainActivity.CLASSNAME.equals(parentPageName)) {
 			
-		} else if (LocalViewUtil.Info_Search_Second.equals(listName)) {
-			this.list = LocalViewUtil.SecondInfoList;
+			if (LocalViewUtil.Info_Search_Supply.equals(listName)) {
+				this.list = LocalViewUtil.SupplyInfoList;
+				
+			} else if (LocalViewUtil.Info_Search_Identity.equals(listName)) {
+				this.list = LocalViewUtil.IdentityInfoList;
+				
+			} else if (LocalViewUtil.Info_Search_Area.equals(listName)) {
+				this.list = LocalViewUtil.AreaInfoList;
+				
+			} else if (LocalViewUtil.Info_Search_Price.equals(listName)) {
+				this.list = LocalViewUtil.PriceInfoList;
+				
+			} else {
+				this.list = new ArrayList<String>();
+			}
+		} else if (ParkingAddActivity.CLASSNAME.equals(parentPageName)) {
 			
-		} else if (LocalViewUtil.Info_Search_Third.equals(listName)) {
-			this.list = LocalViewUtil.ThirdInfoList;
-			
-		} else if (LocalViewUtil.Info_Search_Fourth.equals(listName)) {
-			this.list = LocalViewUtil.FourthInfoList;
-			
-		} else {
-			this.list = new ArrayList<String>();
-		}
+			if (LocalViewUtil.Info_Search_Supply.equals(listName)) {
+				this.list = LocalViewUtil.SupplyInfoList;
+				
+			} else if (LocalViewUtil.Info_Search_Identity.equals(listName)) {
+				this.list = LocalViewUtil.IdentityInfoList;
+				
+			} else if (LocalViewUtil.Info_Search_Unit.equals(listName)) {
+				this.list = LocalViewUtil.UnitInfoList;
+				
+			} else {
+				this.list = new ArrayList<String>();
+			}
+		} 
 	}
 
 	@Override
@@ -87,14 +108,27 @@ public class SearchPageViewAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View arg0) {
 				
-				String item = String.valueOf(list.get(position));				
-				LocalViewUtil.MainParkingInfoMap.put(listName, item);
+				String item = String.valueOf(list.get(position));
 				
-				if (LocalUtil.isActiveActivityExists(ParkingSearchActivity.CLASSNAME)) {
-					ParkingSearchActivity page = (ParkingSearchActivity)LocalUtil.getActiveActivity(ParkingSearchActivity.CLASSNAME);
-					page.refreshPage();
-					mContext.finish();
-    			}
+				if (ParkingMainActivity.CLASSNAME.equals(parentPageName)) {
+					
+					LocalViewUtil.MainParkingInfoMap.put(listName, item);
+					if (LocalUtil.isActiveActivityExists(ParkingSearchActivity.CLASSNAME)) {
+						ParkingSearchActivity page = (ParkingSearchActivity)LocalUtil.getActiveActivity(ParkingSearchActivity.CLASSNAME);
+						page.refreshPage();
+						mContext.finish();
+	    			}
+					
+				} else if (ParkingAddActivity.CLASSNAME.equals(parentPageName)) {
+					
+					LocalViewUtil.AddParkingInfoMap.put(listName, item);
+					if (LocalUtil.isActiveActivityExists(ParkingAddActivity.CLASSNAME)) {
+						ParkingAddActivity page = (ParkingAddActivity)LocalUtil.getActiveActivity(ParkingAddActivity.CLASSNAME);
+						page.refreshPage();
+						mContext.finish();
+	    			}
+					
+				}
 			}
 		});
 

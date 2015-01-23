@@ -87,7 +87,16 @@
     <string name="publish_default_supply_type">出租</string>    
     <string name="publish_identity">您的身份</string>
     <string name="publish_default_identity">个人</string>
-    
+    <string name="publish_area">面积</string>
+    <string name="publish_area_content_hint_label">请输入面积</string>
+    <string name="publish_price">租金</string>
+    <string name="publish_price_content_hint_label">请输入租金</string>
+    <string name="publish_unit">租金单位</string>
+    <string name="publish_default_unit">元/月</string>
+    <string name="publish_phone">联系电话</string>
+    <string name="publish_phone_content_hint_label">请输入联系电话</string>
+    <string name="publish_nickname">联系人名称</string>
+    <string name="publish_nickname_content_hint_label">请输入联系人名称</string>
     
     
     <string name="search_label">筛选条件</string>

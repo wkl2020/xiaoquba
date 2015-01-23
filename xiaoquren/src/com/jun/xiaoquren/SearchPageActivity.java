@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.jun.xiaoquren.util.LocalViewUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
@@ -32,13 +31,15 @@ public class SearchPageActivity  extends MyAbstractActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.search_page);
 		searchListView = (ListView) findViewById(R.id.listview);		
-		searchKeyList.add(LocalViewUtil.Info_Search_First);
-		searchKeyList.add(LocalViewUtil.Info_Search_Second);
-		searchKeyList.add(LocalViewUtil.Info_Search_Third);
-		searchKeyList.add(LocalViewUtil.Info_Search_Fourth);
+		searchKeyList.add(LocalViewUtil.Info_Search_Supply);
+		searchKeyList.add(LocalViewUtil.Info_Search_Identity);
+		searchKeyList.add(LocalViewUtil.Info_Search_Area);
+		searchKeyList.add(LocalViewUtil.Info_Search_Price);
 		
 		String listName = (String)getIntent().getSerializableExtra("listName");
-		listViewAdapter = new SearchPageViewAdapter(this, listName);
+		String parentPageName = (String)getIntent().getSerializableExtra("parentPageName");
+		
+		listViewAdapter = new SearchPageViewAdapter(this, listName, parentPageName);
 		
 		// Binds the Adapter to the ListView
 		searchListView.setAdapter(listViewAdapter);
