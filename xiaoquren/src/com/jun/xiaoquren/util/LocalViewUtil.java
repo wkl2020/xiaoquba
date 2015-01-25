@@ -50,7 +50,7 @@ public class LocalViewUtil {
 	public static final String Info_Search_Supply_Value_Second = "寻租";
 	public static List<String> SupplyInfoList = new ArrayList<String>();
 	
-	public static final String Info_Search_Identity = "发布人";
+	public static final String Info_Search_Identity = "发布人身份";
 	public static final String Info_Search_Identity_Value_Zero = "不限";
 	public static final String Info_Search_Identity_Value_First = "个人";
 	public static final String Info_Search_Identity_Value_Second = "经纪人";

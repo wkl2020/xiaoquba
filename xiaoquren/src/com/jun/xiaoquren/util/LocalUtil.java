@@ -6,12 +6,14 @@ import java.util.Map;
 import com.jun.xiaoquren.AppMainActivity;
 import com.jun.xiaoquren.AppMainFragment;
 import com.jun.xiaoquren.AppSettingFragment;
+import com.jun.xiaoquren.ParkingMainActivity;
 import com.lidroid.xutils.util.LogUtils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.widget.Toast;
 
 public class LocalUtil {
 	
@@ -228,6 +230,23 @@ public class LocalUtil {
     	// TODO
     	
     	return sessionId != null && !sessionId.isEmpty();
+    }
+    
+    public static boolean isUserStatusValid(Context context) {
+    	if (LocalUtil.getCurrentXiaoQuId(context).isEmpty()) {
+			Toast.makeText(context, "请先选择所属小区", Toast.LENGTH_LONG).show();
+			return false;
+		}
+		if (LocalUtil.getUsername(context).isEmpty()) {
+			Toast.makeText(context, "请先登录用户", Toast.LENGTH_LONG).show();
+			return false;
+		}
+		// TODO 
+//		if (LocalUtil.getJSessionId(context).isEmpty()) {
+//			Toast.makeText(context, "登录信息已过期，请再次登录用户", Toast.LENGTH_LONG).show();
+//			return false;
+//		}
+		return true;
     }
     
     public static void userLogout(Context context) {

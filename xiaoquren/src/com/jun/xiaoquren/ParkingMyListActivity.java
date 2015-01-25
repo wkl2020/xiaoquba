@@ -9,20 +9,13 @@ import org.apache.http.entity.StringEntity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.Toast;
 
 import com.jun.xiaoquren.http.JsonTools;
 import com.jun.xiaoquren.http.LocalHttpUtil;
@@ -30,7 +23,7 @@ import com.jun.xiaoquren.server.model.ParkingStallInfo;
 import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.LocalViewUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
-import com.jun.xiaoquren.view.adapter.ParkingMainViewAdapter;
+import com.jun.xiaoquren.view.adapter.ParkingMyListViewAdapter;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -39,9 +32,9 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
 
-public class ParkingMainActivity extends MyAbstractActivity {
+public class ParkingMyListActivity extends MyAbstractActivity {
 
-	public static final String CLASSNAME = "ParkingMainActivity";
+	public static final String CLASSNAME = "ParkingMyListActivity";
 
     @Override
 	public String getActivityName() {
@@ -50,16 +43,14 @@ public class ParkingMainActivity extends MyAbstractActivity {
 
 	// Declare Variables
 	ListView infoListView;
-	ParkingMainViewAdapter listViewAdapter;
+	ParkingMyListViewAdapter listViewAdapter;
 	EditText searchTextbox;
 	List<ParkingStallInfo> infoList = new ArrayList<ParkingStallInfo>();
-	
-	private PopupWindow popupwindow; 
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.parking_main);
+		setContentView(R.layout.parking_my_list);
 
 		infoListView = (ListView) findViewById(R.id.listview);
 		
@@ -67,7 +58,7 @@ public class ParkingMainActivity extends MyAbstractActivity {
 		infoList = JsonTools.getParkingStallInfoList(parkingStallInfosJsonstr);
 
 		// Pass results to ListViewAdapter Class
-		listViewAdapter = new ParkingMainViewAdapter(this, infoList);
+		listViewAdapter = new ParkingMyListViewAdapter(this, infoList);
 		
 		// Binds the Adapter to the ListView
 		infoListView.setAdapter(listViewAdapter);
@@ -96,74 +87,10 @@ public class ParkingMainActivity extends MyAbstractActivity {
 				// TODO Auto-generated method stub
 			}
 		});
-		
-		initmPopupWindowView();
+
 		refreshList();
 	}
 	
-	public void onFilterInfoPopClick(View v) {
-		
-		popupwindow.dismiss();
-	    Intent intent = new Intent();
-		intent.setClass(ParkingMainActivity.this, ParkingSearchActivity.class);
-		startActivity(intent);
-	}
-	
-	public void onPublishInfoPopClick(View v) {
-		
-		if (LocalUtil.isUserStatusValid(ParkingMainActivity.this)) {
-			popupwindow.dismiss();
-			Intent intent = new Intent();
-			intent.setClass(ParkingMainActivity.this, ParkingAddActivity.class);
-			startActivity(intent);
-		}
-	}
-	
-	public void onMyInfoPopClick(View v) {
-		
-		if (LocalUtil.isUserStatusValid(ParkingMainActivity.this)) {
-			popupwindow.dismiss();
-			Intent intent = new Intent();
-			intent.putExtra("parkingStallInfosJsonstr", "[]");			
-			intent.setClass(ParkingMainActivity.this, ParkingMyListActivity.class);
-			startActivity(intent);			
-		}
-	}
-    
-    public void onPopupButtonClicked(View v) {
-		if (popupwindow != null && popupwindow.isShowing()) {  
-            popupwindow.dismiss();  
-            return;  
-        } else {
-            popupwindow.showAsDropDown(v, 5, 5);  
-        }  
-    }
-	
-	 public void initmPopupWindowView() {  		  
-        View customView = getLayoutInflater().inflate(R.layout.parking_main_pop, null, false);  
-        popupwindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);  
-        
-        popupwindow.setAnimationStyle(R.style.AnimationFade);
-        popupwindow.setOutsideTouchable(false);
-        popupwindow.setBackgroundDrawable(new BitmapDrawable());
-        popupwindow.setFocusable(true);//如果不加这个，Grid不会响应ItemClick
-        popupwindow.setTouchable(true);
-        
-        popupwindow.setTouchInterceptor(new OnTouchListener() {
-
-				@Override
-				public boolean onTouch(View v, MotionEvent event) {
-					
-					System.out.println("onTouch: Y: " + event.getY() + ":X: " + event.getX());                   
-                    if (event.getY()<0){  //这里处理，当点击gridview以外区域的时候，菜单关闭
-                        if (popupwindow.isShowing())
-                        	popupwindow.dismiss();
-                    }
-                    return false;
-				}
-        });
-    }  
-
 	// Not using options menu in this page
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -185,11 +112,7 @@ public class ParkingMainActivity extends MyAbstractActivity {
 			
 			JSONObject commentJson = new JSONObject();
 			commentJson.put("xiaoquId", currentXiaoquId);
-			commentJson.put("supplyDemandType", LocalViewUtil.MainParkingInfoMap.get(LocalViewUtil.Info_Search_Supply));			
-			if (!LocalViewUtil.MainParkingInfoMap.get(LocalViewUtil.Info_Search_Identity)
-					.equals(LocalViewUtil.Info_Search_Identity_Value_Zero)) {
-				commentJson.put("yourIdentity", LocalViewUtil.MainParkingInfoMap.get(LocalViewUtil.Info_Search_Identity));
-			}			
+//			commentJson.put("owner", LocalUtil.getUsername(ParkingMyListActivity.this));
 			
 			commentJson.put("rows", 10);
 			commentJson.put("page", 1);

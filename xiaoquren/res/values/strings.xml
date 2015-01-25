@@ -85,7 +85,7 @@
     <string name="publish_desc_content_hint_label">请输入描述</string>
     <string name="publish_supply_type">供需</string>
     <string name="publish_default_supply_type">出租</string>    
-    <string name="publish_identity">您的身份</string>
+    <string name="publish_identity">发布人身份</string>
     <string name="publish_default_identity">个人</string>
     <string name="publish_area">面积</string>
     <string name="publish_area_content_hint_label">请输入面积</string>
@@ -102,6 +102,8 @@
     <string name="parking_edit_btn">编辑</string>
     <string name="parking_default_empty_value">空</string>
     <string name="publish_create_date">创建时间</string>
+    
+    <string name="parking_my_list_title_label">我的信息</string>
     
     
     
