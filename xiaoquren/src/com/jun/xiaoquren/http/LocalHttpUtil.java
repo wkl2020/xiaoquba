@@ -39,6 +39,7 @@ public class LocalHttpUtil {
 	
 	// ParkingStallInfo	
 	public static final String XiaoquParkingStallInfosUrl = ServerURL + "/xiaoqubaserver/main/xiaoqu_parking_stall_infos/";
+	public static final String ParkingInfoSearchUrl = ServerURL + "/xiaoqubaserver/main/parking_stall_info_search";	
 	public static final String GetParkingStallInfoByIdUrl = ServerURL + "/xiaoqubaserver/main/parking_stall_info/";
 	public static final String AddParkingStallInfoUrl = ServerURL + "/xiaoqubaserver/main/parking_stall_info/";
 	

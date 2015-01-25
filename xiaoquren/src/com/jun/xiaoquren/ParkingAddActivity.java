@@ -201,6 +201,7 @@ class SaveParkingBtnOnClickListener implements View.OnClickListener {
 				commentJson.put("nickname", publish_nickname_content);
 				commentJson.put("phone", publish_phone_content);
 				commentJson.put("xiaoquId", LocalUtil.getCurrentXiaoQuId(parentView));
+				commentJson.put("owner", LocalUtil.getUsername(parentView));
 				
 				LogUtils.i("CommentJSON: " + commentJson.toString());
 				

@@ -98,6 +98,14 @@
     <string name="publish_nickname">联系人名称</string>
     <string name="publish_nickname_content_hint_label">请输入联系人名称</string>
     
+    <string name="parking_view_header_title">车位信息</string>
+    <string name="parking_edit_btn">编辑</string>
+    <string name="parking_default_empty_value">空</string>
+    <string name="publish_create_date">创建时间</string>
+    
+    
+    
+    
     
     <string name="search_label">筛选条件</string>
     <string name="search_btn_label">搜索</string>

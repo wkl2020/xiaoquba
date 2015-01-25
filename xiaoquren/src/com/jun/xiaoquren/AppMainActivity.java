@@ -1,5 +1,11 @@
 package com.jun.xiaoquren;
 
+import java.io.UnsupportedEncodingException;
+
+import org.apache.http.entity.StringEntity;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -8,12 +14,16 @@ import android.provider.Settings.Secure;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.mqtt.PushService;
 import com.jun.xiaoquren.util.LocalUtil;
+import com.jun.xiaoquren.util.LocalViewUtil;
 import com.jun.xiaoquren.util.MyAbstractFragmentActivity;
+import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
@@ -130,36 +140,75 @@ public class AppMainActivity extends MyAbstractFragmentActivity {
     
     public void parkingonclick(final View v) { 
 
-    	String currentXiaoquId = LocalUtil.getCurrentXiaoQuId(this);
-    	System.out.println("Start to connect xiaoqu ParkingStallInfos with xiaoqu id: " + currentXiaoquId);
-    	LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.XiaoquParkingStallInfosUrl+currentXiaoquId, new RequestCallBack<String>() {
-
-            @Override
-            public void onStart() {
-            	System.out.println("Start to connect xiaoqu ParkingStallInfos... ");
-            }
-
-            @Override
-            public void onLoading(long total, long current, boolean isUploading) {
-            	System.out.println("On loading to connect xiaoqu ParkingStallInfos: " + current + "/" + total);
-            }
-
-  			@Override
-  			public void onFailure(HttpException error, String msg) {
-  				System.out.println("Error to connect xiaoqu ParkingStallInfos: " + msg);
-  			}
-
-  			@Override
-  			public void onSuccess(ResponseInfo<String> response) {
-  				System.out.println("Success to connect xiaoqu ParkingStallInfos: " + response.result.toString());
-  				String parkingStallInfosJsonstr = response.result.toString(); 
-  				
-  				Intent intent = new Intent();
-  				intent.setClass(v.getContext(), ParkingMainActivity.class);
-  			    intent.putExtra("parkingStallInfosJsonstr", parkingStallInfosJsonstr);
-  			    startActivity(intent);    	
-  			}
-  		});
+    	if (!LocalUtil.getCurrentXiaoQuId(this).isEmpty()) {
+    		String parkingStallInfosJsonstr = "[]"; 
+			
+			Intent intent = new Intent();
+			intent.setClass(v.getContext(), ParkingMainActivity.class);
+		    intent.putExtra("parkingStallInfosJsonstr", parkingStallInfosJsonstr);
+		    startActivity(intent);
+    	}
+//    	System.out.println("Start to connect xiaoqu ParkingStallInfos with xiaoqu id: " + currentXiaoquId);
+//    	
+//    	RequestParams params = new RequestParams();
+//		try {
+//			
+//			JSONObject commentJson = new JSONObject();
+//			commentJson.put("xiaoquId", currentXiaoquId);
+//			commentJson.put("supplyDemandType", LocalViewUtil.Info_Search_Supply_Value_First);
+//			commentJson.put("yourIdentity", LocalViewUtil.Info_Search_Identity_Value_First);
+//			commentJson.put("rows", 10);
+//			commentJson.put("page", 1);
+//			commentJson.put("sidx", "create_date");
+//			commentJson.put("sord", "desc");
+//			
+//			LogUtils.i("CommentJSON: " + commentJson.toString());
+//			
+//			params.setContentType("application/json;charset=UTF-8");
+//			params.setBodyEntity(new StringEntity(commentJson.toString(),"UTF-8"));
+//		} catch (UnsupportedEncodingException e) {
+//			
+//			LogUtils.i("Error occured UnsupportedEncodingException: " + e.getMessage());
+//			e.printStackTrace();
+//		} catch (JSONException e) {
+//			
+//			LogUtils.i("Error occured JSONException: " + e.getMessage());
+//			e.printStackTrace();
+//		}
+//		
+//		HttpUtils http = new HttpUtils();
+//        http.send(HttpRequest.HttpMethod.POST,
+//        		LocalHttpUtil.ParkingInfoSearchUrl,
+//                params,
+//                new RequestCallBack<String>() {
+//
+//                    @Override
+//                    public void onStart() {
+//                    	LogUtils.i("onStart conn...");
+//                    }
+//
+//                    @Override
+//                    public void onLoading(long total, long current, boolean isUploading) {
+//                    	LogUtils.i("onLoading " + current + "/" + total);
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(ResponseInfo<String> response) {
+//                    	LogUtils.i("onSuccess response:" + response.result);
+//                    	System.out.println("Success to connect xiaoqu ParkingStallInfos: " + response.result.toString());
+//          				String parkingStallInfosJsonstr = response.result.toString(); 
+//          				
+//          				Intent intent = new Intent();
+//          				intent.setClass(v.getContext(), ParkingMainActivity.class);
+//          			    intent.putExtra("parkingStallInfosJsonstr", parkingStallInfosJsonstr);
+//          			    startActivity(intent);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(HttpException error, String msg) {
+//                    	LogUtils.i("onFailure " + msg);
+//                    }
+//                });
     }
     
     public void shopptingsonclick(View v) {

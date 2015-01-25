@@ -8,8 +8,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.jun.xiaoquren.util.LocalUtil;
 import com.jun.xiaoquren.util.LocalViewUtil;
 import com.jun.xiaoquren.util.MyAbstractActivity;
 import com.jun.xiaoquren.view.adapter.ParkingSearchViewAdapter;
@@ -76,7 +76,14 @@ class SearchBtnOnClickListener implements View.OnClickListener {
 	@Override  
 	public void onClick(View v) {
 		
-		Toast.makeText(parentView, "onSearchBtnClick!", Toast.LENGTH_LONG).show();
+//		Toast.makeText(parentView, "onSearchBtnClick!", Toast.LENGTH_LONG).show();
+		
+		if (LocalUtil.isActiveActivityExists(ParkingMainActivity.CLASSNAME)) {
+			ParkingMainActivity page = (ParkingMainActivity)LocalUtil.getActiveActivity(ParkingMainActivity.CLASSNAME);
+			page.refreshList();
+		}
+		
+		parentView.finish();
 	
 //		LocalHttpUtil.getDefaultHttpUtils().send(HttpRequest.HttpMethod.GET, LocalHttpUtil.GetAllXiaoquListUrl, new RequestCallBack<String>() {
 //		

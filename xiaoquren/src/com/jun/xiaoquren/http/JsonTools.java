@@ -285,6 +285,7 @@ public class JsonTools {
 		
 		try {	
 			parkingStallInfo.setId(obj.getInt("id"));
+			parkingStallInfo.setSupplyDemandType(obj.getString("supplyDemandType"));
 			parkingStallInfo.setTitle(obj.getString("title"));
 			parkingStallInfo.setContent(obj.getString("content"));
 			parkingStallInfo.setOwner(obj.getString("owner"));

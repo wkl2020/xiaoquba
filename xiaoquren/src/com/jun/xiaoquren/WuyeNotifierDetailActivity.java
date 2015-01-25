@@ -95,6 +95,7 @@ public class WuyeNotifierDetailActivity extends MyAbstractActivity implements On
 	public void onAddCommentPopClick(View v) {
 		System.out.println("####################### onAddCommentPopClick ################################");
 		
+		popupwindow.dismiss();  
 		Intent intent = new Intent();
 		intent.setClass(WuyeNotifierDetailActivity.this, WuyeNotifierCommentAddActivity.class);
 	    intent.putExtra("documentId", id_text.getText());

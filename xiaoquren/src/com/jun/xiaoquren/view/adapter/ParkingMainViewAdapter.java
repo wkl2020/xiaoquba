@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.jun.xiaoquren.ParkingViewActivity;
 import com.jun.xiaoquren.R;
 import com.jun.xiaoquren.http.LocalHttpUtil;
 import com.jun.xiaoquren.server.model.ParkingStallInfo;
@@ -122,10 +124,9 @@ public class ParkingMainViewAdapter extends BaseAdapter {
 							String infoJsonstr = response.result.toString();
 							System.out.println("infoJsonstr: " + infoJsonstr);
 							
-//							Intent intent = new Intent(mContext, WuyeNotifierDetailActivity.class);
-//							intent.putExtra("commentListJsonstr", infoJsonstr);
-//							intent.putExtra("ParkingStallInfo", parkingStallInfoList.get(position));
-//							mContext.startActivity(intent);
+							Intent intent = new Intent(mContext, ParkingViewActivity.class);
+							intent.putExtra("parkingJsonstr", infoJsonstr);
+							mContext.startActivity(intent);
 						}
 					});
 			}
